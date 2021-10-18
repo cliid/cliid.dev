@@ -17,6 +17,8 @@
 - 🌉 Dark Themes via [`next-themes`](https://github.com/pacocoursey/next-themes)
 - 🧱 Component Based CSS via [`tailwindcss`](https://github.com/tailwindlabs/tailwindcss)
 
+- Based on Lee Robinson's [`leerob.io`](https://leerob.io)
+
 **Running Locally**
 
 ```bash
