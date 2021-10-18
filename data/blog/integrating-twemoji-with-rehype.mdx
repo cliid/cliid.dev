@@ -1,0 +1,129 @@
+---
+title: 'Integrating Twemojis with rehype.js using rehype-twemojify'
+publishedAt: '2021-10-18'
+summary: 'Learn how to seamlessly integrate twemojis with rehype.js'
+---
+
+![](https://s3-alpha.figma.com/hub/file/338625855/c0c3061e-6431-432d-bc0e-f2ebab33bb4f-cover)
+
+# Introduction
+
+Howdy! In this article, I will talk about how to add twemojis to [rehype.js](https://github.com/rehypejs/rehype).
+
+Since emojis had first got into the web, they always took people's attention, as they were a totally new language.
+Everyone loves emojis, right? Me too. I personally myself an emoji enthusiast.
+I use emojis all the time, and undoubtfully, [Emojipedia](https://emojipedia.com) is my best friend.
+
+However, since emojis are system-dependent, some emojis that look pretty in your environment might just show nothing at all for others.
+How to solve this problem? Well, we have custom emojis! Custom emojis are emojis that are displayed as images instead of ordinary plain text.
+By using custom emojis, we, developers can equally provide a consistent user experience for everyone. Hooray!
+Nevertheless, there are plentiful number of custom emojis to choose from.
+Microsoft's Segoe UI Emoji is also good, but since it has a strict license, it's actually quite not... good.
+But hey, [twemoji](https://twemoji.twitter.com/) to the rescue! It's totally free, open sourced, and more importantly, pretty!
+I'm using it on my website, too! ⚡⚡
+
+...
+
+Okay, so we will use twemojis, but how can we apply them to rehype?
+
+# Installation
+
+Yeah, let's talk about how to convert ordinary emojis to twemojis.
+Previously, there were no plugins to convert ordinary emojis to twemojis, but don't be sad, I made one!
+You can install the [rehype-twemojify](https://www.npmjs.com/package/rehype-twemojify) plugin with `yarn`, `npm`, `pnpm` or whatever package manager you prefer.
+I'll do it with yarn, (not yarn v2, but yarn classic) since yarn is fast and lightweight.
+
+```
+yarn add --dev rehype-twemojify // For yarn
+```
+
+```
+npm i --save-dev rehype-twemojify // For NPM
+```
+
+Now that you've installed it, try adding it to your rehype plugin list.
+If you don't have rehype yet, install it using this command:
+
+```
+yarn add --dev rehype // For Yarn
+```
+
+```
+npm i --save-dev rehype // For NPM
+```
+
+And simply run this plugin as follows.
+
+# Configurations
+
+```ts
+import rehype from 'rehype';
+import rehypeTwemojify from 'rehype-twemojify';
+
+rehype().use(rehypeTwemojify);
+```
+
+Or, for [contentlayer](https://www.contentlayer.dev/), you could do this:
+
+```ts:contentlayer.config.ts
+import rehypeTwemojify from 'rehype-twemojify';
+
+const contentLayerConfig = makeSource({
+  mdx: {
+    rehypePlugins: [[rehypeTwemojify]]
+  }
+});
+
+export default contentLayerConfig;
+```
+
+# Next.js Specific Config
+
+And if you're using Next.js, here's a custom configuration, which supports using `/_next/image`, instead of the default one.
+
+Just add `isNext: true` and your custom base, which can be configured using `base: '/YOUR/BASE'`.<br />
+Custom base is required because Next.js does not support external links using `/_next/image`.
+
+By the way, if you're doing this way, you should download all twemoji images and put them in your `/public/twemoji` folder.<br />
+The `/public/twemoji` folder should have two subfolders: `72x72` and `svg`. If it has those two folders, you're okay.<br />
+Then, give the base like such: `/twemoji`.<br />
+Furthermore, `params.w` and `params.q` are also required, because that's what Next.js requires.<br />
+`params.w` is the width, and you can read more about it [here](https://github.com/vercel/next.js/issues/18413).<br />
+`params.q` is the quality of the image, and usually for emojis that use small images, `5` to `40` is okay.<br />
+It should be fine even if you set it to `1`. Anyway, this is the config for Next.js.
+
+```ts:contentlayer.config.ts
+import rehypeTwemojify from 'rehype-twemojify';
+
+const contentLayerConfig = makeSource({
+  mdx: {
+    rehypePlugins: [
+      [
+        rehypeTwemojify,
+        {
+          isNext: true,
+          base: '/twemoji',
+          params: {
+            w: 3840,
+            q: 40
+          }
+        }
+      ]
+    ]
+  }
+});
+
+export default contentLayerConfig;
+```
+
+# Configurations
+
+If you're curious what configurations you can do, here's the list.
+
+- `params`: `{[key: string]: any}`, optional. Any params you want to put for the image URI.
+- `folder`: `string`, optional. The folder that has emojis, e.g., `svg`, `72x72`.
+- `base`: `string`, optional. The base url, by default `https://twemoji.maxcdn.com/v/latest`
+- `ext`: `string`, optional. The image extension, by default `.png`
+- `size`: `string`, optional. The assets size, by default `72x72`
+
+Thanks for reading, as always! Goodbye. 🛸
