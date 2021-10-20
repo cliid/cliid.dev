@@ -15,35 +15,19 @@
 }
 
 @font-face {
-  font-family: 'Meslo';
+  font-family: 'Jetbrains Mono';
   font-style: normal;
-  font-weight: normal;
+  font-weight: 100 900;
   font-display: optional;
-  src: url(/static/fonts/meslo.woff2) format('woff2');
+  src: url(/static/fonts/JetBrainsMono-VariableFont_wght.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Meslo';
-  font-style: normal;
-  font-weight: bold;
-  font-display: optional;
-  src: url(/static/fonts/meslo-bold.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Meslo';
+  font-family: 'Jetbrains Mono';
   font-style: italic;
-  font-weight: normal;
+  font-weight: 100 900;
   font-display: optional;
-  src: url(/static/fonts/meslo-italic.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Meslo';
-  font-style: italic;
-  font-weight: bold;
-  font-display: optional;
-  src: url(/static/fonts/meslo-bold-italic.woff2) format('woff2');
+  src: url(/static/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2) format('woff2');
 }
 
 html {
@@ -82,14 +66,6 @@ body {
   }
 }
 
-.tw-prose .anchor {
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 1%;
-  max-width: 700px;
-  cursor: pointer;
-}
-
 .tw-prose ol,
 .tw-prose ul {
   list-style: none;
@@ -107,10 +83,6 @@ body {
   @apply tw-transition-all;
 }
 
-.tw-prose .anchor:after {
-  content: '#';
-}
-
 .tw-prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
@@ -121,7 +93,7 @@ pre {
   overflow-x: auto;
 }
 
-/**
+/*
  * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
  * 1. Make the element just wide enough to fit its content.
  * 2. Always fill the visible space in .code-highlight.
@@ -154,6 +126,8 @@ pre {
   margin-left: -8px;
   color: rgb(156, 163, 175); /* Line number color */
   content: attr(line);
+  display: inline-block;
+  width: 40px;
 }
 
 pre::-webkit-scrollbar {

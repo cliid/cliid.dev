@@ -66,7 +66,16 @@ const nextConfig = {
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
   },
-  images: { domains: ['pbs.twimg.com'] },
+  experimental: {
+    swcLoader: true,
+    swcMinify: true
+  },
+  images: {
+    domains: [
+      'i.scdn.co', // Spotify Album Art
+      'pbs.twimg.com' // Twitter Profile Picture
+    ]
+  },
   webpack: (config, { dev, isServer }) => {
     const CompressionPlugin = require('compression-webpack-plugin');
     config.module.rules.push({

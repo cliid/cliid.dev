@@ -9,6 +9,12 @@
 
   .tw-prose .anchor {
     @apply tw-absolute tw-invisible;
+    background-color: transparent;
+    margin-left: -1em;
+    padding-right: 0.5em;
+    width: 80%;
+    max-width: 700px;
+    cursor: pointer;
   }
 
   .anchor:hover {
@@ -17,6 +23,7 @@
 
   .tw-prose .anchor:after {
     @apply tw-text-gray-300 dark:tw-text-gray-700 tw-w-min;
+    content: '#';
   }
 
   .tw-prose *:hover > .anchor {
@@ -33,12 +40,19 @@
   }
 
   .tw-prose code {
-    font-family: 'Meslo';
+    font-family: 'Jetbrains Mono';
     @apply tw-text-sm tw-text-[#b26ae2];
   }
 
   .tw-prose img {
     /* Don't apply styles to next/image */
     @apply tw-m-0;
+  }
+
+  .tw-prose :target::before {
+    content: '';
+    display: block;
+    height: 96px; /* fixed header height*/
+    margin: -96px 0 0; /* negative fixed header height */
   }
 }

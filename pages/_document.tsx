@@ -20,28 +20,14 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/static/fonts/meslo.woff2"
+            href="/static/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/static/fonts/meslo-italic.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/meslo-bold.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/meslo-bold-italic.woff2"
+            href="/static/fonts/JetBrainsMono-VariableFont_wght.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
