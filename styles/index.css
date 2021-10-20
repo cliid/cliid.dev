@@ -117,59 +117,43 @@ body {
   margin-bottom: 1.25em !important;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  @apply tw-text-gray-700 dark:tw-text-gray-300;
+pre {
+  overflow-x: auto;
 }
 
-.token.punctuation {
-  @apply tw-text-gray-700 dark:tw-text-gray-300;
+/**
+ * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .code-highlight.
+ */
+.code-highlight {
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
 }
 
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  @apply tw-text-green-500;
+.code-line {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-left-width: 4px;
+  border-left-color: rgb(31, 41, 55); /* Set code block color */
 }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  @apply tw-text-purple-500;
+.highlight-line {
+  margin-left: -16px;
+  margin-right: -16px;
+  background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+  border-left-width: 4px;
+  border-left-color: rgb(59, 130, 246); /* Set highlight accent border color */
 }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  @apply tw-text-yellow-500;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  @apply tw-text-blue-500;
-}
-
-.token.function,
-.token.class-name {
-  @apply tw-text-pink-500;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  @apply tw-text-yellow-500;
+.line-number::before {
+  padding-right: 16px;
+  margin-left: -8px;
+  color: rgb(156, 163, 175); /* Line number color */
+  content: attr(line);
 }
 
 pre::-webkit-scrollbar {

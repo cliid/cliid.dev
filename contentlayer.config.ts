@@ -2,7 +2,7 @@ import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/sou
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
-import rehypePrism from 'rehype-prism-plus';
+import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import rehypeTwemojify from 'rehype-twemojify';
 import remarkGemoji from 'remark-gemoji';
@@ -101,7 +101,7 @@ const contentLayerConfig = makeSource({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      rehypePrism,
+      [rehypePrismPlus, { showLineNumbers: true }],
       [
         rehypeTwemojify,
         {
