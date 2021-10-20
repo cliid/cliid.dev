@@ -16,6 +16,7 @@
 - 💬 Discussions via [`giscus`](https://github.com/laymonage/giscus)
 - 🌉 Dark Themes via [`next-themes`](https://github.com/pacocoursey/next-themes)
 - 🧱 Component Based CSS via [`tailwindcss`](https://github.com/tailwindlabs/tailwindcss)
+- Highly inspired by Lee Robinson's [`leerob.io`](https://leerob.io)
 
 **Running Locally**
 
