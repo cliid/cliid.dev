@@ -46,10 +46,6 @@
   src: url(/static/fonts/meslo-bold-italic.woff2) format('woff2');
 }
 
-* {
-  @apply tw-antialiased tw-text-text dark:tw-text-dark-text tw-bg-bg dark:tw-bg-dark-bg tw-border-border dark:tw-border-dark-border;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -87,8 +83,6 @@ body {
 }
 
 .tw-prose .anchor {
-  @apply tw-absolute tw-invisible !important;
-
   margin-left: -1em;
   padding-right: 0.5em;
   width: 1%;
@@ -96,21 +90,17 @@ body {
   cursor: pointer;
 }
 
-.anchor:hover {
-  @apply tw-visible tw-no-underline tw-text-text dark:tw-text-dark-text !important;
-}
-
 .tw-prose ol,
 .tw-prose ul {
   list-style: none;
-  padding: 0 !important;
-  padding-left: 12px !important;
-  margin: 0 !important;
+  padding: 0;
+  padding-left: 12px;
+  margin: 0;
 }
 
 .tw-prose li {
-  padding-left: 2em !important;
-  text-indent: -0.7em !important;
+  padding-left: 2em;
+  text-indent: -0.7em;
 }
 
 .tw-prose a {
@@ -118,31 +108,7 @@ body {
 }
 
 .tw-prose .anchor:after {
-  @apply tw-text-gray-300 dark:tw-text-gray-700 tw-w-min !important;
   content: '#';
-}
-
-.tw-prose *:hover > .anchor {
-  @apply tw-visible tw-no-underline !important;
-}
-
-.tw-prose > p {
-  font-family: 'Freight Text Pro';
-  @apply tw-mb-8 tw-text-xl tw-leading-7 !important;
-}
-
-.tw-prose pre {
-  @apply tw-border tw-border-border dark:tw-border-dark-border tw-text-text dark:tw-text-dark-text tw-bg-bg dark:tw-bg-dark-bg !important;
-}
-
-.tw-prose code {
-  font-family: 'Meslo';
-  @apply tw-text-sm tw-text-[#b26ae2] !important;
-}
-
-.tw-prose img {
-  /* Don't apply styles to next/image */
-  @apply tw-m-0;
 }
 
 .tw-prose > :first-child {
