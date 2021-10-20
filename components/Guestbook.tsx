@@ -87,7 +87,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
 
   return (
     <>
-      <div className="tw-border tw-border-gray-200 tw-rounded tw-p-6 tw-my-4 tw-w-full dark:tw-border-gray-800 tw-bg-gray-100 dark:tw-bg-gray-800">
+      <div className="tw-border tw-rounded tw-p-6 tw-my-4 tw-w-full">
         <h5 className="tw-text-lg md:tw-text-xl tw-font-bold tw-text-gray-900 dark:tw-text-gray-100">
           Sign the Guestbook
         </h5>
@@ -98,7 +98,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <a
             href="/api/auth/signin/github"
-            className="tw-flex tw-items-center tw-justify-center tw-my-4 tw-font-bold tw-h-8 tw-bg-gray-200 dark:tw-bg-gray-700 tw-text-gray-900 dark:tw-text-gray-100 tw-rounded tw-w-28"
+            className="tw-flex tw-items-center tw-justify-center tw-my-4 tw-font-bold tw-h-8 tw-rounded tw-w-28 tw-bg-dark-bg dark:tw-bg-bg tw-text-dark-text dark:tw-text-text"
             onClick={(e) => {
               e.preventDefault();
               signIn('github');
@@ -114,10 +114,10 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
               aria-label="Your message"
               placeholder="Your message..."
               required
-              className="tw-pl-4 tw-pr-32 tw-py-2 tw-mt-1 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-w-full tw-rounded-md tw-bg-white dark:tw-bg-black tw-text-gray-900 dark:tw-text-gray-100"
+              className="tw-pl-4 tw-pr-32 tw-py-2 tw-mt-1 focus:tw-ring-primary focus:tw-border-primary tw-block tw-w-full tw-rounded-md"
             />
             <button
-              className="tw-flex tw-items-center tw-justify-center tw-absolute tw-right-1 tw-top-1 tw-px-4 tw-py-1 tw-font-medium tw-h-8 tw-bg-gray-100 dark:tw-bg-gray-700 tw-text-gray-900 dark:tw-text-gray-100 tw-rounded tw-w-28"
+              className="tw-flex tw-items-center tw-justify-center tw-absolute tw-right-1 tw-top-1 tw-px-4 tw-py-1 tw-font-medium tw-h-8 tw-rounded tw-w-28"
               type="submit"
             >
               {form.state === Form.Loading ? <LoadingSpinner /> : 'Sign'}
@@ -129,7 +129,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
         ) : form.state === Form.Success ? (
           <SuccessMessage>{form.message}</SuccessMessage>
         ) : (
-          <p className="tw-text-sm tw-text-gray-800 dark:tw-text-gray-200">
+          <p className="tw-text-sm">
             Your information is only used to display your name and reply by email.
           </p>
         )}

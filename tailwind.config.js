@@ -7,7 +7,20 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   prefix: 'tw-',
   mode: 'jit',
-  purge: ['./pages/**/*.tsx', './components/**/*.tsx', './layouts/**/*.tsx', './lib/**/*.ts'],
+  purge: [
+    './pages/**/*.tsx',
+    './pages/**/*.ts',
+    './components/**/*.tsx',
+    './components/**/*.ts',
+    './layouts/**/*.tsx',
+    './layouts/**/*.ts',
+    './lib/**/*.tsx',
+    './lib/**/*.ts',
+    './constants/**/*.tsx',
+    './constants/**/*.ts',
+    './hooks/**/*.tsx',
+    './hooks/**/*.ts'
+  ],
   darkMode: 'class',
   theme: {
     gradientColorStops: (theme) => ({
@@ -38,18 +51,24 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#FF86B3',
-          50: '#FFE2ED',
-          100: '#FFD8E6',
-          200: '#FFC3D9',
-          300: '#FFAFCD',
-          400: '#FF9AC0',
-          500: '#FF86B3',
-          600: '#FF72A6',
-          700: '#FF5D99',
-          800: '#FF498D',
-          900: '#FF3480'
+          DEFAULT: '#00807D',
+          50: '#66FFFB',
+          100: '#4DFFFB',
+          200: '#1AFFFA',
+          300: '#00E6E1',
+          400: '#00B3AF',
+          500: '#00807D',
+          600: '#004D4B',
+          700: '#001A19',
+          800: '#000000',
+          900: '#000000'
         },
+        bg: '#f7f9fd',
+        'dark-bg': '#09101b',
+        text: '#0b1423',
+        'dark-text': '#eff4fa',
+        border: '#e5e5e5',
+        'dark-border': '#333333',
         gray: colors.trueGray,
         'spotify-green': '#1db954',
         code: {

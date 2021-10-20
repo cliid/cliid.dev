@@ -21,7 +21,10 @@ function quotesAndDashes(input: string) {
 }
 
 const computedFields: ComputedFields = {
-  readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
+  readingTime: {
+    type: 'json',
+    resolve: (doc) => readingTime(doc.body.raw, { wordsPerMinute: 275 })
+  },
   wordCount: {
     type: 'number',
     resolve: (doc) => doc.body.raw.split(/\s+/gu).length

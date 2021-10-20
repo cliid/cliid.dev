@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 
 const Divider = () => {
-  return <div className="tw-border tw-border-gray-200 dark:tw-border-gray-600 tw-w-full tw-my-8" />;
+  return <div className="tw-border tw-w-full tw-my-8" />;
 };
 
 const Year = ({ children }: { children: ReactNode }) => {

@@ -26,7 +26,7 @@ const Pre = ({ children }: { children: React.ReactNode }) => {
         <button
           aria-label="Copy code"
           type="button"
-          className={`tw-absolute tw-right-2 tw-top-2 tw-w-8 tw-h-8 tw-p-1 tw-rounded tw-border-2 tw-bg-gray-700 dark:tw-bg-gray-800 ${
+          className={`tw-absolute tw-right-2 tw-top-2 tw-w-8 tw-h-8 tw-p-1 tw-rounded tw-border-2 ${
             copied
               ? 'focus:tw-outline-none focus:tw-border-green-400 tw-border-green-400'
               : 'tw-border-gray-300'

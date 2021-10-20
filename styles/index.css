@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -10,15 +6,48 @@
   src: url(/static/fonts/Inter.var.woff2) format('woff2');
 }
 
-@layer base {
-  body {
-    @apply tw-antialiased tw-text-black dark:tw-text-white tw-bg-gray-50 dark:tw-bg-gray-900 tw-border-gray-200 dark:tw-border-gray-800;
-  }
+@font-face {
+  font-family: 'Freight Text Pro';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/static/fonts/freight-text-pro.woff) format('woff');
 }
 
-::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+@font-face {
+  font-family: 'Meslo';
+  font-style: normal;
+  font-weight: normal;
+  font-display: optional;
+  src: url(/static/fonts/meslo.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Meslo';
+  font-style: normal;
+  font-weight: bold;
+  font-display: optional;
+  src: url(/static/fonts/meslo-bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Meslo';
+  font-style: italic;
+  font-weight: normal;
+  font-display: optional;
+  src: url(/static/fonts/meslo-italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Meslo';
+  font-style: italic;
+  font-weight: bold;
+  font-display: optional;
+  src: url(/static/fonts/meslo-bold-italic.woff2) format('woff2');
+}
+
+* {
+  @apply tw-antialiased tw-text-text dark:tw-text-dark-text tw-bg-bg dark:tw-bg-dark-bg tw-border-border dark:tw-border-dark-border;
 }
 
 html {
@@ -32,7 +61,6 @@ body {
 }
 
 #__next {
-  @apply tw-bg-gray-50 dark:tw-bg-gray-900;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -51,14 +79,6 @@ body {
   display: table;
 }
 
-.skip-nav {
-  @apply tw-absolute tw-px-4 tw-py-3 tw-transition-transform tw-duration-200 tw-transform tw--translate-y-12 tw--left-1/4 focus:tw-top-4 focus:tw-translate-y-3 tw--top-8;
-}
-
-#skip {
-  scroll-margin-top: 1.125rem;
-}
-
 @supports not (backdrop-filter: none) {
   .sticky-nav {
     backdrop-filter: none;
@@ -67,17 +87,17 @@ body {
 }
 
 .tw-prose .anchor {
-  @apply tw-absolute tw-invisible;
+  @apply tw-absolute tw-invisible !important;
 
   margin-left: -1em;
   padding-right: 0.5em;
-  width: 80%;
+  width: 1%;
   max-width: 700px;
   cursor: pointer;
 }
 
 .anchor:hover {
-  @apply tw-visible tw-no-underline;
+  @apply tw-visible tw-no-underline tw-text-text dark:tw-text-dark-text !important;
 }
 
 .tw-prose ol,
@@ -98,24 +118,26 @@ body {
 }
 
 .tw-prose .anchor:after {
-  @apply tw-text-gray-300 dark:tw-text-gray-700;
+  @apply tw-text-gray-300 dark:tw-text-gray-700 tw-w-min !important;
   content: '#';
 }
 
 .tw-prose *:hover > .anchor {
-  @apply tw-visible tw-no-underline;
+  @apply tw-visible tw-no-underline !important;
+}
+
+.tw-prose > p {
+  font-family: 'Freight Text Pro';
+  @apply tw-mb-8 tw-text-xl tw-leading-7 !important;
 }
 
 .tw-prose pre {
-  @apply tw-border tw-border-gray-200 tw-bg-gray-50 dark:tw-border-gray-700 dark:tw-bg-gray-900;
+  @apply tw-border tw-border-border dark:tw-border-dark-border tw-text-text dark:tw-text-dark-text tw-bg-bg dark:tw-bg-dark-bg !important;
 }
 
 .tw-prose code {
-  @apply tw-text-gray-800 dark:tw-text-gray-200 tw-px-1 tw-py-0.5 tw-border tw-border-gray-100 dark:tw-border-gray-800 tw-rounded-lg tw-bg-gray-100 dark:tw-bg-gray-900;
-}
-
-.tw-prose pre code {
-  @apply tw-text-gray-800 dark:tw-text-gray-200 tw-bg-gray-50 dark:tw-bg-gray-900;
+  font-family: 'Meslo';
+  @apply tw-text-sm tw-text-[#b26ae2] !important;
 }
 
 .tw-prose img {
@@ -184,11 +206,6 @@ body {
   @apply tw-text-yellow-500;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
-  @apply tw-text-gray-800 dark:tw-text-gray-50;
-}
-
 pre::-webkit-scrollbar {
   display: none;
 }
@@ -199,7 +216,7 @@ pre {
 }
 
 .rehype-code-title {
-  @apply tw-px-5 tw-py-3 tw-font-mono tw-text-sm tw-font-bold tw-text-gray-800 tw-bg-gray-200 tw-border tw-border-b-0 tw-border-gray-200 tw-rounded-t-lg dark:tw-text-gray-200 dark:tw-border-gray-700 dark:tw-bg-gray-800;
+  @apply tw-px-5 tw-py-3 tw-font-mono tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-border-gray-200 dark:tw-border-gray-700 tw-rounded-t-lg;
 }
 
 .rehype-code-title + div > pre {
@@ -207,7 +224,7 @@ pre {
 }
 
 .highlight-line {
-  @apply tw-block tw-px-4 tw--mx-4 tw-bg-gray-100 tw-border-l-4 tw-border-blue-500 dark:tw-bg-gray-800;
+  @apply tw-block tw-px-4 tw--mx-4 tw-border-l-4 tw-border-blue-500;
 }
 
 /* Remove Safari input tw-shadow on mobile */
@@ -244,8 +261,8 @@ table {
 
 .emoji {
   display: inline-block;
-  width: 1em !important;
-  height: 1em !important;
+  width: 0.8em !important;
+  height: 0.8em !important;
   margin-left: 0.1em !important;
   margin-right: 0.1em !important;
   vertical-align: -0.1em;
@@ -292,87 +309,4 @@ table {
 
 .animate-cutebounce {
   animation: cutebounce 0.8s infinite;
-}
-
-.navbar {
-  position: sticky;
-  z-index: 10;
-  top: 0;
-}
-
-.navbar-hide {
-  visibility: hidden;
-  transition: all 0.3s;
-  transform: translateY(-100%);
-}
-
-.navbar-show {
-  visibility: visible;
-  transition: all 0.3s;
-}
-
-@-webkit-keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-@keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.jello-horizontal {
-  -webkit-animation: jello-horizontal 0.2s both;
-  animation: jello-horizontal 0.2s both;
 }

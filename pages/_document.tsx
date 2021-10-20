@@ -19,6 +19,41 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
+            rel="preload"
+            href="/static/fonts/meslo.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/fonts/meslo-italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/fonts/meslo-bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/fonts/meslo-bold-italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/fonts/freight-text-pro.woff"
+            as="font"
+            type="font/woff"
+            crossOrigin="anonymous"
+          />
+          <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="/static/favicons/apple-touch-icon.png"
@@ -43,7 +78,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#000000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
-        <body className="tw-bg-white dark:tw-bg-black tw-text-white dark:tw-text-black">
+        <body>
           <Main />
           <NextScript />
         </body>

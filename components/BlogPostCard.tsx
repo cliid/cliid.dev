@@ -25,13 +25,13 @@ export default function BlogPostCard({
           gradient
         )}
       >
-        <div className="tw-flex tw-flex-col tw-justify-between tw-h-full tw-bg-white dark:tw-bg-gray-900 tw-rounded-lg tw-p-4 tw-w-full">
+        <div className="tw-flex tw-flex-col tw-justify-between tw-h-full tw-rounded-lg tw-p-4 tw-w-full">
           <div className="tw-flex tw-flex-col md:tw-flex-row tw-justify-between tw-w-full">
-            <h3 className="tw-text-lg md:tw-text-xl tw-font-semibold tw-mb-6 sm:tw-mb-10 tw-w-full tw-text-gray-900 dark:tw-text-gray-100 tw-tracking-tight tw-break-words tw-text-left">
+            <h3 className="tw-text-lg md:tw-text-xl tw-font-semibold tw-mb-6 sm:tw-mb-10 tw-w-full tw-tracking-tight tw-break-words tw-text-left">
               {title}
             </h3>
           </div>
-          <div className="tw-flex tw-items-center tw-text-gray-800 dark:tw-text-gray-200 capsize">
+          <div className="tw-flex tw-items-center capsize">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="tw-h-6 tw-w-6"

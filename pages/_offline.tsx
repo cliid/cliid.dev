@@ -11,8 +11,8 @@ export default function Offline() {
           </h1>
         </div>
         <p className="tw-text-gray-600 dark:tw-text-gray-400 tw-mb-4">
-          Hey, it seems you're offline! Wait, how is this website still tw-visible then? It's
-          because this website uses{' '}
+          Hey, it seems you're offline! Wait, how is this website still visible then? It's because
+          this website uses{' '}
           <Link href="https://github.com/shadowwalker/next-pwa" passHref>
             <code className="tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-gray-900 dark:hover:tw-text-gray-100 hover:tw-cursor-pointer">
               next-pwa

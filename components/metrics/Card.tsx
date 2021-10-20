@@ -10,7 +10,7 @@ export default function MetricCard({
   isCurrency: boolean;
 }) {
   return (
-    <div className="metric-card tw-bg-white dark:tw-bg-gray-900 tw-border tw-border-gray-200 dark:tw-border-gray-800 tw-rounded-lg tw-p-4 max-w-72 tw-w-full">
+    <div className="metric-card tw-border tw-rounded-lg tw-p-4 max-w-72 tw-w-full">
       <a aria-label={header} target="_blank" rel="noopener noreferrer" href={link}>
         <div className="tw-flex tw-items-center tw-text-gray-900 dark:tw-text-gray-100">
           {header}

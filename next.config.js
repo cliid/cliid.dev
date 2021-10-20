@@ -64,7 +64,7 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   eslint: {
-    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks']
+    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
   },
   images: { domains: ['pbs.twimg.com'] },
   webpack: (config, { dev, isServer }) => {
