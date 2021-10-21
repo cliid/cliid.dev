@@ -2,24 +2,19 @@
 
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import("tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   prefix: 'tw-',
   mode: 'jit',
   purge: [
-    './pages/**/*.tsx',
-    './pages/**/*.ts',
-    './components/**/*.tsx',
-    './components/**/*.ts',
-    './layouts/**/*.tsx',
-    './layouts/**/*.ts',
-    './lib/**/*.tsx',
-    './lib/**/*.ts',
-    './constants/**/*.tsx',
-    './constants/**/*.ts',
-    './hooks/**/*.tsx',
-    './hooks/**/*.ts'
+    './pages/**/*.{js,ts,jsx,tsx,mdx,vue}',
+    './components/**/*.{js,ts,jsx,tsx,mdx,vue}',
+    './layouts/**/*.{js,ts,jsx,tsx,mdx,vue}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx,vue}',
+    './constants/**/*.{js,ts,jsx,tsx,mdx,vue}',
+    './hooks/**/*.{js,ts,jsx,tsx,mdx,vue}'
   ],
   darkMode: 'class',
   theme: {
@@ -198,5 +193,21 @@ module.exports = {
     typography: ['dark'],
     animation: ['responsive', 'motion-safe', 'motion-reduce']
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')]
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    plugin(function ({ addVariant, e, postcss }) {
+      addVariant('firefox', ({ container, separator }) => {
+        const isFirefoxRule = postcss.atRule({
+          name: '-moz-document',
+          params: 'url-prefix()'
+        });
+        isFirefoxRule.append(container.nodes);
+        container.append(isFirefoxRule);
+        isFirefoxRule.walkRules((rule) => {
+          rule.selector = `.${e(`firefox${separator}${rule.selector.slice(1)}`)}`;
+        });
+      });
+    })
+  ]
 };

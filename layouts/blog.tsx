@@ -29,10 +29,10 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
     >
       <article className="tw-w-full">
         <section id="title">
-          <h1 className="tw-mb-4 tw-text-3xl tw-font-bold tw-tracking-tight md:tw-text-5xl md:tw-text-center">
-            {post.title}
+          <h1 className="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight md:tw-text-5xl md:tw-text-center capsize">
+            {post.title.toUpperCase()}
           </h1>
-          <h2 className="tw-mb-4 tw-text-xl tw-font-semibold tw-tracking-tight md:tw-text-2xl md:tw-text-center tw-text-gray-500">
+          <h2 className="tw-mb-4 tw-text-xl tw-font-semibold tw-tracking-tight md:tw-text-2xl md:tw-text-center tw-text-gray-500 capsize">
             {post.summary}
           </h2>
         </section>
@@ -58,7 +58,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
               <Tippy
                 render={(attrs) => (
                   <div
-                    className="tw-text-xs tw-text-dark-text dark:tw-text-text tw-bg-dark-bg dark:tw-bg-bg tw-rounded-md tw-p-3"
+                    className="tw-text-xs tw-text-dark-text dark:tw-text-text tw-bg-dark-bg dark:tw-bg-bg tw-rounded-md tw-p-3 capsize"
                     tabIndex={-1}
                     {...attrs}
                   >

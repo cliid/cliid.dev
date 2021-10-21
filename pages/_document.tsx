@@ -34,9 +34,9 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/static/fonts/freight-text-pro.woff"
+            href="/static/fonts/freight-text-pro.woff2"
             as="font"
-            type="font/woff"
+            type="font/woff2"
             crossOrigin="anonymous"
           />
           <link

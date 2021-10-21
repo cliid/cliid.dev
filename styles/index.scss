@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: optional;
-  src: url(/static/fonts/freight-text-pro.woff) format('woff');
+  src: url(/static/fonts/freight-text-pro.woff2) format('woff2');
 }
 
 @font-face {
@@ -36,7 +36,8 @@ html {
 
 body {
   text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
   font-size: 16px;
 }
 
@@ -66,27 +67,29 @@ body {
   }
 }
 
-.tw-prose ol,
-.tw-prose ul {
-  list-style: none;
-  padding: 0;
-  padding-left: 12px;
-  margin: 0;
-}
+.tw-prose {
+  ol,
+  ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 12px;
+    margin: 0;
+  }
 
-.tw-prose li {
-  padding-left: 2em;
-  text-indent: -0.7em;
-}
+  li {
+    padding-left: 2em;
+    text-indent: -0.7em;
+  }
 
-.tw-prose a {
-  @apply tw-transition-all;
-}
+  a {
+    @apply tw-transition-all;
+  }
 
-.tw-prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
+  > :first-child {
+    /* Override removing top margin, causing layout shift */
+    margin-top: 1.25em !important;
+    margin-bottom: 1.25em !important;
+  }
 }
 
 pre {

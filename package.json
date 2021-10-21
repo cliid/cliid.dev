@@ -54,6 +54,7 @@
     "@types/react": "^17.0.14",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@types/tailwindcss": "^2.2.0",
+    "@types/twemoji": "^12.1.2",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "compression-webpack-plugin": "^9.0.0",

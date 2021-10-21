@@ -1,8 +1,8 @@
 import { useAnalytics } from '@lib/analytics';
-import '@styles/index.css';
+import '@styles/index.scss';
 import '@styles/prism-dark.scss';
 import '@styles/prism.scss';
-import '@styles/tailwind.css';
+import '@styles/tailwind.scss';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 const Divider = () => {
   return <div className="tw-border tw-w-full tw-my-8" />;
@@ -15,7 +15,7 @@ const Year = ({ children }: { children: ReactNode }) => {
 const Step = ({ children, title }: { children?: ReactNode; title: string }) => {
   return (
     <li className="tw-mb-4 tw-ml-2">
-      <div className="tw-flex tw-items-center tw-mb-2 tw-text-green-700 dark:tw-text-green-300">
+      <div className="tw-flex tw-items-center tw-mb-2">
         <span className="tw-sr-only">Check</span>
         <svg className="tw-h-4 tw-w-4 tw-mr-2" viewBox="0 0 24 24">
           <g
@@ -77,7 +77,7 @@ const FullTimeline = () => (
     <Year>2010</Year>
     <ul>
       <Step title="Destroyed two laptops with my bare hand">
-        I put a pen on the laptop hinge and smacked the laptop. What happened? Of course, the
+        I put a pen on the hinge of my mom's laptop and smacked it. What happened? Of course, the
         monitor broke, completely. Why did I do that? I don't know either.
       </Step>
     </ul>
@@ -104,12 +104,12 @@ export default function Timeline() {
       <ul>
         <Step title="Founded Dazzle 🚀">
           I've founded a company called Dazzle with&nbsp;
-          <a href="https://github.com/krrrr0" className="tw-text-primary-700">
-            <strong>@krrrr0</strong>
+          <a href="https://github.com/krrrr0">
+            <strong className="tw-text-primary-500">@krrrr0</strong>
           </a>
           &nbsp;and&nbsp;
-          <a href="https://github.com/shi3do" className="tw-text-primary-700">
-            <strong>@shi3do</strong>
+          <a href="https://github.com/shi3do">
+            <strong className="tw-text-primary-500">@shi3do</strong>
           </a>
           ,&nbsp;and we're currently developing a tech-focused wiki called&nbsp;
           <a href="https://seven.wiki">Sevenwiki</a> for Koreans.
