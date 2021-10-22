@@ -41,6 +41,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "sass": "^1.43.3",
     "sharp": "^0.29.1",
     "smoothscroll-polyfill": "^0.4.4",
     "swr": "^1.0.1",
@@ -92,7 +93,6 @@
     "remark-gfm": "^3.0.0",
     "remark-textr": "^5.0.0",
     "rss": "1.2.2",
-    "sass": "^1.43.3",
     "smartquotes": "^2.3.2",
     "twemoji": "^13.1.0",
     "typescript": "^4.3.5"
