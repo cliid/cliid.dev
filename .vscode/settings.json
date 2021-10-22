@@ -4,14 +4,17 @@
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
     "source.fixAll.eslint": true,
-    "source.fixAll.format": true
+    "source.fixAll.format": true,
+    "source.organizeImports": true
   },
-  "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.configFile": ".stylelintrc.json",
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "files.exclude": {
     "node_modules/": true
-  },
-  "eslint.packageManager": "yarn"
+  }
 }

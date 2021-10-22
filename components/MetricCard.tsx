@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import Image from './Image';
 
 const MetricCard = ({
@@ -16,7 +15,7 @@ const MetricCard = ({
   <div className="tw-p-4 md:tw-w-1/2 md" style={{ maxWidth: '544px' }}>
     <div className="tw-h-full tw-overflow-hidden tw-border-2 tw-rounded-md tw-border-opacity-60">
       {href ? (
-        <Link href={href} aria-label={`Link to ${title}`} passHref>
+        <Link href={href} aria-label={`Link to ${title}`}>
           <Image
             alt={title}
             src={imageUrl}

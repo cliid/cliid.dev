@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import CustomLink from './CustomLink';
 import Pre from './Pre';
 

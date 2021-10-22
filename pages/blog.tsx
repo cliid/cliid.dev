@@ -1,3 +1,5 @@
+import { allBlogs } from '.contentlayer/data';
+import type { Blog as BlogType } from '.contentlayer/types';
 import BlogPost from '@components/BlogPost';
 import Container from '@components/Container';
 import { pick } from '@lib/utils';
@@ -5,9 +7,6 @@ import Fuse from 'fuse.js';
 import { InferGetStaticPropsType } from 'next';
 import { useState } from 'react';
 import { FaSearchengin } from 'react-icons/fa';
-
-import { allBlogs } from '.contentlayer/data';
-import type { Blog as BlogType } from '.contentlayer/types';
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('');

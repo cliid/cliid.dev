@@ -1,14 +1,13 @@
 import { routes } from '@constants/routes';
+import { MenuSolid, MoonSolid, SunSolid, XSolid } from '@graywolfai/react-heroicons';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import cn from 'classnames';
+import { useTheme } from 'next-themes';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
-import { HiMenu, HiMoon, HiSun, HiX } from 'react-icons/hi';
 import useDelayedRender from 'use-delayed-render';
-
 import Footer from './Footer';
 import ToolBtns from './ToolBtns';
 
@@ -140,9 +139,9 @@ export default function Container(props: any) {
               onClick={toggleMenu}
             >
               {isMenuOpen ? (
-                <HiX className="tw-w-5 tw-h-5" />
+                <XSolid className="tw-w-5 tw-h-5" />
               ) : (
-                <HiMenu className="tw-w-5 tw-h-5" />
+                <MenuSolid className="tw-w-5 tw-h-5" />
               )}
             </button>
             <div>
@@ -161,9 +160,9 @@ export default function Container(props: any) {
               }}
             >
               {mounted && resolvedTheme === 'tw-dark' ? (
-                <HiMoon className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+                <MoonSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
               ) : (
-                <HiSun className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+                <SunSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
               )}
             </button>
           </div>

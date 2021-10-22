@@ -51,9 +51,9 @@ How does it manage the order? Well, for this one, I'll just quote Wikipedia.
 > As an example of binary heap insertion, say we have a max-heap
 > ![](https://upload.wikimedia.org/wikipedia/commons/a/ac/Heap_add_step1.svg)
 > and we want to add the number 15 to the heap. We first place the 15 in the position marked by the X. However, the heap property is violated since 15 > 8, so we need to swap the 15 and the 8. So, we have the heap looking as follows after the first swap:
-> ![](https://upload.wikimedia.org/wikipedia/commons/1/16/Heap_add_step2.svg)
+> ![](https://upload.wikimedia.org/wikipedia/commons/a/ac/Heap_add_step2.svg)
 > However the heap property is still violated since 15 > 11, so we need to swap again:
-> ![](https://upload.wikimedia.org/wikipedia/commons/5/51/Heap_add_step3.svg)
+> ![](https://upload.wikimedia.org/wikipedia/commons/a/ac/Heap_add_step3.svg)
 > which is a valid max-heap. There is no need to check the left child after this final step: at the start, the max-heap was valid, meaning the root was already greater than its left child, so replacing the root with an even greater value will maintain the property that each node is greater than its children (11 > 5; if 15 > 11, and 11 > 5, then 15 > 5, because of the transitive relation).
 
 Long story short, it puts the new element at the bottom of the heap,

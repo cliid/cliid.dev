@@ -1,11 +1,11 @@
+import type { Blog } from '.contentlayer/types';
 import Container from '@components/Container';
 import Giscus from '@components/Giscus';
 import ViewCounter from '@components/ViewCounter';
-import Tippy, { TippyProps } from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react/headless';
 import { format } from 'date-fns';
 import React, { PropsWithChildren } from 'react';
-
-import type { Blog } from '.contentlayer/types';
+import 'tippy.js/dist/tippy.css'; // optional
 
 const editUrl = (slug: string) =>
   `https://github.com/cliid/cliid.dev/edit/main/data/blog/${slug}.mdx`;
@@ -18,36 +18,6 @@ interface ReadTime {
   words: number;
   minutes: number;
 }
-
-// Will only render the `content` or `render` elements if the tippy is mounted to the DOM.
-// Replace <Tippy /> with <LazyTippy /> component and it should work the same.
-
-// Export own set of props (even if they are the same for now) to enable clients to be more future-proof
-export type LazyTippyProps = TippyProps;
-
-export const LazyTippy = (props: LazyTippyProps) => {
-  const [mounted, setMounted] = React.useState(false);
-
-  const lazyPlugin = {
-    fn: () => ({
-      onMount: () => setMounted(true),
-      onHidden: () => setMounted(false)
-    })
-  };
-
-  const computedProps = { ...props };
-
-  computedProps.plugins = [lazyPlugin, ...(props.plugins || [])];
-
-  if (props.render) {
-    const render = props.render; // let TypeScript safely derive that render is not undefined
-    computedProps.render = (...args) => (mounted ? render(...args) : '');
-  } else {
-    computedProps.content = mounted ? props.content : '';
-  }
-
-  return <Tippy {...computedProps} />;
-};
 
 export default function BlogLayout({ children, post }: PropsWithChildren<{ post: Blog }>) {
   return (
@@ -85,7 +55,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
                 post.readingTime.minutes
               )} mins`}</span>
               <span className="tw-text-gray-500 dark:tw-text-gray-500">&nbsp;reading time</span>
-              <LazyTippy
+              <Tippy
                 render={(attrs) => (
                   <div
                     className="tw-text-xs tw-text-dark-text dark:tw-text-text tw-bg-dark-bg dark:tw-bg-bg tw-rounded-md tw-p-3 capsize"
@@ -105,7 +75,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
                 >
                   i
                 </button>
-              </LazyTippy>
+              </Tippy>
             </li>
           </ul>
         </section>

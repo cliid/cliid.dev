@@ -39,35 +39,6 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
-
-          <link
-            rel="subresource"
-            href="/static/fonts/Inter.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="subresource"
-            href="/static/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="subresource"
-            href="/static/fonts/JetBrainsMono-VariableFont_wght.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="subresource"
-            href="/static/fonts/freight-text-pro.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

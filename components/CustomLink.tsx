@@ -1,6 +1,6 @@
+import { ExternalLinkSolid, HashtagSolid, LinkSolid, MailSolid } from '@graywolfai/react-heroicons';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
-import { HiExternalLink, HiHashtag, HiLink, HiMail } from 'react-icons/hi';
 
 const CustomLink = ({
   href,
@@ -24,7 +24,7 @@ const CustomLink = ({
     return (
       <a href={href} className={baseStyle} {...props}>
         {children}
-        <HiMail className={iconStyle} />
+        <MailSolid className={iconStyle} />
       </a>
     );
   } else if (isRelativeHref) {
@@ -32,7 +32,7 @@ const CustomLink = ({
       <Link href={href}>
         <a className={baseStyle} {...props}>
           {children}
-          <HiLink className={iconStyle} />
+          <LinkSolid className={iconStyle} />
         </a>
       </Link>
     );
@@ -46,7 +46,7 @@ const CustomLink = ({
     return typeof children === 'string' ? (
       <a href={href} className={baseStyle} {...props}>
         {children}
-        <HiHashtag className={iconStyle} />
+        <HashtagSolid className={iconStyle} />
       </a>
     ) : (
       <a href={href} {...props}>
@@ -57,7 +57,7 @@ const CustomLink = ({
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={baseStyle} {...props}>
         {children}
-        <HiExternalLink className={iconStyle} />
+        <ExternalLinkSolid className={iconStyle} />
       </a>
     );
   }
