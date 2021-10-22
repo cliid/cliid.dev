@@ -1,23 +1,18 @@
-import type { Blog } from '.contentlayer/types';
+import 'tippy.js/dist/tippy.css'; // optional
+
 import Container from '@components/Container';
 import Giscus from '@components/Giscus';
 import ViewCounter from '@components/ViewCounter';
 import Tippy from '@tippyjs/react/headless';
 import { format } from 'date-fns';
 import React, { PropsWithChildren } from 'react';
-import 'tippy.js/dist/tippy.css'; // optional
+
+import type { Blog } from '.contentlayer/types';
 
 const editUrl = (slug: string) =>
   `https://github.com/cliid/cliid.dev/edit/main/data/blog/${slug}.mdx`;
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://cliid.dev/blog/${slug}`)}`;
-
-interface ReadTime {
-  text: string;
-  time: number;
-  words: number;
-  minutes: number;
-}
 
 export default function BlogLayout({ children, post }: PropsWithChildren<{ post: Blog }>) {
   return (

@@ -186,8 +186,8 @@
     @apply tw-no-underline;
 
     &[aria-hidden='true'][href^='#'] {
-      margin-left: -1.5ch;
-      margin-right: 0.5ch;
+      margin-left: -1.2ch;
+      margin-right: 0.2ch;
 
       @apply hover:tw-bg-opacity-0;
       @apply tw-font-normal;
@@ -280,7 +280,8 @@
 }
 
 .rehype-code-title {
-  @apply tw-px-5 tw-py-3 tw-font-mono tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-border-gray-200 dark:tw-border-gray-700 tw-rounded-t-lg;
+  @apply tw-px-5 tw-py-3 tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-border-gray-200 dark:tw-border-gray-700 tw-rounded-t-lg;
+  font-family: 'Jetbrains Mono';
 }
 
 .rehype-code-title + div > pre {

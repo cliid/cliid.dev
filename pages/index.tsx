@@ -28,7 +28,6 @@ export default function Home() {
             width={176}
             src="/static/images/avatar.webp"
             className="tw-rounded-full filter"
-            priority={true}
           />
         </div>
       </div>
