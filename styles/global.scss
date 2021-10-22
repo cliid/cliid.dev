@@ -186,8 +186,8 @@
     @apply tw-no-underline;
 
     &[aria-hidden='true'][href^='#'] {
-      margin-left: -1.5ch;
-      margin-right: 0.5ch;
+      margin-left: -1.2ch;
+      margin-right: 0.2ch;
 
       @apply hover:tw-bg-opacity-0;
       @apply tw-font-normal;

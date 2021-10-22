@@ -18,6 +18,7 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
+          {/*
           <link
             rel="preload"
             href="/static/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2"
@@ -31,7 +32,7 @@ class MyDocument extends Document {
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
-          />
+          />*/}
           <link
             rel="preload"
             href="/static/fonts/freight-text-pro.woff2"
