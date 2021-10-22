@@ -123,86 +123,88 @@ export default function Container(props: any) {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <nav
-        className={cn(
-          'tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
-          isTop ||
-            'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-b-2 dark:tw-border-dark-border'
-        )}
-      >
-        <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
-          <button
-            className="tw-visible md:tw-hidden"
-            aria-label="Toggle menu"
-            type="button"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? (
-              <XSolid className="tw-w-5 tw-h-5" />
-            ) : (
-              <MenuSolid className="tw-w-5 tw-h-5" />
-            )}
-          </button>
-          <div>
-            <div className="md:tw-space-x-4">
-              {routes.map((value, index) => (
-                <NavItem href={value.href} text={value.text} key={index.toString()} />
-              ))}
-            </div>
-          </div>
-          <button
-            aria-label="Toggle Dark Mode"
-            type="button"
-            className="tw-w-max tw-h-max tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-transition-all"
-            onClick={() => {
-              setTheme(resolvedTheme === 'tw-dark' ? 'tw-light' : 'tw-dark');
-            }}
-          >
-            {mounted && resolvedTheme === 'tw-dark' ? (
-              <MoonSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
-            ) : (
-              <SunSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
-            )}
-          </button>
-        </div>
-      </nav>
-      {isMenuMounted && (
-        <ul
+      <div>
+        <nav
           className={cn(
-            'tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
-            isMenuRendered && 'tw-opacity-100'
+            'tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
+            isTop ||
+              'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-b-2 dark:tw-border-dark-border'
           )}
-          style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}
         >
-          {routes.map((value, index) => (
-            <li
-              key={index.toString()}
-              className={cn(
-                'tw-whitespace-nowrap tw-px-1',
-                `tw-delay-[${150 + index * 25}]`,
-                isMenuRendered
-                  ? 'tw-w-full tw-opacity-100 tw-translate-x-0'
-                  : 'tw--translate-x-4 tw-opacity-0'
+          <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
+            <button
+              className="tw-visible md:tw-hidden"
+              aria-label="Toggle menu"
+              type="button"
+              onClick={toggleMenu}
+            >
+              {isMenuOpen ? (
+                <XSolid className="tw-w-5 tw-h-5" />
+              ) : (
+                <MenuSolid className="tw-w-5 tw-h-5" />
               )}
-              style={{
-                transition: isMenuRendered
-                  ? 'opacity 300ms ease, transform 300ms ease, width 300ms ease, border-color 300ms ease'
-                  : '',
-                transitionDelay: `${150 + index * 25}ms`
+            </button>
+            <div>
+              <div className="md:tw-space-x-4">
+                {routes.map((value, index) => (
+                  <NavItem href={value.href} text={value.text} key={index.toString()} />
+                ))}
+              </div>
+            </div>
+            <button
+              aria-label="Toggle Dark Mode"
+              type="button"
+              className="tw-w-max tw-h-max tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-transition-all"
+              onClick={() => {
+                setTheme(resolvedTheme === 'tw-dark' ? 'tw-light' : 'tw-dark');
               }}
             >
-              <MobileNavItem {...value} />
-            </li>
-          ))}
-        </ul>
-      )}
-      <main className="tw-flex tw-flex-col tw-justify-center tw-px-8 tw-pt-8">
-        <div className="tw-flex tw-flex-col tw-items-start tw-justify-center tw-max-w-2xl tw-mx-auto tw-mb-16 tw-w-full">
-          {children}
-        </div>
-        <Footer />
-      </main>
-      <ToolBtns />
+              {mounted && resolvedTheme === 'tw-dark' ? (
+                <MoonSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+              ) : (
+                <SunSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+              )}
+            </button>
+          </div>
+        </nav>
+        {isMenuMounted && (
+          <ul
+            className={cn(
+              'tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
+              isMenuRendered && 'tw-opacity-100'
+            )}
+            style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}
+          >
+            {routes.map((value, index) => (
+              <li
+                key={index.toString()}
+                className={cn(
+                  'tw-whitespace-nowrap tw-px-1',
+                  `tw-delay-[${150 + index * 25}]`,
+                  isMenuRendered
+                    ? 'tw-w-full tw-opacity-100 tw-translate-x-0'
+                    : 'tw--translate-x-4 tw-opacity-0'
+                )}
+                style={{
+                  transition: isMenuRendered
+                    ? 'opacity 300ms ease, transform 300ms ease, width 300ms ease, border-color 300ms ease'
+                    : '',
+                  transitionDelay: `${150 + index * 25}ms`
+                }}
+              >
+                <MobileNavItem {...value} />
+              </li>
+            ))}
+          </ul>
+        )}
+        <main className="tw-flex tw-flex-col tw-justify-center tw-px-8 tw-pt-8">
+          <div className="tw-flex tw-flex-col tw-items-start tw-justify-center tw-max-w-2xl tw-mx-auto tw-mb-16 tw-w-full">
+            {children}
+          </div>
+          <Footer />
+        </main>
+        <ToolBtns />
+      </div>
     </>
   );
 }
