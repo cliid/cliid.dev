@@ -1,5 +1,6 @@
 import NowPlaying from '@components/NowPlaying';
 import Link from 'next/link';
+
 import SpeedlifyScore from './SpeedlifyScore';
 
 const ExternalLink = ({ href, children }: { href: string; children: string }) => (

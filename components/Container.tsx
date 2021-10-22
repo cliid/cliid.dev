@@ -1,13 +1,14 @@
 import { routes } from '@constants/routes';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import cn from 'classnames';
-import { useTheme } from 'next-themes';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { HiMenu, HiMoon, HiSun, HiX } from 'react-icons/hi';
 import useDelayedRender from 'use-delayed-render';
+
 import Footer from './Footer';
 import ToolBtns from './ToolBtns';
 

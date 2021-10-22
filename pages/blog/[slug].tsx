@@ -1,4 +1,3 @@
-import { allBlogs } from '.contentlayer/data';
 import components from '@components/MDXComponents';
 import Tweet from '@components/Tweet';
 import BlogLayout from '@layouts/blog';
@@ -6,6 +5,8 @@ import { getTweets } from '@lib/twitter';
 import { getMDXComponent } from 'mdx-bundler/client';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useMemo } from 'react';
+
+import { allBlogs } from '.contentlayer/data';
 
 export default function Page({ post, tweets }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMemo(() => getMDXComponent(post.body.code), [post.body.code]);

@@ -77,7 +77,7 @@ export default function NowPlaying() {
       <div className="tw-flex tw-max-w-full tw-truncate">
         {data?.songUrl ? (
           <a
-            className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-medium hover:text-spotify-green dark:hover:text-spotify-green"
+            className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-medium hover:tw-text-spotify-green dark:hover:tw-text-spotify-green"
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
