@@ -32,7 +32,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
           <h1 className="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight md:tw-text-5xl md:tw-text-center capsize">
             {post.title.toUpperCase()}
           </h1>
-          <h2 className="tw-mb-4 tw-text-xl tw-font-semibold tw-tracking-tight md:tw-text-2xl md:tw-text-center tw-text-gray-500 capsize">
+          <h2 className="tw-mb-4 tw-text-xl tw-font-semibold tw-tracking-tight md:tw-text-2xl md:tw-text-center tw-text-gray-500 dark:tw-text-gray-500 capsize">
             {post.summary}
           </h2>
         </section>
@@ -40,13 +40,13 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
           <ul className="tw-flex tw-justify-evenly tw-flex-wrap tw-text-sm tw-list-none tw-flex-col tw-mb-8 sm:tw-flex-row sm:tw-mb-0">
             <li className="tw-flex tw-items-center">
               <p className="tw-text-sm">
-                <span className="tw-text-gray-500">Published at&nbsp;</span>
+                <span className="tw-text-gray-500 dark:tw-text-gray-500">Published at&nbsp;</span>
                 <span className="tw-text-black dark:tw-text-white tw-font-semibold">
                   {format(new Date(post.publishedAt), 'MMMM dd, yyyy')}
                 </span>
               </p>
             </li>
-            <li className="tw-mt-2 sm:tw-m-0 tw-text-sm min-w-32 tw-text-gray-500 tw-flex tw-flex-row tw-items-center">
+            <li className="tw-mt-2 sm:tw-m-0 tw-text-sm min-w-32 tw-text-gray-500 dark:tw-text-gray-500 tw-flex tw-flex-row tw-items-center">
               <span className="tw-text-black dark:tw-text-white tw-font-semibold">
                 <ViewCounter slug={post.slug} />
               </span>
@@ -54,7 +54,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
               <span className="tw-text-black dark:tw-text-white tw-font-semibold">{`${Math.ceil(
                 post.readingTime.minutes
               )} mins`}</span>
-              <span className="tw-text-gray-500">&nbsp;reading time</span>
+              <span className="tw-text-gray-500 dark:tw-text-gray-500">&nbsp;reading time</span>
               <Tippy
                 render={(attrs) => (
                   <div

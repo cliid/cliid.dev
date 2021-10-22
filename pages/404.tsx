@@ -10,7 +10,7 @@ export default function NotFound() {
         </h1>
         <div className="tw-relative tw-block tw-w-12 tw-h-12 animate-cutebounce">
           <Image
-            src="/static/images/teapot.png"
+            src="/static/images/teapot.webp"
             layout="fill"
             alt="Is it a bird? Is it a plane? No, it's a teapot!"
           />

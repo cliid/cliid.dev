@@ -26,7 +26,7 @@ export default function Home() {
             alt="Jiwu Jang"
             height={176}
             width={176}
-            src="/static/images/avatar.png"
+            src="/static/images/avatar.webp"
             className="tw-rounded-full filter"
             priority={true}
           />
@@ -106,28 +106,28 @@ export default function Home() {
             description="A Markdown based tech-wiki focused on giving the best user experience and providing high quality content. Especially designed / optimized for Koreans."
             href="https://seven.wiki"
             gradient="tw-from-[#7777ff] tw-to-[#7777ff]"
-            imageUrl="/static/images/svw-logo.png"
+            imageUrl="/static/images/svw-logo.webp"
           />
           <ProjectCard
             title="cliid.dev"
             description="An extensively feature-rich portfolio / blog. Powered by Next.js, Preact, Tailwind, Contentlayer, Twemoji, Prisma, Planetscale and much more."
             href="https://cliid.dev"
             gradient="tw-from-[#000000] tw-to-[#000000]"
-            imageUrl="/static/images/avatar.png"
+            imageUrl="/static/images/avatar.webp"
           />
           <ProjectCard
             title="Dazzle Inc."
             description="A small company that dreams of positively impacting millions of users. Creating stuff that anyone can fall in love with."
             href="https://dazzle.works"
             gradient="tw-from-[#FF86B3] tw-to-[#FF86B3]"
-            imageUrl="/static/images/dazzle-logo.png"
+            imageUrl="/static/images/dazzle-logo.webp"
           />
           <ProjectCard
             title="Coming soon..."
             description="Initializing Yarn, installing TailwindCSS, creating new schemas with Prisma, and constantly deploying to ▲Vercel."
             href="/404"
             gradient="tw-from-[#00AF54] tw-via-[#007CBE] tw-to-[#FFD639]"
-            imageUrl="/static/images/construction.png"
+            imageUrl="/static/images/construction.webp"
           />
         </div>
       </div>

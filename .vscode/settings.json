@@ -10,6 +10,7 @@
   "eslint.alwaysShowStatus": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.configFile": ".stylelintrc.json",
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },

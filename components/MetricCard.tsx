@@ -1,7 +1,7 @@
-import Link from './CustomLink';
+import Link from 'next/link';
 import Image from './Image';
 
-const Card = ({
+const MetricCard = ({
   title,
   description,
   imageUrl,
@@ -47,12 +47,10 @@ const Card = ({
           {description}
         </p>
         {href && (
-          <Link
-            href={href}
-            className="tw-text-base tw-font-medium tw-leading-6 tw-text-primary-500 hover:tw-text-primary-600 dark:hover:tw-text-primary-400"
-            aria-label={`Link to ${title}`}
-          >
-            Learn more &rarr;
+          <Link href={href} aria-label={`Link to ${title}`}>
+            <a className="tw-text-base tw-font-medium tw-leading-6 tw-text-primary-500 hover:tw-text-primary-600 dark:hover:tw-text-primary-400">
+              Learn more &rarr;
+            </a>
           </Link>
         )}
       </div>
@@ -60,4 +58,4 @@ const Card = ({
   </div>
 );
 
-export default Card;
+export default MetricCard;

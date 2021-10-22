@@ -1,12 +1,10 @@
 import { useAnalytics } from '@lib/analytics';
-import '@styles/index.scss';
-import '@styles/prism-dark.scss';
-import '@styles/prism.scss';
-import '@styles/tailwind.scss';
+import '@styles/global.scss';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import NextNprogress from 'nextjs-progressbar';
 import React from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,6 +21,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
+        <NextNprogress
+          color="#00807D"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={2}
+          showOnShallow={true}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>

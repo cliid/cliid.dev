@@ -1,5 +1,6 @@
 import { routes } from '@constants/routes';
 import { MenuSolid, MoonSolid, SunSolid, XSolid } from '@graywolfai/react-heroicons';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import Head from 'next/head';
@@ -8,6 +9,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import useDelayedRender from 'use-delayed-render';
 import Footer from './Footer';
+import ToolBtns from './ToolBtns';
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
@@ -62,21 +64,16 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
 export default function Container(props: any) {
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isTop, setIsTop] = useState(false);
+  const [isTop, setIsTop] = useState(true);
   const { resolvedTheme, setTheme } = useTheme();
 
-  const onScroll = (e: any) => {
-    if (e.target.scrollTop < 32) {
-      setIsTop(true);
-    } else {
-      setIsTop(false);
-    }
-  };
+  useScrollPosition(({ currPos }) => {
+    setIsTop(!currPos.y);
+  });
 
   // After mounting, we have access to the theme
   useEffect(() => {
     setMounted(true);
-    window.addEventListener('scroll', onScroll);
     return function cleanup() {
       document.body.style.overflow = '';
     };
@@ -107,7 +104,7 @@ export default function Container(props: any) {
   };
 
   return (
-    <div>
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -126,13 +123,14 @@ export default function Container(props: any) {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <div
+      <nav
         className={cn(
           'tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
-          isTop || 'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg'
+          isTop ||
+            'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-b-2 dark:tw-border-dark-border'
         )}
       >
-        <nav className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
+        <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
           <button
             className="tw-visible md:tw-hidden"
             aria-label="Toggle menu"
@@ -166,8 +164,8 @@ export default function Container(props: any) {
               <SunSolid className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
             )}
           </button>
-        </nav>
-      </div>
+        </div>
+      </nav>
       {isMenuMounted && (
         <ul
           className={cn(
@@ -204,6 +202,7 @@ export default function Container(props: any) {
         </div>
         <Footer />
       </main>
-    </div>
+      <ToolBtns />
+    </>
   );
 }

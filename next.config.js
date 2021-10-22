@@ -78,6 +78,7 @@ const nextConfig = {
   },
   webpack: (config, { dev, isServer }) => {
     const CompressionPlugin = require('compression-webpack-plugin');
+    const BrotliPlugin = require('brotli-webpack-plugin');
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [
@@ -98,18 +99,19 @@ const nextConfig = {
 
     config.plugins.push(
       new CompressionPlugin({
-        filename: '[path][base].br',
-        algorithm: 'brotliCompress',
-        test: /\.(js|css|svg)$/,
-        minRatio: 0.8
-      })
-    );
-    config.plugins.push(
-      new CompressionPlugin({
         filename: '[path][base].gz',
         algorithm: 'gzip',
         test: /\.(js|css|svg)$/,
         minRatio: 0.8
+      })
+    );
+
+    config.plugins.push(
+      new BrotliPlugin({
+        filename: '[path][base].br',
+        test: /\.(js|css|svg)$/,
+        threshold: 10240,
+        minRatio: 0.7
       })
     );
 

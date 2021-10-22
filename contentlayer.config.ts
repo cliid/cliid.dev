@@ -100,6 +100,13 @@ const contentLayerConfig = makeSource({
     ],
     rehypePlugins: [
       rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'prepend',
+          singleTilde: false
+        }
+      ],
       rehypeCodeTitles,
       [rehypePrismPlus, { showLineNumbers: true }],
       [
@@ -111,14 +118,6 @@ const contentLayerConfig = makeSource({
           params: {
             w: 3840,
             q: 40
-          }
-        }
-      ],
-      [
-        rehypeAutolinkHeadings,
-        {
-          properties: {
-            className: ['anchor']
           }
         }
       ]
