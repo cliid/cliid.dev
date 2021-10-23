@@ -16,13 +16,12 @@ const CustomLink = ({
   const isFootNoteHref = href && href.startsWith('#fn');
   const isRelativeHref = href && (href.startsWith('/') || href.startsWith('.'));
 
-  const baseStyle = 'tw-px-1 tw-py-0.5 hover:tw-bg-gray-200 dark:hover:tw-bg-gray-700 tw-rounded';
   const iconStyle =
-    'tw-w-[1em] tw-h-[1em] tw-inline-block tw-text-gray-500 dark:tw-text-gray-500 tw-bg-transparent dark:tw-bg-transparent tw-ml-1 tw-mb-1';
+    'tw-w-[1em] tw-h-[1em] tw-inline-block tw-text-gray-500 dark:tw-text-gray-500 tw-bg-transparent dark:tw-bg-transparent tw-ml-0.5 tw-mb-1';
 
   if (isMailHref) {
     return (
-      <a href={href} className={baseStyle} {...props}>
+      <a href={href} {...props}>
         {children}
         <HiMail className={iconStyle} />
       </a>
@@ -30,7 +29,7 @@ const CustomLink = ({
   } else if (isRelativeHref) {
     return (
       <Link href={href}>
-        <a className={baseStyle} {...props}>
+        <a {...props}>
           {children}
           <HiLink className={iconStyle} />
         </a>
@@ -44,7 +43,7 @@ const CustomLink = ({
     );
   } else if (isAnchorHref) {
     return typeof children === 'string' ? (
-      <a href={href} className={baseStyle} {...props}>
+      <a href={href} {...props}>
         {children}
         <HiHashtag className={iconStyle} />
       </a>
@@ -55,7 +54,7 @@ const CustomLink = ({
     );
   } else {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={baseStyle} {...props}>
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
         <HiExternalLink className={iconStyle} />
       </a>

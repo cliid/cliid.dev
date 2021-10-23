@@ -3,6 +3,7 @@ import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrismPlus from 'rehype-prism-plus';
+import rehypeProbeImageSize from 'rehype-probe-image-size';
 import rehypeSlug from 'rehype-slug';
 import rehypeTwemojify from 'rehype-twemojify';
 import remarkGemoji from 'remark-gemoji';
@@ -103,12 +104,15 @@ const contentLayerConfig = makeSource({
       [
         rehypeAutolinkHeadings,
         {
-          behavior: 'prepend',
-          singleTilde: false
+          properties: {
+            className: ['anchor']
+          },
+          behavior: 'append'
         }
       ],
       rehypeCodeTitles,
       [rehypePrismPlus, { showLineNumbers: true }],
+      [rehypeProbeImageSize, { staticDir: 'public' }],
       [
         rehypeTwemojify,
         {

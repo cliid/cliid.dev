@@ -82,20 +82,9 @@ export default function Home() {
             carefully coded by me. I've written a couple blog posts about the overall structure and
             development process about those projects. Oh, by the way I always plan to make a new
             project. It's hardcoded in my genetics&nbsp;
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/static/images/twemoji/svg/1f9ec.svg"
-              className="emoji"
-              draggable={false}
-              alt="🧬"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/static/images/twemoji/svg/1f9ec.svg"
-              className="emoji"
-              draggable={false}
-              alt="🧬"
-            />
+            <span role="img" aria-label={'🧬'}>
+              🧬🧬
+            </span>
           </span>
         </p>
 

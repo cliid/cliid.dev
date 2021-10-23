@@ -1,6 +1,5 @@
 // @ts-check
 
-const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
@@ -40,9 +39,6 @@ module.exports = {
         12: '3rem',
         13: '3.25rem',
         14: '3.5rem'
-      },
-      fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         primary: {

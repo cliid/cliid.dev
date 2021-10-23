@@ -73,7 +73,9 @@ const nextConfig = {
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com' // Twitter Profile Picture
+      'pbs.twimg.com', // Twitter Profile Picture
+      's3-alpha.figma.com',
+      'octodex.github.com'
     ]
   },
   webpack: (config, { dev, isServer }) => {
