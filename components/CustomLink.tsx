@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
-import { HiExternalLink, HiHashtag, HiLink, HiMail } from 'react-icons/hi';
-
+import { HiExternalLink, HiFlag, HiLink, HiMail } from 'react-icons/hi';
 const CustomLink = ({
   href,
   children,
@@ -45,7 +44,7 @@ const CustomLink = ({
     return typeof children === 'string' ? (
       <a href={href} {...props}>
         {children}
-        <HiHashtag className={iconStyle} />
+        <HiFlag className={iconStyle} />
       </a>
     ) : (
       <a href={href} {...props}>

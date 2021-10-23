@@ -20,7 +20,7 @@ const ToolBtns = () => {
           isTop && 'tw-hidden'
         )}
       >
-        <HiChevronDoubleUp className="tw-w-8 tw-h-8 hover:tw-opacity-60 dark:hover:tw-opacity-60" />
+        <HiChevronDoubleUp className="tw-w-8 tw-h-8 hover:tw-opacity-70 dark:hover:tw-opacity-70" />
       </button>
     </div>
   );

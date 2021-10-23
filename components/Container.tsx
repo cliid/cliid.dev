@@ -6,7 +6,8 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
-import { HiMenu, HiMoon, HiSun, HiX } from 'react-icons/hi';
+import { CgClose } from 'react-icons/cg';
+import { GiHamburgerMenu, GiMoonOrbit, GiStripedSun } from 'react-icons/gi';
 import useDelayedRender from 'use-delayed-render';
 
 import Footer from './Footer';
@@ -140,9 +141,9 @@ export default function Container(props: any) {
               onClick={toggleMenu}
             >
               {isMenuOpen ? (
-                <HiX className="tw-w-5 tw-h-5" />
+                <CgClose className="tw-w-5 tw-h-5" />
               ) : (
-                <HiMenu className="tw-w-5 tw-h-5" />
+                <GiHamburgerMenu className="tw-w-5 tw-h-5" />
               )}
             </button>
             <div>
@@ -161,9 +162,9 @@ export default function Container(props: any) {
               }}
             >
               {mounted && resolvedTheme === 'tw-dark' ? (
-                <HiMoon className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+                <GiMoonOrbit className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
               ) : (
-                <HiSun className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+                <GiStripedSun className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
               )}
             </button>
           </div>
