@@ -75,7 +75,8 @@ const nextConfig = {
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
       's3-alpha.figma.com',
-      'octodex.github.com'
+      'octodex.github.com',
+      'upload.wikimedia.org'
     ]
   },
   webpack: (config, { dev, isServer }) => {
