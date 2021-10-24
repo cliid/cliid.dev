@@ -12,34 +12,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
-            href="/static/fonts/Inter.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/JetBrainsMono-VariableFont_wght.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/static/fonts/freight-text-pro.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="/static/favicons/apple-touch-icon.png"
