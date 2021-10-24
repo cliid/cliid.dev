@@ -1,10 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 @import './prism.scss';
-@import './base.scss';
-@import './components.scss';
 
 .rehype-code-title {
   @apply tw-px-5 tw-py-3 tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-border-gray-200 dark:tw-border-gray-700 tw-rounded-t-lg;

@@ -15,13 +15,13 @@ const ToolBtns = () => {
           document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }}
         className={cn(
-          'tw-w-12 tw-h-12 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-transition-all tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-2 dark:tw-border-dark-border',
+          'tw-w-10 tw-h-10 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-transition-all tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-2 dark:tw-border-dark-border',
           isTop && 'tw-hidden'
         )}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+          className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

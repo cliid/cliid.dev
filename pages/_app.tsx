@@ -1,3 +1,5 @@
+import '@styles/base.scss';
+import '@styles/components.scss';
 import '@styles/global.scss';
 
 import { useAnalytics } from '@lib/analytics';

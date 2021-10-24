@@ -49,7 +49,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
     <NextLink href={href}>
       <a
         className={cn(
-          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
+          'default-colors tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -141,7 +141,7 @@ export default function Container(props: any) {
               {isMenuOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -156,7 +156,7 @@ export default function Container(props: any) {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -188,7 +188,7 @@ export default function Container(props: any) {
               {mounted && resolvedTheme === 'tw-dark' ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -203,7 +203,7 @@ export default function Container(props: any) {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -222,8 +222,7 @@ export default function Container(props: any) {
         {isMenuMounted && (
           <ul
             className={cn(
-              'tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
-              'default-colors',
+              'default-colors tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
               isMenuRendered && 'tw-opacity-100'
             )}
             style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}
