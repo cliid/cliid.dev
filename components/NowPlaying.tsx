@@ -77,7 +77,7 @@ export default function NowPlaying() {
       <div className="tw-flex tw-max-w-full tw-truncate">
         {data?.songUrl ? (
           <a
-            className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-medium hover:tw-text-spotify-green dark:hover:tw-text-spotify-green"
+            className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-semibold hover:tw-text-spotify-green dark:hover:tw-text-spotify-green"
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export default function NowPlaying() {
             {data.title}
           </a>
         ) : (
-          <p className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-medium">Not Playing</p>
+          <p className="tw-text-gray-800 dark:tw-text-gray-200">Not Playing</p>
         )}
         <span className="tw-mx-2 tw-text-gray-500 dark:tw-text-gray-300 tw-block">{' – '}</span>
         <p className="tw-text-gray-500 dark:tw-text-gray-300 tw-max-w-max tw-truncate">

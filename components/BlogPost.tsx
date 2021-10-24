@@ -18,8 +18,8 @@ export default function BlogPost({
       <a className="tw-w-full">
         <div className="tw-w-full tw-mb-8">
           <div className="tw-flex tw-flex-col tw-justify-between md:tw-flex-row">
-            <span className="tw-w-full tw-mb-2 tw-text-lg tw-font-medium tw-text-gray-900 md:tw-text-xl dark:tw-text-gray-100">
-              {title}
+            <span className="tw-w-full tw-mb-2 tw-text-lg tw-font-bold tw-text-gray-900 md:tw-text-xl dark:tw-text-gray-100">
+              {title.toUpperCase()}
             </span>
             <p className="tw-w-32 tw-mb-4 tw-text-left tw-text-gray-500 md:tw-text-right md:tw-mb-0">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`}

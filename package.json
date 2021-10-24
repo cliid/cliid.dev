@@ -3,8 +3,8 @@
   "version": "v1.0.0-canary.1",
   "private": true,
   "scripts": {
-    "start": "next-remote-watch ./data",
-    "dev": "next dev",
+    "start": "NODE_ENV='development' next-remote-watch ./data",
+    "dev": "NODE_ENV='development' next dev",
     "build": "contentlayer build && prisma generate && NODE_ENV='production' next build && NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs && node ./scripts/generate-sitemap.mjs",
     "serve": "next start",
     "generate": "contentlayer build",

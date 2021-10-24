@@ -117,7 +117,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
               className="tw-pl-4 tw-pr-32 tw-py-2 tw-mt-1 focus:tw-ring-primary focus:tw-border-primary tw-block tw-w-full tw-rounded-md"
             />
             <button
-              className="tw-flex tw-items-center tw-justify-center tw-absolute tw-right-1 tw-top-1 tw-px-4 tw-py-1 tw-font-medium tw-h-8 tw-rounded tw-w-28"
+              className="tw-flex tw-items-center tw-justify-center tw-absolute tw-right-1 tw-top-1 tw-px-4 tw-py-1 tw-font-bold tw-h-8 tw-rounded tw-w-28"
               type="submit"
             >
               {form.state === Form.Loading ? <LoadingSpinner /> : 'Sign'}

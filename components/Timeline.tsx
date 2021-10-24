@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 
 const Divider = () => {
-  return <div className="tw-border tw-w-full tw-my-8" />;
+  return <div className="default-colors tw-border tw-w-full tw-my-8" />;
 };
 
 const Year = ({ children }: { children: ReactNode }) => {
@@ -29,7 +29,7 @@ const Step = ({ children, title }: { children?: ReactNode; title: string }) => {
             <path d="M22 4L12 14.01l-3-3" />
           </g>
         </svg>
-        <p className="tw-font-medium tw-text-gray-900 dark:tw-text-gray-100">{title}</p>
+        <p className="tw-font-semibold tw-text-gray-900 dark:tw-text-gray-100">{title}</p>
       </div>
       <p className="tw-text-gray-700 dark:tw-text-gray-400 tw-ml-6">{children}</p>
     </li>
@@ -138,7 +138,7 @@ export default function Timeline() {
       ) : (
         <button
           type="button"
-          className="tw-flex tw-items-center tw-text-sm tw-my-4 tw-mx-auto tw-px-4 tw-py-2 tw-rounded-md tw-font-medium tw-text-gray-900 dark:tw-text-gray-100"
+          className="tw-flex tw-items-center tw-text-sm tw-my-4 tw-mx-auto tw-px-4 tw-py-2 tw-rounded-md tw-font-semibold tw-text-gray-900 dark:tw-text-gray-100"
           onClick={() => showFullTimeline(true)}
         >
           See More

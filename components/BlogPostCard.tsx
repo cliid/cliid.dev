@@ -25,7 +25,7 @@ export default function BlogPostCard({
           gradient
         )}
       >
-        <div className="tw-flex tw-flex-col tw-justify-between tw-h-full tw-rounded-lg tw-p-4 tw-w-full">
+        <div className="tw-flex tw-flex-col tw-justify-between tw-h-full tw-rounded-lg tw-p-4 tw-w-full default-colors">
           <div className="tw-flex tw-flex-col md:tw-flex-row tw-justify-between tw-w-full">
             <h3 className="tw-text-lg md:tw-text-xl tw-font-semibold tw-mb-6 sm:tw-mb-10 tw-w-full tw-tracking-tight tw-break-words tw-text-left">
               {title}

@@ -11,9 +11,7 @@ export default function GuestbookPage({
       title="Guestbook – Jiwu Jang"
       description="Sign my digital guestbook and share some wisdom."
     >
-      <h1 className="tw-font-bold tw-text-3xl md:tw-text-5xl tw-tracking-tight tw-mb-4 tw-text-black dark:tw-text-white">
-        Guestbook
-      </h1>
+      <h1 className="page-title">Guestbook</h1>
       <p className="tw-text-gray-600 dark:tw-text-gray-400 tw-mb-4">
         Leave a comment below. It could be anything – appreciation, information, wisdom, or even
         humor. Surprise me!

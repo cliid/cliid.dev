@@ -10,9 +10,7 @@ export default function Dashboard() {
       title="Dashboard – Jiwu Jang"
       description="My personal dashboard, built with Next.js API routes deployed as serverless functions."
     >
-      <h1 className="tw-font-bold tw-text-3xl md:tw-text-5xl tw-tracking-tight tw-mb-4 tw-text-black dark:tw-text-white">
-        Dashboard
-      </h1>
+      <h1 className="page-title">Dashboard</h1>
       <div className="tw-mb-8">
         <p className="tw-text-gray-600 dark:tw-text-gray-400 tw-mb-4">
           This is my personal dashboard, built with Next.js API routes deployed as serverless

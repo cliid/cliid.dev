@@ -8,12 +8,12 @@ module.exports = {
   prefix: 'tw-',
   mode: 'jit',
   purge: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx,vue}',
-    './components/**/*.{js,ts,jsx,tsx,mdx,vue}',
-    './layouts/**/*.{js,ts,jsx,tsx,mdx,vue}',
-    './lib/**/*.{js,ts,jsx,tsx,mdx,vue}',
-    './constants/**/*.{js,ts,jsx,tsx,mdx,vue}',
-    './hooks/**/*.{js,ts,jsx,tsx,mdx,vue}'
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './layouts/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx}',
+    './constants/**/*.{js,ts,jsx,tsx,mdx}',
+    './hooks/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   darkMode: 'class',
   theme: {
@@ -54,9 +54,9 @@ module.exports = {
           800: '#000000',
           900: '#000000'
         },
-        bg: '#f7f9fd',
+        bg: '#fff',
         'dark-bg': '#09101b',
-        text: '#0b1423',
+        text: '#222',
         'dark-text': '#eff4fa',
         border: '#e5e5e5',
         'dark-border': '#333333',

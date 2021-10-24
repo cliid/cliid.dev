@@ -1,4 +1,4 @@
-import MetricCard from '@components/metrics/Card';
+import MetricCard from '@components/metrics/MetricCard';
 import fetcher from '@lib/fetcher';
 import { Views } from '@lib/types';
 import useSWR from 'swr';

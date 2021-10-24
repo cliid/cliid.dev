@@ -67,8 +67,7 @@ const nextConfig = {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
   },
   experimental: {
-    swcLoader: true,
-    swcMinify: true
+    swcLoader: true
   },
   images: {
     domains: [
@@ -80,8 +79,6 @@ const nextConfig = {
     ]
   },
   webpack: (config, { dev, isServer }) => {
-    const CompressionPlugin = require('compression-webpack-plugin');
-    const BrotliPlugin = require('brotli-webpack-plugin');
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [
@@ -100,25 +97,28 @@ const nextConfig = {
       use: ['@svgr/webpack']
     });
 
-    config.plugins.push(
-      new CompressionPlugin({
-        filename: '[path][base].gz',
-        algorithm: 'gzip',
-        test: /\.(js|css|svg)$/,
-        minRatio: 0.8
-      })
-    );
-
-    config.plugins.push(
-      new BrotliPlugin({
-        filename: '[path][base].br',
-        test: /\.(js|css|svg)$/,
-        threshold: 10240,
-        minRatio: 0.7
-      })
-    );
-
     if (!dev) {
+      const CompressionPlugin = require('compression-webpack-plugin');
+      const BrotliPlugin = require('brotli-webpack-plugin');
+
+      config.plugins.push(
+        new CompressionPlugin({
+          filename: '[path][base].gz',
+          algorithm: 'gzip',
+          test: /\.(js|css|svg)$/,
+          minRatio: 0.8
+        })
+      );
+
+      config.plugins.push(
+        new BrotliPlugin({
+          filename: '[path][base].br',
+          test: /\.(js|css|svg)$/,
+          threshold: 10240,
+          minRatio: 0.7
+        })
+      );
+
       const MangleCssClassPlugin = require('mangle-css-class-webpack-plugin');
       config.plugins.push(
         new MangleCssClassPlugin({

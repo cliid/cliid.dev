@@ -6,8 +6,6 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
-import { CgClose } from 'react-icons/cg';
-import { GiHamburgerMenu, GiMoonOrbit, GiStripedSun } from 'react-icons/gi';
 import useDelayedRender from 'use-delayed-render';
 
 import Footer from './Footer';
@@ -26,7 +24,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <a>
         <span
           className={cn(
-            'tw-hidden md:tw-inline-block capsize tw-font-bold hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all tw-text-sm',
+            'tw-hidden md:tw-inline-block capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all tw-text-sm',
             isActive
               ? 'tw-text-primary-500 dark:tw-text-primary-500'
               : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -51,7 +49,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
     <NextLink href={href}>
       <a
         className={cn(
-          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-bold capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
+          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -125,10 +123,10 @@ export default function Container(props: any) {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <div>
+      <div className="default-colors">
         <nav
           className={cn(
-            'tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
+            'default-colors tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
             isTop ||
               'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-b-2 dark:tw-border-dark-border'
           )}
@@ -141,9 +139,35 @@ export default function Container(props: any) {
               onClick={toggleMenu}
             >
               {isMenuOpen ? (
-                <CgClose className="tw-w-5 tw-h-5" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               ) : (
-                <GiHamburgerMenu className="tw-w-5 tw-h-5" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 8h16M4 16h16"
+                  />
+                </svg>
               )}
             </button>
             <div>
@@ -162,9 +186,35 @@ export default function Container(props: any) {
               }}
             >
               {mounted && resolvedTheme === 'tw-dark' ? (
-                <GiMoonOrbit className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
               ) : (
-                <GiStripedSun className="tw-w-5 tw-h-5 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-primary-500 dark:hover:tw-text-primary-500" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
               )}
             </button>
           </div>
@@ -173,6 +223,7 @@ export default function Container(props: any) {
           <ul
             className={cn(
               'tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
+              'default-colors',
               isMenuRendered && 'tw-opacity-100'
             )}
             style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}

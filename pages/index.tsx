@@ -10,24 +10,27 @@ export default function Home() {
     <Container>
       <div className="tw-flex tw-flex-col-reverse sm:tw-flex-row tw-items-start tw-mb-16">
         <div className="tw-flex tw-flex-col tw-pr-8">
-          <h1 className="tw-font-bold tw-text-3xl md:tw-text-5xl tw-tracking-tight tw-mb-1 tw-text-black dark:tw-text-white">
-            Jiwu Jang
+          <h1 className="page-title">
+            Jiwu Jang&nbsp;
+            <p className="tw-text-2xl tw-text-gray-500 dark:tw-text-gray-300 tw-font-bold">
+              a.k.a. cliid
+            </p>
           </h1>
           <h2 className="tw-text-gray-700 dark:tw-text-gray-200 tw-mb-4">
-            Co-founder of <span className="tw-font-semibold">Dazzle</span>
+            Co-founder of <span className="tw-font-semibold">@dazzleofficial</span>
           </h2>
           <p className="tw-text-gray-600 dark:tw-text-gray-400">
             Learning modern web technologies. Designing eye-fascinating designs. Always ecstatic
             when coding with Next.js / TailwindCSS.
           </p>
         </div>
-        <div className="tw-w-[80px] sm:tw-w-[176px] tw-relative tw-mb-8 sm:tw-mb-0 tw-mr-auto">
+        <div className="tw-relative tw-mb-8 sm:tw-mb-0 tw-mr-auto tw-rounded-full tw-filter">
           <Image
             alt="Jiwu Jang"
             height={176}
             width={176}
             src="/static/images/avatar.webp"
-            className="tw-rounded-full filter"
+            className="tw-rounded-full tw-filter"
           />
         </div>
       </div>

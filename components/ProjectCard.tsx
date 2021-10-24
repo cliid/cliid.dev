@@ -24,7 +24,7 @@ export default function ProjectCard({
           gradient
         )}
       >
-        <div className="tw-flex tw-flex-row tw-justify-between tw-h-full tw-rounded-lg tw-p-8 tw-w-full">
+        <div className="default-colors tw-flex tw-flex-row tw-justify-between tw-h-full tw-rounded-lg tw-p-8 tw-w-full">
           <div className="tw-flex tw-flex-col tw-justify-between tw-h-full tw-space-y-8">
             <div className="tw-flex tw-flex-col tw-w-full tw-space-y-4">
               <div className="tw-text-2xl tw-font-bold tw-text-gray-900 dark:tw-text-gray-100 tw-tracking-tight tw-break-words tw-flex tw-flex-row tw-items-center">
@@ -34,7 +34,7 @@ export default function ProjectCard({
                 &nbsp;
                 {title}
               </div>
-              <span className="tw-text-xl tw-font-medium tw-text-gray-900 dark:tw-text-gray-100 tw-tracking-tight tw-break-words tw-text-left">
+              <span className="tw-text-xl tw-font-semibold tw-text-gray-900 dark:tw-text-gray-100 tw-tracking-tight tw-break-words tw-text-left">
                 {description}
               </span>
             </div>

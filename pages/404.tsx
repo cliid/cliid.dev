@@ -5,9 +5,7 @@ export default function NotFound() {
   return (
     <Container title="418 – Jiwu Jang">
       <div className="tw-flex tw-flex-row tw-items-center tw-space-x-4 tw-mb-4">
-        <h1 className="tw-font-bold tw-text-3xl md:tw-text-5xl tw-tracking-tight tw-text-black dark:tw-text-white">
-          418 - I'm a teapot
-        </h1>
+        <h1 className="page-title">418 - I'm a teapot</h1>
         <div className="tw-relative tw-block tw-w-12 tw-h-12 animate-cutebounce">
           <Image
             src="/static/images/teapot.webp"

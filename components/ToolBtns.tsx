@@ -1,7 +1,6 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import cn from 'classnames';
 import { useState } from 'react';
-import { HiChevronDoubleUp } from 'react-icons/hi';
 
 const ToolBtns = () => {
   const [isTop, setIsTop] = useState(true);
@@ -20,7 +19,20 @@ const ToolBtns = () => {
           isTop && 'tw-hidden'
         )}
       >
-        <HiChevronDoubleUp className="tw-w-8 tw-h-8 hover:tw-opacity-70 dark:hover:tw-opacity-70" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 11l7-7 7 7M5 19l7-7 7 7"
+          />
+        </svg>
       </button>
     </div>
   );

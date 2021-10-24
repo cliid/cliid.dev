@@ -46,9 +46,9 @@ const SpeedlifyScore = ({ speedlifyUrl, hash }: { speedlifyUrl: string; hash: st
         <div className="tw-w-6 tw-h-6 tw-relative tw-flex-shrink-0">
           <Image src="/static/images/lighthouse-logo.svg" alt="" layout="fill" />
         </div>
-        <span className="tw-ml-2 tw-font-medium tw-cursor-pointer tw-break-words tw-overflow-ellipsis">
+        <span className="tw-ml-2 tw-cursor-pointer tw-break-words tw-overflow-ellipsis">
           <a
-            className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-medium hover:tw-text-blue-800 dark:hover:tw-text-blue-600 tw-hidden sm:tw-inline-block"
+            className="tw-text-gray-800 dark:tw-text-gray-200 tw-font-semibold hover:tw-text-blue-800 dark:hover:tw-text-blue-600 tw-hidden sm:tw-inline-block"
             href={speedlifyUrl}
             rel="noopener noreferrer"
             target="_blank"

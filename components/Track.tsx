@@ -6,7 +6,7 @@ export default function Track(track: any) {
       </p>
       <div className="tw-flex tw-flex-col tw-pl-3">
         <a
-          className="tw-font-medium tw-truncate tw-w-60 sm:tw-w-96 md:tw-w-full"
+          className="tw-font-semibold tw-truncate tw-w-60 sm:tw-w-96 md:tw-w-full"
           href={track.songUrl}
           target="_blank"
           rel="noopener noreferrer"

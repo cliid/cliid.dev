@@ -24,15 +24,12 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
     >
       <article className="tw-w-full">
         <section id="title">
-          <h1 className="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight md:tw-text-5xl md:tw-text-center capsize">
+          <h1 className="tw-mb-8 tw-text-5xl lg:tw-text-6xl tw-font-black tw-tracking-tight tw-text-left capsize">
             {post.title.toUpperCase()}
           </h1>
-          <h2 className="tw-mb-4 tw-text-xl tw-font-semibold tw-tracking-tight md:tw-text-2xl md:tw-text-center tw-text-gray-500 dark:tw-text-gray-500 capsize">
-            {post.summary}
-          </h2>
         </section>
         <section>
-          <ul className="tw-flex tw-justify-evenly tw-flex-wrap tw-text-sm tw-list-none tw-flex-col tw-mb-8 sm:tw-flex-row sm:tw-mb-0">
+          <ul className="tw-flex tw-flex-col tw-flex-wrap tw-text-sm tw-list-none tw-space-y-4 tw-mb-16">
             <li className="tw-flex tw-items-center">
               <p className="tw-text-sm">
                 <span className="tw-text-gray-500 dark:tw-text-gray-500">Published at&nbsp;</span>
@@ -41,7 +38,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
                 </span>
               </p>
             </li>
-            <li className="tw-mt-2 sm:tw-m-0 tw-text-sm min-w-32 tw-text-gray-500 dark:tw-text-gray-500 tw-flex tw-flex-row tw-items-center">
+            <li className="tw-mt-2 sm:tw-m-0 tw-text-sm tw-text-gray-500 dark:tw-text-gray-500 tw-flex tw-flex-row tw-items-center">
               <span className="tw-text-black dark:tw-text-white tw-font-semibold">
                 <ViewCounter slug={post.slug} />
               </span>
@@ -62,7 +59,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
                   </div>
                 )}
                 arrow={false}
-                placement="top"
+                placement="bottom"
               >
                 <button
                   type="button"
@@ -74,9 +71,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
             </li>
           </ul>
         </section>
-        <div className="tw-w-full tw-mt-4 tw-prose dark:tw-prose-dark tw-max-w-none">
-          {children}
-        </div>
+        <div className="tw-w-full tw-prose dark:tw-prose-dark tw-max-w-none">{children}</div>
         <Giscus />
         <div className="tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
           <a href={discussUrl(post.slug)} target="_blank" rel="noopener noreferrer">

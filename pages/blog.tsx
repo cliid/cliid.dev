@@ -4,7 +4,6 @@ import { pick } from '@lib/utils';
 import Fuse from 'fuse.js';
 import { InferGetStaticPropsType } from 'next';
 import { useState } from 'react';
-import { FaSearchengin } from 'react-icons/fa';
 
 import { allBlogs } from '.contentlayer/data';
 import type { Blog as BlogType } from '.contentlayer/types';
@@ -23,9 +22,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
       title="Blog – Jiwu Jang"
       description="Personal thoughts on programming, life, investing and more."
     >
-      <h1 className="tw-mb-4 tw-text-3xl tw-font-bold tw-tracking-tight tw-text-black md:tw-text-5xl dark:tw-text-white">
-        Blog
-      </h1>
+      <h1 className="page-title">Blog</h1>
       <p className="tw-mb-4 tw-text-gray-600 dark:tw-text-gray-400">
         {`I've been writing on this website since 2021. 2021?
             Yes, you got it right. This blog is infantly, but I believe it'll sometime be mature. 
@@ -40,7 +37,20 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           className="tw-pl-4 tw-pr-32 tw-py-2 focus:tw-ring-primary-500 focus:tw-border-primary-500 tw-block tw-w-full tw-h-10 tw-rounded-md tw-border tw-border-border dark:tw-border-dark-border tw-bg-bg dark:tw-bg-dark-bg"
         />
         <div className="tw-absolute tw-right-2 tw-top-2">
-          <FaSearchengin size={24} color="gray" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
         </div>
       </div>
       {!searchValue && (
