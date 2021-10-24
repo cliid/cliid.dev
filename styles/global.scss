@@ -4,235 +4,58 @@
 
 @import './prism';
 
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Thin.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Thin.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url("/static/fonts/Inter-ThinItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-ThinItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url("/static/fonts/Inter-ExtraLight.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-ExtraLight.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url("/static/fonts/Inter-ExtraLightItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-ExtraLightItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Light.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Light.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url("/static/fonts/Inter-LightItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-LightItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Regular.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Regular.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Italic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Italic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Medium.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Medium.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/static/fonts/Inter-MediumItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-MediumItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/static/fonts/Inter-SemiBold.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-SemiBold.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/static/fonts/Inter-SemiBoldItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-SemiBoldItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Bold.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Bold.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/static/fonts/Inter-BoldItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-BoldItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("/static/fonts/Inter-ExtraBold.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-ExtraBold.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url("/static/fonts/Inter-ExtraBoldItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-ExtraBoldItalic.woff?v=3.19") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Black.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-Black.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url("/static/fonts/Inter-BlackItalic.woff2?v=3.19") format("woff2"),
-       url("/static/fonts/Inter-BlackItalic.woff?v=3.19") format("woff");
-}
-
-  @font-face {
-    font-family: 'Freight Text Pro';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url(/static/fonts/freight-text-pro.woff2) format('woff2');
+@layer base {
+  ::selection {
+    @apply tw-bg-[#e5e5e6] dark:tw-bg-[#3e4451];
   }
 
-  @font-face {
-    font-family: 'Jetbrains Mono';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url(/static/fonts/JetBrainsMono-VariableFont_wght.woff2) format('woff2');
+  * {
+    @apply tw-text-text dark:tw-text-dark-text tw-bg-bg dark:tw-bg-dark-bg tw-border-border dark:tw-border-dark-border;
   }
 
-  @font-face {
-    font-family: 'Jetbrains Mono';
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url(/static/fonts/JetBrainsMono-Italic-VariableFont_wght.woff2) format('woff2');
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem + 0.2rem;
+    top: -.2rem;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale; /* Firefox */
+    font-size: 16px;
+    font-feature-settings: 'case', 'zero', 'ss01', 'ss03', 'cv01';
   }
 
-  @layer base {
-    ::selection {
-      @apply tw-bg-[#e5e5e6] dark:tw-bg-[#3e4451];
-    }
-  
-    * {
-      @apply tw-text-text dark:tw-text-dark-text tw-bg-bg dark:tw-bg-dark-bg tw-border-border dark:tw-border-dark-border;
-    }
-  
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 4.5rem + 0.2rem;
-      top: -.2rem;
-      font-family: Inter, 'Freight Text Pro', 'Jetbrains Mono', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-      text-rendering: optimizeSpeed;
-      -webkit-font-smoothing: antialiased; /* Chrome, Safari */
-      -moz-osx-font-smoothing: grayscale; /* Firefox */
-      font-size: 16px;
-      font-feature-settings: 'case', 'zero', 'ss01', 'ss03', 'cv01';
-    }
-  
-    #__next {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-  
-    pre {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-  
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-  
-    /* Remove Safari input tw-shadow on mobile */
-    input[type='text'],
-    input[type='email'] {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-  
-    table {
-      display: block;
-      max-width: fit-content;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
+
+  pre {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Remove Safari input tw-shadow on mobile */
+  input[type='text'],
+  input[type='email'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  table {
+    display: block;
+    max-width: fit-content;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+}
 
 @layer components {
   .emoji {
@@ -355,9 +178,13 @@
       }
     }
 
+    img {
+      /* Don't apply styles to next/image */
+      @apply tw-m-0;
+    }
+    
     p {
-      font-family: 'Freight Text Pro';
-      @apply tw-mb-8 tw-text-xl tw-leading-7;
+      @apply tw-mb-8 tw-text-base tw-leading-7;
     }
 
     pre {
@@ -367,11 +194,6 @@
     code {
       font-family: 'Jetbrains Mono';
       @apply tw-text-sm tw-text-[#b26ae2];
-    }
-
-    img {
-      /* Don't apply styles to next/image */
-      @apply tw-m-0;
     }
 
     .task-list-item {

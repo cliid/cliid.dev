@@ -40,7 +40,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           className="tw-pl-4 tw-pr-32 tw-py-2 focus:tw-ring-primary-500 focus:tw-border-primary-500 tw-block tw-w-full tw-h-10 tw-rounded-md tw-border tw-border-border dark:tw-border-dark-border tw-bg-bg dark:tw-bg-dark-bg"
         />
         <div className="tw-absolute tw-right-2 tw-top-2">
-          <FaSearchengin size="1.5rem" color="gray" />
+          <FaSearchengin size={24} color="gray" />
         </div>
       </div>
       {!searchValue && (
