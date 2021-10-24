@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "bierner.markdown-preview-github-styles",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "formulahendry.auto-rename-tag",
+    "NuclleaR.vscode-extension-auto-import",
+    "pnp.polacode",
+    "silvenon.mdx",
+    "Zignd.html-css-class-completion",
+    "pkief.material-icon-theme",
+    "equinusocio.vsc-material-theme",
+    "bradlc.vscode-tailwindcss",
+    "foxundermoon.shell-format"
+  ]
+}

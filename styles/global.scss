@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import './prism';
+@import './prism.scss';
 
 @layer base {
   ::selection {
@@ -14,15 +14,17 @@
   }
 
   html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 4.5rem + 0.2rem;
-    top: -.2rem;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color;
-    text-rendering: optimizeSpeed;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color';
+    font-feature-settings: 'case', 'zero', 'ss01', 'ss03', 'cv01';
+    font-size: 16px;
     -webkit-font-smoothing: antialiased; /* Chrome, Safari */
     -moz-osx-font-smoothing: grayscale; /* Firefox */
-    font-size: 16px;
-    font-feature-settings: 'case', 'zero', 'ss01', 'ss03', 'cv01';
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem + 0.2rem;
+    text-rendering: optimizeSpeed;
+    top: -0.2rem;
   }
 
   #__next {
@@ -40,11 +42,16 @@
     }
   }
 
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   /* Remove Safari input tw-shadow on mobile */
   input[type='text'],
   input[type='email'] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
   }
 
@@ -55,31 +62,34 @@
     white-space: nowrap;
   }
 
+  p {
+    @apply tw-font-medium;
+  }
 }
 
 @layer components {
   .emoji {
     display: inline-block;
-    width: 0.8em;
     height: 0.8em;
+    margin-bottom: 0;
     margin-left: 0.1em;
     margin-right: 0.1em;
-    vertical-align: -0.1em;
     margin-top: 0;
-    margin-bottom: 0;
+    vertical-align: -0.1em;
+    width: 0.8em;
   }
 
   /* https://seek-oss.github.io/capsize/ */
   .capsize::before {
     content: '';
-    margin-bottom: -0.098em;
     display: table;
+    margin-bottom: -0.098em;
   }
 
   .capsize::after {
     content: '';
-    margin-top: -0.219em;
     display: table;
+    margin-top: -0.219em;
   }
 
   .highlight-line {
@@ -122,17 +132,17 @@
   @keyframes cutebounce {
     0%,
     100% {
-      transform: rotate(20deg) translateY(-25%);
       animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      transform: rotate(20deg) translateY(-25%);
     }
     25%,
     75% {
-      transform: none;
       animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      transform: none;
     }
     50% {
-      transform: rotate(-20deg) translateY(-25%);
       animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      transform: rotate(-20deg) translateY(-25%);
     }
   }
 
@@ -140,11 +150,10 @@
     animation: cutebounce 0.8s infinite;
   }
 
-
   .tw-prose {
     .tweet a {
-      text-decoration: inherit;
       font-weight: inherit;
+      text-decoration: inherit;
     }
 
     a {
@@ -166,8 +175,9 @@
         font-size: 1em;
         text-decoration: none;
 
-        @apply tw-opacity-50;
+        @apply tw-opacity-0;
         @apply hover:tw-opacity-100;
+        @apply tw-transition-opacity;
 
         &::after {
           content: '#';
@@ -182,9 +192,9 @@
       /* Don't apply styles to next/image */
       @apply tw-m-0;
     }
-    
+
     p {
-      @apply tw-mb-8 tw-text-base tw-leading-7;
+      @apply tw-mb-8 tw-text-lg;
     }
 
     pre {
@@ -192,8 +202,7 @@
     }
 
     code {
-      font-family: 'Jetbrains Mono';
-      @apply tw-text-sm tw-text-[#b26ae2];
+      @apply tw-text-[#b26ae2];
     }
 
     .task-list-item {
@@ -226,7 +235,7 @@
     .footnote-ref > sup {
       @apply tw-ml-0.5 tw-text-primary dark:tw-text-primary;
 
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       font-size: 0.6rem;
       line-height: 0.5rem;
 
@@ -240,16 +249,18 @@
     }
 
     > :first-child {
+      margin-bottom: 1.25em !important;
+
       /* Override removing margin, to prevent layout shift */
       margin-top: 1.25em !important;
-      margin-bottom: 1.25em !important;
     }
   }
 }
 
 .rehype-code-title {
   @apply tw-px-5 tw-py-3 tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-border-gray-200 dark:tw-border-gray-700 tw-rounded-t-lg;
-  font-family: 'Jetbrains Mono';
+
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .rehype-code-title + div > pre {

@@ -39,8 +39,4 @@ yarn-error.log*
 # Contentlayer
 .contentlayer
 
-# Next PWA
-**/public/workbox-*.js
-**/public/sw.js
-
 tsconfig.tsbuildinfo
