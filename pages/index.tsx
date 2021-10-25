@@ -33,8 +33,8 @@ export default function Home() {
             Co-founder of <span className="tw-font-semibold">@dazzleofficial</span>
           </h2>
           <p className="tw-text-gray-600 dark:tw-text-gray-400">
-            Learning modern web technologies. Designing eye-fascinating designs. Always ecstatic
-            when coding with Next.js / TailwindCSS.
+            Creator of Sevenwiki. Building the web with @dazzleofficial. Occasional optimization
+            fanatic. Thinking how to serve minimal code with maximal user experience.
           </p>
         </div>
       </div>
