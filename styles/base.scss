@@ -1,4 +1,5 @@
 @import 'tailwindcss/base';
+
 @layer base {
   ::selection {
     @apply tw-bg-[#e5e5e6] dark:tw-bg-[#3e4451];

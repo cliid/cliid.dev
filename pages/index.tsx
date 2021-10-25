@@ -30,11 +30,37 @@ export default function Home() {
             a.k.a. cliid
           </p>
           <h2 className="tw-text-gray-700 dark:tw-text-gray-200 tw-mb-4">
-            Co-founder of <span className="tw-font-semibold">@dazzleofficial</span>
+            Co-founder of&nbsp;
+            <a
+              href="https://dazzle.works"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="tw-font-semibold tw-text-primary hover:tw-text-black dark:hover:tw-text-white"
+            >
+              @dazzleofficial
+            </a>
           </h2>
           <p className="tw-text-gray-600 dark:tw-text-gray-400">
-            Creator of Sevenwiki. Building the web with @dazzleofficial. Occasional optimization
-            fanatic. Thinking how to serve minimal code with maximal user experience.
+            Creator of&nbsp;
+            <a
+              href="https://seven.wiki"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="tw-font-semibold tw-text-primary hover:tw-text-black dark:hover:tw-text-white"
+            >
+              Sevenwiki.
+            </a>
+            &nbsp;Building the web with&nbsp;
+            <a
+              href="https://dazzle.works"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="tw-font-semibold tw-text-primary hover:tw-text-black dark:hover:tw-text-white"
+            >
+              @dazzleofficial
+            </a>
+            .&nbsp;Occasional optimization fanatic. Thinking how to serve minimal code with maximal
+            user experience.
           </p>
         </div>
       </div>
