@@ -22,7 +22,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
       title="Blog – Jiwu Jang"
       description="Personal thoughts on programming, life, investing and more."
     >
-      <h1 className="page-title">Blog</h1>
+      <h1 className="page-title tw-mb-4">Blog</h1>
       <p className="tw-mb-4 tw-text-gray-600 dark:tw-text-gray-400">
         {`I've been writing on this website since 2021. 2021?
             Yes, you got it right. This blog is infantly, but I believe it'll sometime be mature. 

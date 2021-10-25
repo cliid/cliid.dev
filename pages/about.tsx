@@ -4,7 +4,7 @@ import Timeline from '@components/Timeline';
 export default function About() {
   return (
     <Container title="About – Jiwu Jang">
-      <h1 className="page-title">About Me</h1>
+      <h1 className="page-title tw-mb-4">About Me</h1>
       <div className="tw-mb-8 tw-prose tw-leading-6 tw-text-gray-600 dark:tw-text-gray-400">
         <p>
           Hey, I’m Jiwu. I'm a developer, writer, investor, and the creator of&nbsp;
