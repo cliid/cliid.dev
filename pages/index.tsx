@@ -10,7 +10,7 @@ export default function Home() {
       <div className="tw-flex tw-flex-col-reverse sm:tw-flex-row tw-items-start tw-mb-16">
         <div className="tw-flex tw-flex-col tw-pr-8">
           <div className="tw-flex tw-flex-row tw-mb-4">
-            <div className="tw-flex tw-flex-shrink-0 tw-mr-4 tw-w-12 tw-h-12 tw-bg-dark-bg tw-text-dark-text dark:tw-text-text dark:tw-bg-transparent tw-rounded-full">
+            <div className="tw-flex tw-flex-shrink-0 tw-mr-4 tw-w-12 tw-h-12 tw-bg-dark-bg tw-text-dark-text dark:tw-text-text dark:tw-bg-transparent dark:tw-border dark:tw-border-white tw-rounded-full">
               <svg
                 className="tw-w-full tw-h-full tw-stroke-current tw-fill-current"
                 viewBox="0 0 400 400"
