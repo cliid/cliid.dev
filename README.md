@@ -1,5 +1,8 @@
 ### An open source repo for Jiwu's personal website.
 
+![Website Status](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=blue&up_message=online&url=https%3A%2F%2Fcliid.dev)
+![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fcliid.dev)
+![HSTS Preload](https://img.shields.io/hsts/preload/cliid.dev)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c1d7161de7ef4f4ea047b8ae83dd3351)](https://app.codacy.com/gh/cliid/cliid.dev?utm_source=github.com&utm_medium=referral&utm_content=cliid/cliid.dev&utm_campaign=Badge_Grade_Settings)
 [![License](https://img.shields.io/github/license/cliid/cliid.dev)](https://github.com/cliid/cliid.dev/blob/main/LICENSE)
 [![Version](https://img.shields.io/github/package-json/v/cliid/cliid.dev)](https://github.com/cliid/cliid.dev/blob/main/package.json)
