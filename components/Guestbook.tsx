@@ -87,7 +87,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
 
   return (
     <>
-      <div className="tw-border tw-rounded tw-p-6 tw-my-4 tw-w-full">
+      <div className="tw-border tw-border-border dark:tw-border-dark-border tw-rounded tw-p-6 tw-my-4 tw-w-full">
         <h5 className="tw-text-lg md:tw-text-xl tw-font-bold tw-text-gray-900 dark:tw-text-gray-100">
           Sign the Guestbook
         </h5>
