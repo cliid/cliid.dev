@@ -4,5 +4,6 @@ export const routes = [
   { href: '/dashboard', text: 'Dashboard' },
   { href: '/guestbook', text: 'Guestbook' },
   { href: '/about', text: 'About' },
-  { href: '/feed.xml', text: 'RSS' }
+  { href: '/feed.xml', text: 'RSS' },
+  { href: '/resume', text: 'Résumé' }
 ];

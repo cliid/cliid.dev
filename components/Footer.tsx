@@ -41,6 +41,11 @@ export default function Footer() {
             Tweets
           </a>
         </Link>
+        <Link href="/resume">
+          <a className="tw-text-gray-600 dark:tw-text-gray-400 tw-leading-7 hover:tw-text-gray-800 dark:hover:tw-text-gray-200 tw-transition">
+            Résumé
+          </a>
+        </Link>
         <ExternalLink href="https://twitter.com/cliiiid">Twitter</ExternalLink>
         <ExternalLink href="https://instagram.com/cliiiid">Instagram</ExternalLink>
         <ExternalLink href="https://github.com/cliid">GitHub</ExternalLink>

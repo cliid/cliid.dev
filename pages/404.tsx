@@ -11,7 +11,7 @@ export default function NotFound() {
             src="/static/images/teapot.webp"
             layout="fill"
             alt="Is it a bird? Is it a plane? No, it's a teapot!"
-            loading="lazy"
+            priority={true}
           />
         </div>
       </div>

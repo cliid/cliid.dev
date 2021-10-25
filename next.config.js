@@ -163,6 +163,15 @@ const nextConfig = {
         headers: securityHeaders
       }
     ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/resume',
+        destination: 'https://cliid.notion.site/cliid/Resume-66f1b9343226457a8b11be5e9062407c',
+        permanent: true
+      }
+    ];
   }
 };
 
