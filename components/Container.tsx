@@ -49,7 +49,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
     <NextLink href={href}>
       <a
         className={cn(
-          'default-colors tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
+          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-border-border dark:tw-border-dark-border tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
