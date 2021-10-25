@@ -68,7 +68,7 @@ export default function Container(props: any) {
   const { resolvedTheme, setTheme } = useTheme();
 
   useScrollPosition(({ currPos }) => {
-    setIsTop(!currPos.y);
+    setIsTop(-currPos.y < 10);
   });
 
   // After mounting, we have access to the theme

@@ -5,7 +5,7 @@ import { useState } from 'react';
 const ToolBtns = () => {
   const [isTop, setIsTop] = useState(true);
   useScrollPosition(({ currPos }) => {
-    setIsTop(!currPos.y);
+    setIsTop(-currPos.y < 10);
   });
   return (
     <div className="tw-fixed tw-flex tw-flex-row tw-right-4 tw-bottom-4 tw-space-x-4 tw-rounded-xl tw-bg-bg dark:tw-bg-dark-bg">
