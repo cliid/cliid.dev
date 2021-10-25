@@ -59,11 +59,9 @@ How does it manage the order? Well, for this one, I'll just quote Wikipedia.
 Long story short, it puts the new element at the bottom of the heap,
 and it keeps swapping it with its parent until it complies with the comparison function.
 
-<br />
-...
-<br />
+---
 
-Okay... so now I know that a priority queue uses a binary heap and what a binary heap is, but anyway, what are these operations?
+Okay... so now we know that a priority queue uses a binary heap and what a binary heap is, but anyway, what are these operations?
 As I said, there are three operations. However, before we discuss these operations, let's first initialize a priority queue.
 Here comes the code, so don't panic. (For sake of brevity, I'll just use `int` as the element type.)
 
@@ -135,9 +133,9 @@ int main() {
     pq.push(4);                 // pq: [7, 4, 3]
     pq.push(5);                 // pq: [7, 5, 4, 3]
     pq.push(-3);                // pq: [7, 5, 4, 3, -3]
-    cout << pq.top() << "\n";   // 출력 결과: "7"
+    cout << pq.top() << "\n";   // Output: "7"
     pq.pop();                   // pq: [5, 4, 3, -3]
-    cout << pq.top() << "\n";   // 출력 결과: "5"
+    cout << pq.top() << "\n";   // Output: "5"
     return 0;
 }
 ```

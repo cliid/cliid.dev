@@ -1,6 +1,7 @@
 import '@styles/base.scss';
 import '@styles/components.scss';
-import '@styles/global.scss';
+import '@styles/utilities.scss';
+import '@styles/prism.scss';
 
 import { useAnalytics } from '@lib/analytics';
 import type { AppProps } from 'next/app';
