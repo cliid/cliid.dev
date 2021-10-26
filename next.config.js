@@ -66,9 +66,7 @@ const nextConfig = {
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
   },
-  experimental: {
-    swcLoader: true
-  },
+  swcMinify: true,
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
