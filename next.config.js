@@ -74,7 +74,8 @@ const nextConfig = {
       's3-alpha.figma.com',
       'octodex.github.com',
       'upload.wikimedia.org'
-    ]
+    ],
+    formats: ['image/avif', 'image/webp']
   },
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
