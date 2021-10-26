@@ -15,8 +15,9 @@ export default function About() {
           <a href="https://dazzle.works" target="_blank" rel="noopener noreferrer">
             Dazzle.
           </a>
-          &nbsp;I personally prefer using TypeScript and/or C++. I also think Rust can be a good
-          language to learn.
+          &nbsp;I often think how to serve minimal, optimized code yet to provide rich user
+          experience to end users.&nbsp;I personally prefer using TypeScript and/or C++. I also
+          think Rust can be a good language to learn.
         </p>
         <p>
           I once lived in Evanston, Illinois, and now I moved to Jamsil, one of the major places in
