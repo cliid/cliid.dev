@@ -8,14 +8,14 @@ const ToolBtns = () => {
     setIsTop(-currPos.y < 10);
   });
   return (
-    <div className="tw-fixed tw-flex tw-flex-row tw-right-4 tw-bottom-4 tw-space-x-4 tw-rounded-xl">
+    <div className="tw-fixed tw-flex tw-flex-row tw-right-6 tw-bottom-6 tw-space-x-4 tw-rounded-lg">
       <button
         onClick={() => {
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }}
         className={cn(
-          'tw-w-10 tw-h-10 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-transition-all tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-2 dark:tw-border-dark-border',
+          'tw-rounded-lg tw-w-10 tw-h-10 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-transition-all tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-2 dark:tw-border-dark-border',
           isTop && 'tw-hidden'
         )}
       >

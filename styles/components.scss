@@ -12,6 +12,14 @@
     width: 0.8em;
   }
 
+  .skip-nav {
+    @apply tw-absolute tw-px-4 tw-py-3 tw-transition-transform tw-duration-200 tw-transform tw--translate-y-12 tw--left-1/4 focus:tw-top-4 focus:tw-translate-y-3 tw--top-8;
+  }
+
+  #skip {
+    scroll-margin-top: 1.125rem;
+  }
+
   /* https://seek-oss.github.io/capsize/ */
   .capsize::before {
     content: '';
@@ -91,32 +99,17 @@
 
     a {
       @apply tw-no-underline tw-text-primary hover:tw-text-black dark:hover:tw-text-white;
-
-      &[aria-hidden='true'][href^='#'] {
-        margin-left: -1.2ch;
-        margin-right: 0.2ch;
-
-        @apply hover:tw-bg-opacity-0;
-        @apply tw-font-normal;
-        @apply tw-p-0;
-      }
     }
 
     a.anchor {
       margin-left: 0.5rem;
       span.icon.icon-link {
-        font-size: 1em;
-        text-decoration: none;
-
-        @apply tw-opacity-0;
-        @apply hover:tw-opacity-100;
-        @apply tw-transition-opacity;
+        font-size: 0.9em;
 
         &::after {
           content: '#';
 
-          @apply tw-text-primary;
-          @apply dark:tw-text-primary;
+          @apply tw-font-black tw-not-italic;
         }
       }
     }
@@ -137,11 +130,11 @@
     }
 
     pre code {
-      @apply tw-p-3 tw-border-2;
+      @apply tw-p-3;
     }
 
     code {
-      @apply tw-text-primary-400 tw-text-sm;
+      @apply tw-text-sm;
     }
 
     .task-list-item {

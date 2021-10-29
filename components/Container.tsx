@@ -21,18 +21,17 @@ function NavItem({ href, text }: { href: string; text: string }) {
 
   return (
     <NextLink href={href}>
-      <a>
-        <span
-          className={cn(
-            'tw-hidden md:tw-inline-block capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all tw-text-sm',
-            isActive
-              ? 'tw-text-primary-500 dark:tw-text-primary-500'
-              : 'tw-text-gray-700 dark:tw-text-gray-500'
-          )}
-        >
-          {text.toUpperCase()}
-        </span>
-      </a>
+      <button
+        aria-label={text}
+        className={cn(
+          'tw-hidden md:tw-inline-block tw-rounded-lg tw-px-1 capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all tw-text-sm',
+          isActive
+            ? 'tw-text-primary-500 dark:tw-text-primary-500'
+            : 'tw-text-gray-700 dark:tw-text-gray-500'
+        )}
+      >
+        {text.toUpperCase()}
+      </button>
     </NextLink>
   );
 }
@@ -47,16 +46,17 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
 
   return (
     <NextLink href={href}>
-      <a
+      <button
+        aria-label={text}
         className={cn(
-          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
+          'tw-flex tw-w-full tw-my-4 tw-px-1 tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
         )}
       >
         {text.toUpperCase()}
-      </a>
+      </button>
     </NextLink>
   );
 }
@@ -123,7 +123,7 @@ export default function Container(props: any) {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <div
+      <nav
         className={cn(
           'tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
           isTop ||
@@ -131,8 +131,11 @@ export default function Container(props: any) {
         )}
       >
         <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
+          <a href="#skip" className="skip-nav">
+            Skip to content
+          </a>
           <button
-            className="tw-visible md:tw-hidden"
+            className="tw-visible md:tw-hidden tw-rounded-lg"
             aria-label="Toggle menu"
             type="button"
             onClick={toggleMenu}
@@ -170,7 +173,7 @@ export default function Container(props: any) {
             )}
           </button>
           <div>
-            <div className="md:tw-space-x-4">
+            <div className="md:tw-space-x-2">
               {routes.map((value, index) => (
                 <NavItem href={value.href} text={value.text} key={index.toString()} />
               ))}
@@ -217,12 +220,13 @@ export default function Container(props: any) {
             )}
           </button>
         </div>
-      </div>
+      </nav>
       {isMenuMounted && (
         <ul
           className={cn(
             'default-colors tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
-            isMenuRendered && 'tw-opacity-100'
+            isMenuRendered && 'tw-opacity-100',
+            'tw-divide-y'
           )}
           style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}
         >
@@ -230,7 +234,7 @@ export default function Container(props: any) {
             <li
               key={index.toString()}
               className={cn(
-                'tw-whitespace-nowrap tw-px-1',
+                'tw-whitespace-nowrap',
                 `tw-delay-[${150 + index * 25}]`,
                 isMenuRendered
                   ? 'tw-w-full tw-opacity-100 tw-translate-x-0'

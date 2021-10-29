@@ -3,6 +3,14 @@
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '');
+const rem = (px) => `${round(px / 16)}rem`;
+const em = (px, base) => `${round(px / base)}em`;
+
 /** @type {import("tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   prefix: 'tw-',
@@ -94,13 +102,14 @@ module.exports = {
             },
             h3: {
               fontWeight: '600',
+              letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.900')
             },
             'h4,h5,h6': {
               color: theme('colors.gray.900')
             },
             code: {
-              color: theme('colors.pink.500'),
+              color: theme('colors.primary.400'),
               backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
@@ -151,6 +160,7 @@ module.exports = {
             },
             h3: {
               fontWeight: '600',
+              letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.100')
             },
             'h4,h5,h6': {

@@ -26,7 +26,10 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
     >
       <article className="tw-w-full">
         <section id="title">
-          <h1 className="tw-mb-8 tw-text-5xl lg:tw-text-6xl tw-font-black tw-tracking-tight tw-text-left capsize">
+          <h1
+            aria-label={post.title}
+            className="tw-mb-8 tw-text-5xl lg:tw-text-6xl tw-font-black tw-tracking-tight tw-text-left capsize"
+          >
             {post.title.toUpperCase()}
           </h1>
         </section>
@@ -60,6 +63,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
               275WPM reading speed.`}
                   </div>
                 )}
+                hideOnClick={false}
                 arrow={false}
                 placement="bottom"
               >
