@@ -8,7 +8,7 @@ const ToolBtns = () => {
     setIsTop(-currPos.y < 10);
   });
   return (
-    <div className="tw-fixed tw-flex tw-flex-row tw-right-4 tw-bottom-4 tw-space-x-4 tw-rounded-xl tw-bg-bg dark:tw-bg-dark-bg">
+    <div className="tw-fixed tw-flex tw-flex-row tw-right-4 tw-bottom-4 tw-space-x-4 tw-rounded-xl">
       <button
         onClick={() => {
           document.body.scrollTop = 0; // For Safari

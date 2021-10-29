@@ -97,20 +97,16 @@ export default function Timeline() {
 
   return (
     <>
-      <h3 className="tw-font-bold tw-text-2xl md:tw-text-4xl tw-tracking-tight tw-mb-4 tw-mt-8 tw-text-black dark:tw-text-white">
+      <h3 className="tw-font-bold tw-text-2xl md:tw-text-4xl tw-tracking-tight tw-mb-4 tw-mt-8">
         Timeline
       </h3>
       <Year>2021</Year>
       <ul>
         <Step title="Founded Dazzle 🚀">
           I've founded a company called Dazzle with&nbsp;
-          <a href="https://github.com/krrrr0">
-            <strong className="tw-text-primary-500">@krrrr0</strong>
-          </a>
+          <a href="https://github.com/krrrr0">@krrrr0</a>
           &nbsp;and&nbsp;
-          <a href="https://github.com/shi3do">
-            <strong className="tw-text-primary-500">@shi3do</strong>
-          </a>
+          <a href="https://github.com/shi3do">@shi3do</a>
           ,&nbsp;and we're currently developing a tech-focused wiki called&nbsp;
           <a href="https://seven.wiki">Sevenwiki</a> for Koreans.
         </Step>

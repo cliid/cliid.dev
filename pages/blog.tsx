@@ -23,7 +23,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
       description="Personal thoughts on programming, life, investing and more."
     >
       <h1 className="page-title tw-mb-4">Blog</h1>
-      <p className="tw-mb-4 tw-text-gray-600 dark:tw-text-gray-400">
+      <p className="tw-mb-4">
         {`I've been writing on this website since 2021. 2021?
             Yes, you got it right. This blog is infantly, but I believe it'll sometime be mature. 
             Oh, and I've written ${posts.length} articles on this site. Use the search below to filter by title.`}
@@ -32,14 +32,13 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         <input
           aria-label="Search articles"
           placeholder="Search articles..."
-          type="text"
           onChange={(e) => setSearchValue(e.target.value)}
-          className="tw-pl-4 tw-pr-32 tw-py-2 focus:tw-ring-primary-500 focus:tw-border-primary-500 tw-block tw-w-full tw-h-10 tw-rounded-md tw-border tw-border-border dark:tw-border-dark-border tw-bg-bg dark:tw-bg-dark-bg"
+          className="tw-pl-4 tw-pr-32 tw-py-2 focus:tw-ring-primary-500 focus:tw-border-primary-500 tw-block tw-w-full tw-h-10 tw-rounded-md tw-border"
         />
         <div className="tw-absolute tw-right-2 tw-top-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
+            className="tw-w-6 tw-h-6 hover:tw-text-black dark:hover:tw-text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

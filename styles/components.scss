@@ -90,7 +90,7 @@
     }
 
     a {
-      @apply tw-no-underline hover:tw-underline;
+      @apply tw-no-underline tw-text-primary hover:tw-text-black dark:hover:tw-text-white;
 
       &[aria-hidden='true'][href^='#'] {
         margin-left: -1.2ch;
@@ -137,7 +137,7 @@
     }
 
     pre code {
-      @apply tw-p-3 tw-border-2 tw-border-border dark:tw-border-dark-border;
+      @apply tw-p-3 tw-border-2;
     }
 
     code {

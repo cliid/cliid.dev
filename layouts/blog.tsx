@@ -50,7 +50,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
               <Tippy
                 render={(attrs) => (
                   <div
-                    className="tw-text-xs tw-text-dark-text dark:tw-text-text tw-bg-dark-bg dark:tw-bg-bg tw-rounded-md tw-p-3 capsize"
+                    className="tw-text-xs tw-text-dark-text dark:tw-text-text tw-border-2 tw-rounded-md tw-p-3 capsize"
                     tabIndex={-1}
                     {...attrs}
                   >

@@ -10,6 +10,6 @@
   @apply tw-mt-0 tw-rounded-t-none;
 }
 
-.default-colors {
-  @apply tw-bg-bg dark:tw-bg-dark-bg tw-text-text dark:tw-text-dark-text tw-border-border dark:tw-border-dark-border;
+.title {
+  @apply tw-text-black dark:tw-text-white;
 }

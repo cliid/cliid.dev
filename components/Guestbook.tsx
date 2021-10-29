@@ -23,12 +23,11 @@ function GuestbookEntry({ entry, user }: { entry: any; user: any }) {
   return (
     <div className="tw-flex tw-flex-col tw-space-y-2">
       <div className="tw-prose dark:tw-prose-dark tw-w-full">{entry.body}</div>
-      <div className="tw-flex tw-items-center tw-space-x-3">
-        <p className="tw-text-sm tw-text-gray-500">{entry.created_by}</p>
-        <span className=" tw-text-gray-200 dark:tw-text-gray-800">/</span>
+      <div className="tw-flex tw-items-center">
         <p className="tw-text-sm tw-text-gray-400 dark:tw-text-gray-600">
-          {format(new Date(entry.updated_at), "d MMM yyyy 'at' h:mm bb")}
+          {format(new Date(entry.updated_at), "d MMM yyyy 'at' h:mm bb")},&nbsp;
         </p>
+        <p className="tw-text-sm tw-font-semibold tw-text-gray-500">{entry.created_by}</p>
         {user && entry.created_by === user.name && (
           <>
             <span className="tw-text-gray-200 dark:tw-text-gray-800">/</span>
@@ -87,7 +86,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
 
   return (
     <>
-      <div className="tw-border tw-border-border dark:tw-border-dark-border tw-rounded tw-p-6 tw-my-4 tw-w-full">
+      <div className="tw-border tw-rounded tw-p-6 tw-my-4 tw-w-full">
         <h5 className="tw-text-lg md:tw-text-xl tw-font-bold tw-text-gray-900 dark:tw-text-gray-100">
           Sign the Guestbook
         </h5>
@@ -98,7 +97,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <a
             href="/api/auth/signin/github"
-            className="tw-flex tw-items-center tw-justify-center tw-my-4 tw-font-bold tw-h-8 tw-rounded tw-w-28 tw-bg-dark-bg dark:tw-bg-bg tw-text-dark-text dark:tw-text-text"
+            className="tw-flex tw-items-center tw-justify-center tw-my-4 tw-font-bold tw-h-8 tw-rounded tw-w-28 tw-border-2"
             onClick={(e) => {
               e.preventDefault();
               signIn('github');

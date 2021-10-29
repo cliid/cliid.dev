@@ -43,7 +43,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#000000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
-        <body>
+        <body className="tw-bg-[#fff] dark:tw-bg-[#09101b] tw-text-gray-600 dark:tw-text-gray-400 tw-border-[#e5e5e5] dark:tw-border-[#333333]">
           <Main />
           <NextScript />
         </body>

@@ -49,7 +49,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
     <NextLink href={href}>
       <a
         className={cn(
-          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-border-border dark:tw-border-dark-border tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
+          'tw-flex tw-w-auto tw-py-4 tw-border-b tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -123,140 +123,138 @@ export default function Container(props: any) {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <div className="default-colors">
-        <nav
-          className={cn(
-            'default-colors tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
-            isTop ||
-              'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-b-2 dark:tw-border-dark-border'
-          )}
-        >
-          <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
-            <button
-              className="tw-visible md:tw-hidden"
-              aria-label="Toggle menu"
-              type="button"
-              onClick={toggleMenu}
-            >
-              {isMenuOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 8h16M4 16h16"
-                  />
-                </svg>
-              )}
-            </button>
-            <div>
-              <div className="md:tw-space-x-4">
-                {routes.map((value, index) => (
-                  <NavItem href={value.href} text={value.text} key={index.toString()} />
-                ))}
-              </div>
+      <div
+        className={cn(
+          'tw-flex tw-flex-col tw-justify-center tw-px-8 tw-sticky tw-top-0 tw-z-50',
+          isTop ||
+            'tw-backdrop-filter tw-shadow-md tw-backdrop-saturate-200 tw-backdrop-blur-lg dark:tw-border-b-2 dark:tw-border-dark-border'
+        )}
+      >
+        <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-relative tw-max-w-2xl tw-mx-auto tw-py-6">
+          <button
+            className="tw-visible md:tw-hidden"
+            aria-label="Toggle menu"
+            type="button"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 8h16M4 16h16"
+                />
+              </svg>
+            )}
+          </button>
+          <div>
+            <div className="md:tw-space-x-4">
+              {routes.map((value, index) => (
+                <NavItem href={value.href} text={value.text} key={index.toString()} />
+              ))}
             </div>
-            <button
-              aria-label="Toggle Dark Mode"
-              type="button"
-              className="tw-w-max tw-h-max tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-transition-all"
-              onClick={() => {
-                setTheme(resolvedTheme === 'tw-dark' ? 'tw-light' : 'tw-dark');
+          </div>
+          <button
+            aria-label="Toggle Dark Mode"
+            type="button"
+            className="tw-w-max tw-h-max tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-transition-all"
+            onClick={() => {
+              setTheme(resolvedTheme === 'tw-dark' ? 'tw-light' : 'tw-dark');
+            }}
+          >
+            {mounted && resolvedTheme === 'tw-dark' ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+      {isMenuMounted && (
+        <ul
+          className={cn(
+            'default-colors tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
+            isMenuRendered && 'tw-opacity-100'
+          )}
+          style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}
+        >
+          {routes.map((value, index) => (
+            <li
+              key={index.toString()}
+              className={cn(
+                'tw-whitespace-nowrap tw-px-1',
+                `tw-delay-[${150 + index * 25}]`,
+                isMenuRendered
+                  ? 'tw-w-full tw-opacity-100 tw-translate-x-0'
+                  : 'tw--translate-x-4 tw-opacity-0'
+              )}
+              style={{
+                transition: isMenuRendered
+                  ? 'opacity 300ms ease, transform 300ms ease, width 300ms ease, border-color 300ms ease'
+                  : '',
+                transitionDelay: `${150 + index * 25}ms`
               }}
             >
-              {mounted && resolvedTheme === 'tw-dark' ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </nav>
-        {isMenuMounted && (
-          <ul
-            className={cn(
-              'default-colors tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
-              isMenuRendered && 'tw-opacity-100'
-            )}
-            style={{ transition: 'opacity 300ms ease, transform 300ms ease' }}
-          >
-            {routes.map((value, index) => (
-              <li
-                key={index.toString()}
-                className={cn(
-                  'tw-whitespace-nowrap tw-px-1',
-                  `tw-delay-[${150 + index * 25}]`,
-                  isMenuRendered
-                    ? 'tw-w-full tw-opacity-100 tw-translate-x-0'
-                    : 'tw--translate-x-4 tw-opacity-0'
-                )}
-                style={{
-                  transition: isMenuRendered
-                    ? 'opacity 300ms ease, transform 300ms ease, width 300ms ease, border-color 300ms ease'
-                    : '',
-                  transitionDelay: `${150 + index * 25}ms`
-                }}
-              >
-                <MobileNavItem {...value} />
-              </li>
-            ))}
-          </ul>
-        )}
-        <main className="tw-flex tw-flex-col tw-justify-center tw-px-8 tw-pt-8">
-          <div className="tw-flex tw-flex-col tw-items-start tw-justify-center tw-max-w-2xl tw-mx-auto tw-mb-16 tw-w-full">
-            {children}
-          </div>
-          <Footer />
-        </main>
-        <ToolBtns />
-      </div>
+              <MobileNavItem {...value} />
+            </li>
+          ))}
+        </ul>
+      )}
+      <main className="tw-flex tw-flex-col tw-justify-center tw-px-8 tw-pt-8">
+        <div className="tw-flex tw-flex-col tw-items-start tw-justify-center tw-max-w-2xl tw-mx-auto tw-mb-16 tw-w-full">
+          {children}
+        </div>
+        <Footer />
+      </main>
+      <ToolBtns />
     </>
   );
 }
