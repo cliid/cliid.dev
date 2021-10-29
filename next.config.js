@@ -4,6 +4,7 @@ const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 });
+const withSvgr = require('next-svgr');
 const withPWA = require('next-pwa');
 const { withContentlayer } = require('next-contentlayer');
 const incstr = require('incstr');
@@ -89,11 +90,6 @@ const nextConfig = {
           }
         }
       ]
-    });
-
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
     });
 
     if (!dev) {
@@ -189,7 +185,8 @@ module.exports = withPlugins(
         }
       }
     ],
-    [withContentlayer]
+    [withContentlayer],
+    [withSvgr]
   ],
   nextConfig
 );
