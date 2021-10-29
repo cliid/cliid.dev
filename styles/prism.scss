@@ -41,7 +41,7 @@
   }
 }
 
-.tw-light {
+body.tw-dark {
   @include prism();
   code[class*='language-'],
   pre[class*='language-'] {
@@ -430,7 +430,7 @@
   }
 }
 
-.tw-dark {
+body {
   @include prism();
   code[class*='language-'],
   pre[class*='language-'] {

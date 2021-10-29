@@ -5,6 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 });
 const withSvgr = require('next-svgr');
+const path = require('path');
 const withPWA = require('next-pwa');
 const { withContentlayer } = require('next-contentlayer');
 const incstr = require('incstr');
@@ -68,6 +69,9 @@ const nextConfig = {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
   },
   swcMinify: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')]
+  },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art

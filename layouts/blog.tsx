@@ -5,6 +5,7 @@ import Giscus from '@components/Giscus';
 import ViewCounter from '@components/ViewCounter';
 import Tippy from '@tippyjs/react/headless';
 import { format } from 'date-fns';
+import { useTheme } from 'next-themes';
 import React, { PropsWithChildren } from 'react';
 
 import type { Blog } from '.contentlayer/types';
@@ -15,6 +16,7 @@ const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://cliid.dev/blog/${slug}`)}`;
 
 export default function BlogLayout({ children, post }: PropsWithChildren<{ post: Blog }>) {
+  const { theme, resolvedTheme } = useTheme();
   return (
     <Container
       title={`${post.title} – Jiwu Jang`}
@@ -71,7 +73,11 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
             </li>
           </ul>
         </section>
-        <div className="tw-w-full tw-prose dark:tw-prose-dark tw-max-w-none">{children}</div>
+        <div className="tw-w-full tw-prose dark:tw-prose-dark tw-max-w-none">
+          <div className={theme === 'tw-dark' || resolvedTheme === 'tw-dark' ? 'dark' : 'light'}>
+            {children}
+          </div>
+        </div>
         <Giscus />
         <div className="tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
           <a href={discussUrl(post.slug)} target="_blank" rel="noopener noreferrer">

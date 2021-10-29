@@ -1,4 +1,4 @@
-@import 'tailwindcss/utilities';
+@tailwind utilities;
 
 .rehype-code-title {
   @apply tw-px-5 tw-py-3 tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-border-gray-200 dark:tw-border-gray-700 tw-rounded-t-lg;
