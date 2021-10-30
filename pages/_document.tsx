@@ -34,7 +34,6 @@ class MyDocument extends Document {
             sizes="16x16"
             href="/static/favicons/favicon-16x16.png"
           />
-          <link rel="icon" type="image/svg+xml" href="/static/favicons/favicon.svg" />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#000000" />
           <link rel="shortcut icon" href="/static/favicons/favicon.ico" />
