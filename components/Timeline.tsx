@@ -42,9 +42,8 @@ const FullTimeline = () => (
     <Year>2019</Year>
     <ul>
       <Step title="Made a virtual girlfriend 🔥">
-        I was lonely, so I made a virtual girlfriend with my colleagues at HYGEC. She can talk and
-        do some games with you. Oh, and one of them founded Dazzle with me. It was a great
-        opportunity to meet wonderful programmers.
+        I was lonely, so I made a virtual girlfriend with my colleagues at HYGEC. Simple, huh? BTW,
+        She can talk and do some games with you.
       </Step>
     </ul>
     <Divider />
@@ -53,7 +52,7 @@ const FullTimeline = () => (
       <Step title="Started at Hanyang University Gifted Education Center (HYGEC)">
         It was my first interview, as well as my first standardized exam. Because it was my first
         test, it made me feel so frightening. I can still remember that feeling. But well, luckily I
-        got accepted. Anyway, my colleagues were gold-medalists of an Informatics Olympiad, so I
+        got accepted. Anyway, some of my colleagues were Informatics Olympiad gold medalists, so I
         knew it was going to be a real challenge.
       </Step>
     </ul>
@@ -85,8 +84,8 @@ const FullTimeline = () => (
     <Year>2006</Year>
     <ul>
       <Step title="Born 👶🏼🍼">
-        My mom fainted when she had me. That day, was September 27, which was also Google's
-        birthday. Is it a coincidence that I do programming?
+        My mom fainted when she had me. That day, September 27, is also Google's birthday. Is it a
+        coincidence that I'm doing programming?
       </Step>
     </ul>
   </>

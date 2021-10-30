@@ -72,7 +72,7 @@ export default function Home() {
           />
         </div>
         <Link href="/blog">
-          <a className="tw-flex tw-mt-8 tw-text-gray-600 dark:tw-text-gray-400 tw-font-bold tw-leading-7 tw-rounded-lg hover:tw-text-black dark:hover:tw-text-white tw-transition-all tw-h-6">
+          <a className="tw-flex tw-mt-8 tw-text-gray-600 dark:tw-text-gray-400 tw-font-bold tw-leading-7 tw-rounded-lg hover:tw-text-black dark:hover:tw-text-white tw-h-6">
             Read all posts...
           </a>
         </Link>

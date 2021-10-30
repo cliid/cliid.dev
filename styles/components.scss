@@ -13,7 +13,7 @@
   }
 
   .skip-nav {
-    @apply tw-absolute tw-px-4 tw-py-3 tw-transition-transform tw-duration-200 tw-transform tw--translate-y-12 tw--left-1/4 focus:tw-top-4 focus:tw-translate-y-3 tw--top-8;
+    @apply tw-absolute tw-px-4 tw-py-3 tw-duration-200 tw-transform tw--translate-y-12 tw--left-1/4 focus:tw-top-4 focus:tw-translate-y-3 tw--top-8;
   }
 
   #skip {
@@ -102,14 +102,14 @@
     }
 
     a.anchor {
-      margin-left: 0.5rem;
+      margin-left: 0.2em;
       span.icon.icon-link {
-        font-size: 0.9em;
+        font-size: 1em;
 
         &::after {
-          content: '#';
+          content: '+';
 
-          @apply tw-font-black tw-not-italic;
+          @apply tw-font-black;
         }
       }
     }

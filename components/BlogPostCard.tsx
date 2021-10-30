@@ -17,11 +17,11 @@ export default function BlogPostCard({
   const views = data?.total;
 
   return (
-    <Link href={`/blog/${slug}`}>
-      <a
+    <Link href={`/blog/${slug}`} passHref>
+      <span
         className={cn(
-          'tw-transform hover:tw-scale-[1.01] tw-transition-all',
-          'tw-rounded-xl tw-w-full tw-bg-gradient-to-r tw-p-1',
+          'tw-transform hover:tw-scale-[1.01]',
+          'tw-rounded-xl tw-w-full tw-bg-gradient-to-r tw-p-1 tw-cursor-pointer',
           gradient
         )}
       >
@@ -31,11 +31,11 @@ export default function BlogPostCard({
               {title.toUpperCase()}
             </h3>
           </div>
-          <span className="tw-text-black dark:tw-text-white tw-font-semibold">
+          <span className="tw-font-semibold">
             {views ? new Number(views).toLocaleString() : '–––'}&nbsp;views
           </span>
         </div>
-      </a>
+      </span>
     </Link>
   );
 }

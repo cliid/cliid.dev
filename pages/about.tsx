@@ -29,16 +29,6 @@ export default function About() {
         </p>
       </div>
       <Timeline />
-      <h3 className="tw-font-bold tw-text-2xl md:tw-text-4xl tw-tracking-tight tw-mb-4 tw-mt-8 tw-text-black dark:tw-text-white">
-        My Travel Map
-      </h3>
-      <iframe
-        height="400"
-        loading="lazy"
-        src="https://www.google.com/maps/d/embed?mid=1hRaSvquUyw5424PjryJYQZiRjyv8ORwe"
-        title="Jiwu's Travel Map"
-        width="100%"
-      />
     </Container>
   );
 }

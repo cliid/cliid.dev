@@ -14,12 +14,12 @@ interface Lighthouse {
 
 const scoreColor = (score: number) => {
   if (score < 0.5) {
-    return 'tw-text-red-500 tw-border-red-500 hover:tw-text-red-700 hover:tw-border-red-700';
+    return 'tw-text-red-500 tw-border-red-500';
   }
   if (score < 0.9) {
-    return 'tw-text-yellow-500 tw-border-yellow-500 hover:tw-text-yellow-700 hover:tw-border-yellow-700';
+    return 'tw-text-yellow-500 tw-border-yellow-500';
   }
-  return 'tw-text-green-500 tw-border-green-500 hover:tw-text-green-700 hover:tw-border-green-700';
+  return 'tw-text-green-500 tw-border-green-500';
 };
 
 const SpeedlifyScore = ({ speedlifyUrl, hash }: { speedlifyUrl: string; hash: string }) => {
@@ -61,14 +61,14 @@ const SpeedlifyScore = ({ speedlifyUrl, hash }: { speedlifyUrl: string; hash: st
         –
       </span>
       <a href={speedlifyUrl} rel="noopener noreferrer" target="_blank">
-        <div className="tw-w-max tw-font-semibold tw-text-xs tw-grid tw-grid-flow-col tw-gap-2 tw-break-normal tw-max-w-full tw-cursor-pointer">
+        <div className="tw-w-max tw-font-semibold tw-flex tw-flex-row tw-space-x-2 tw-break-normal tw-max-w-full tw-cursor-pointer">
           {[data.performance, data.accessibility, data.bestPractices, data.seo].map(
             (value, index) => {
               return (
                 <div
                   key={index.toString()}
                   className={cn(
-                    'tw-w-7 tw-h-7 tw-border tw-rounded-full tw-flex tw-justify-center tw-items-center',
+                    'tw-w-7 tw-h-7 tw-border tw-rounded-full tw-flex tw-justify-center tw-items-center capsize tw-text-xs',
                     scoreColor(value)
                   )}
                 >

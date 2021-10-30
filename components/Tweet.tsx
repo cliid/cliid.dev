@@ -124,7 +124,7 @@ export default function Tweet({
       </a>
       <div className="tw-flex tw-text-gray-700 dark:tw-text-gray-300 tw-mt-2">
         <a
-          className="tw-flex tw-items-center tw-mr-4 tw-text-gray-500 hover:tw-text-blue-600 tw-transition hover:tw-underline"
+          className="tw-flex tw-items-center tw-mr-4 tw-text-gray-500 hover:tw-text-blue-600 hover:tw-underline"
           href={replyUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -138,7 +138,7 @@ export default function Tweet({
           <span>{new Number(public_metrics.reply_count).toLocaleString()}</span>
         </a>
         <a
-          className="tw-flex tw-items-center tw-mr-4 tw-text-gray-500 hover:tw-text-green-600 tw-transition hover:tw-underline"
+          className="tw-flex tw-items-center tw-mr-4 tw-text-gray-500 hover:tw-text-green-600 hover:tw-underline"
           href={retweetUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -152,7 +152,7 @@ export default function Tweet({
           <span>{new Number(public_metrics.retweet_count).toLocaleString()}</span>
         </a>
         <a
-          className="tw-flex tw-items-center tw-text-gray-500 hover:tw-text-red-600 tw-transition hover:tw-underline"
+          className="tw-flex tw-items-center tw-text-gray-500 hover:tw-text-red-600 hover:tw-underline"
           href={likeUrl}
           target="_blank"
           rel="noopener noreferrer"

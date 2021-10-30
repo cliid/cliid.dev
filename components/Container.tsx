@@ -24,7 +24,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <button
         aria-label={text}
         className={cn(
-          'tw-hidden md:tw-inline-block tw-rounded-lg tw-px-1 capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all tw-text-sm',
+          'tw-hidden md:tw-inline-block tw-rounded-lg tw-px-1 capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-text-sm',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -49,7 +49,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
       <button
         aria-label={text}
         className={cn(
-          'tw-flex tw-w-full tw-my-4 tw-px-1 tw-text-base tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-transition-all',
+          'tw-flex tw-w-full tw-my-4 tw-px-1 tw-text-sm tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -143,7 +143,7 @@ export default function Container(props: any) {
             {isMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -158,7 +158,7 @@ export default function Container(props: any) {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -182,7 +182,7 @@ export default function Container(props: any) {
           <button
             aria-label="Toggle Dark Mode"
             type="button"
-            className="tw-w-max tw-h-max tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-transition-all"
+            className="tw-w-max tw-h-max tw-rounded-lg tw-flex tw-items-center tw-justify-center"
             onClick={() => {
               setTheme(resolvedTheme === 'tw-dark' ? 'tw-light' : 'tw-dark');
             }}
@@ -190,7 +190,7 @@ export default function Container(props: any) {
             {mounted && resolvedTheme === 'tw-dark' ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -205,7 +205,7 @@ export default function Container(props: any) {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white tw-transition-all"
+                className="tw-w-6 tw-h-6 tw-text-gray-700 dark:tw-text-gray-500 hover:tw-text-black dark:hover:tw-text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -224,7 +224,7 @@ export default function Container(props: any) {
       {isMenuMounted && (
         <ul
           className={cn(
-            'default-colors tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-transition-transform tw-fixed tw-w-full tw-h-full tw-px-8',
+            'default-colors tw-flex tw-flex-col md:tw-hidden tw-z-[1000] tw-left-0 tw-opacity-0 tw-fixed tw-w-full tw-h-full tw-px-8',
             isMenuRendered && 'tw-opacity-100',
             'tw-divide-y'
           )}
