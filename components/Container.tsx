@@ -24,7 +24,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <button
         aria-label={text}
         className={cn(
-          'tw-hidden md:tw-inline-block tw-rounded-lg tw-px-1 capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-text-sm',
+          'tw-hidden md:tw-inline-block tw-tracking-tight tw-rounded-lg tw-px-1 capsize tw-font-black hover:tw-text-black dark:hover:tw-text-white hover:tw-underline tw-text-sm',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'
@@ -49,7 +49,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
       <button
         aria-label={text}
         className={cn(
-          'tw-flex tw-w-full tw-my-4 tw-px-1 tw-text-sm tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline',
+          'tw-tracking-tight tw-flex tw-w-full tw-my-4 tw-px-1 tw-text-sm tw-font-black capsize hover:tw-text-black dark:hover:tw-text-white hover:tw-underline',
           isActive
             ? 'tw-text-primary-500 dark:tw-text-primary-500'
             : 'tw-text-gray-700 dark:tw-text-gray-500'

@@ -60,25 +60,23 @@ const SpeedlifyScore = ({ speedlifyUrl, hash }: { speedlifyUrl: string; hash: st
       <span className="tw-mx-2 tw-text-gray-500 dark:tw-text-gray-300 tw-hidden sm:tw-inline-block">
         –
       </span>
-      <a href={speedlifyUrl} rel="noopener noreferrer" target="_blank">
-        <div className="tw-w-max tw-font-semibold tw-flex tw-flex-row tw-space-x-2 tw-break-normal tw-max-w-full tw-cursor-pointer">
-          {[data.performance, data.accessibility, data.bestPractices, data.seo].map(
-            (value, index) => {
-              return (
-                <div
-                  key={index.toString()}
-                  className={cn(
-                    'tw-w-7 tw-h-7 tw-border tw-rounded-full tw-flex tw-justify-center tw-items-center capsize tw-text-xs',
-                    scoreColor(value)
-                  )}
-                >
-                  {value * 100}
-                </div>
-              );
-            }
-          )}
-        </div>
-      </a>
+      <div className="tw-w-max tw-font-semibold tw-flex tw-flex-row tw-space-x-2 tw-break-normal tw-max-w-full tw-cursor-pointer">
+        {[data.performance, data.accessibility, data.bestPractices, data.seo].map(
+          (value, index) => {
+            return (
+              <div
+                key={index.toString()}
+                className={cn(
+                  'tw-w-7 tw-h-7 tw-border tw-rounded-full tw-flex tw-justify-center tw-items-center capsize tw-text-xs',
+                  scoreColor(value)
+                )}
+              >
+                {value * 100}
+              </div>
+            );
+          }
+        )}
+      </div>
     </div>
   );
 };
