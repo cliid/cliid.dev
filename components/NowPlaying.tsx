@@ -87,7 +87,9 @@ export default function NowPlaying() {
         ) : (
           <p className="tw-text-gray-800 dark:tw-text-gray-200">Not Playing</p>
         )}
-        <span className="tw-mx-2 tw-text-gray-500 dark:tw-text-gray-300 tw-block">{' – '}</span>
+        <span className="tw-mx-2 tw-text-gray-500 dark:tw-text-gray-300 tw-block tw-select-none">
+          {' – '}
+        </span>
         <p className="tw-text-gray-500 dark:tw-text-gray-300 tw-max-w-max tw-truncate">
           {data?.artist ?? 'Spotify'}
         </p>

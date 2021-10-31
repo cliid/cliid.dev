@@ -28,14 +28,8 @@ export default function ProjectCard({
           <div className="tw-flex tw-flex-col tw-justify-between tw-h-full">
             <div className="tw-flex tw-flex-col tw-w-full tw-gap-y-3">
               <div className="tw-text-2xl tw-font-bold tw-text-gray-900 dark:tw-text-gray-100 tw-tracking-tight tw-break-words tw-flex tw-flex-row tw-items-center">
-                <div className="tw-block tw-w-6 tw-h-6 tw-relative tw-mr-[0.4rem]">
-                  <Image
-                    src={imageUrl}
-                    alt={title}
-                    layout="fill"
-                    objectFit="contain"
-                    quality="40"
-                  />
+                <div className="tw-block tw-w-6 tw-h-6 tw-relative tw-mr-[0.4rem] tw-select-none">
+                  <Image src={imageUrl} alt={title} layout="fill" objectFit="contain" quality="1" />
                 </div>
                 {title}
               </div>

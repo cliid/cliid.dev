@@ -57,10 +57,10 @@ const SpeedlifyScore = ({ speedlifyUrl, hash }: { speedlifyUrl: string; hash: st
           </a>
         </span>
       </div>
-      <span className="tw-mx-2 tw-text-gray-500 dark:tw-text-gray-300 tw-hidden sm:tw-inline-block">
+      <span className="tw-mx-2 tw-text-gray-500 dark:tw-text-gray-300 tw-hidden sm:tw-inline-block tw-select-none">
         –
       </span>
-      <div className="tw-w-max tw-font-semibold tw-flex tw-flex-row tw-space-x-2 tw-break-normal tw-max-w-full tw-cursor-pointer">
+      <div className="tw-w-max tw-font-semibold tw-flex tw-flex-row tw-space-x-2 tw-break-normal tw-max-w-full tw-select-none">
         {[data.performance, data.accessibility, data.bestPractices, data.seo].map(
           (value, index) => {
             return (
