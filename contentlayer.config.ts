@@ -11,14 +11,18 @@ import remarkGfm from 'remark-gfm';
 import remarkTextr from 'remark-textr';
 import smartquotes from 'smartquotes';
 
-// Regex to change ... to …
+// Regex to change ... to … Uuugh, I hate regex.
 function ellipses(input: string) {
-  return input.replace(/\.{3}/gim, '…');
+  return input.replaceAll(/((\?|\!)+|\.)?(\.{2,})\./gim, '$1\u2026');
 }
 
-// Magically change all quotes and dashes to match typewriter standards. Hooray!
-function quotesAndDashes(input: string) {
+// Magically change all quotes to match typewriter standards. Hooray!
+function quotes(input: string) {
   return smartquotes(input);
+}
+
+function dashes(input: string) {
+  return input.replaceAll('---', '—').replaceAll('--', '–');
 }
 
 const computedFields: ComputedFields = {
@@ -97,7 +101,7 @@ const contentLayerConfig = makeSource({
     remarkPlugins: [
       remarkGfm,
       remarkGemoji,
-      [remarkTextr, { plugins: [ellipses, quotesAndDashes] }]
+      [remarkTextr, { plugins: [quotes, dashes, ellipses] }]
     ],
     rehypePlugins: [
       rehypeSlug,
