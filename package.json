@@ -92,7 +92,7 @@
     "rehype-twemojify": "^2.0.1",
     "remark-gemoji": "^7.0.0",
     "remark-gfm": "^3.0.0",
-    "remark-textr": "^5.0.0",
+    "remark-textr": "^5.0.1",
     "rss": "1.2.2",
     "sass": "^1.43.4",
     "smartquotes": "^2.3.2",

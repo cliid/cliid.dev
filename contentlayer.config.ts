@@ -21,10 +21,6 @@ function quotes(input: string) {
   return smartquotes(input);
 }
 
-function dashes(input: string) {
-  return input.replaceAll('---', '—').replaceAll('--', '–');
-}
-
 const computedFields: ComputedFields = {
   readingTime: {
     type: 'json',
@@ -60,49 +56,11 @@ const Blog = defineDocumentType(() => ({
   computedFields
 }));
 
-const Newsletter = defineDocumentType(() => ({
-  name: 'Newsletter',
-  filePathPattern: 'newsletter/*.mdx',
-  bodyType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
-    summary: { type: 'string', required: true }
-  },
-  computedFields
-}));
-
-const Snippet = defineDocumentType(() => ({
-  name: 'Snippet',
-  filePathPattern: 'snippets/*.mdx',
-  bodyType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-    logo: { type: 'string', required: true }
-  },
-  computedFields
-}));
-
-const OtherPage = defineDocumentType(() => ({
-  name: 'OtherPage',
-  filePathPattern: '*.mdx',
-  bodyType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true }
-  },
-  computedFields
-}));
-
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Newsletter, Snippet, OtherPage],
+  documentTypes: [Blog],
   mdx: {
-    remarkPlugins: [
-      remarkGfm,
-      remarkGemoji,
-      [remarkTextr, { plugins: [quotes, dashes, ellipses] }]
-    ],
+    remarkPlugins: [remarkGfm, remarkGemoji, [remarkTextr, { plugins: [quotes, ellipses] }]],
     rehypePlugins: [
       rehypeSlug,
       [

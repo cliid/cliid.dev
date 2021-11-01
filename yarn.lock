@@ -10292,10 +10292,10 @@ remark-stringify@^8.1.1:
     unherit "^1.0.4"
     xtend "^4.0.1"
 
-remark-textr@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/remark-textr/-/remark-textr-5.0.0.tgz#cc508fa9a23909ca3df8c9c69fa9feadd05ebeb7"
-  integrity sha512-UKphZPB16zVXZ+7iQST/hMouA4XrRX++IpkkDPwAIVhsO5ehNRtLXpQL4tH8r4PuIpqVrI6B9njkAOc4oegw8Q==
+remark-textr@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/remark-textr/-/remark-textr-5.0.1.tgz#33a84c46dec6b8eef76b1315d5f3d7ab0e7cbb9a"
+  integrity sha512-Kd5q7I1LsZ04meMZJJwBze/wxiLhAItRTGevDeyx3K/WMd4juO6WbGLro0/99Ui6I+lYx/l90v0Ax4dVPj3/0Q==
   dependencies:
     "@types/mdast" "^3.0.0"
     textr "^0.3.0"
