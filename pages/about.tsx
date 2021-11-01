@@ -20,12 +20,9 @@ export default function About() {
           good language to learn.
         </p>
         <p>
-          I once lived in Evanston, Illinois, and now I moved to Jamsil, one of the major places in
-          Seoul, Korea. I spend my free time listening to music, or designing pretty UIs.&nbsp;
-          <em>Yes, designing UIs, it's what I do in my free time.</em> For music, I mostly listen to
-          Nightcore Pop or Frank Sinatra's Jazz. It depends on my mood. I also like playing games
-          such as League of Legends, and enjoying time with friends and my family. By the way, I can
-          do card magic / cardistry too.
+          I once lived in Evanston, Illinois, and now I moved to Seoul, Korea. I spend my free time
+          tinkering and making new things. I mostly listen to City Pop (シティ・ポップ). I love to
+          practice cardistry too.
         </p>
       </div>
       <Timeline />

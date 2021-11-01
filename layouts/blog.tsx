@@ -50,7 +50,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
               &nbsp;•&nbsp;
               <span className="tw-text-black dark:tw-text-white tw-font-semibold">{`${Math.ceil(
                 post.readingTime.minutes
-              )} mins`}</span>
+              )} ${Math.ceil(post.readingTime.minutes) > 1 ? 'mins' : 'min'}`}</span>
               <span className="tw-text-gray-500 dark:tw-text-gray-500">&nbsp;reading time</span>
               <Tippy
                 render={(attrs) => (

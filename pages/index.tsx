@@ -86,10 +86,7 @@ export default function Home() {
             I love making projects for fun, even if it's of no use. The list below are the projects
             carefully coded by me. I've written a couple blog posts about the overall structure and
             development process about those projects. Oh, by the way I always plan to make a new
-            project. It's hardcoded in my genetics&nbsp;
-            <span role="img" aria-label={'🧬'}>
-              🧬🧬
-            </span>
+            project. It's hardcoded in my genetics 🧬🧬
           </span>
         </p>
 
