@@ -41,6 +41,9 @@ yarn-error.log*
 
 # Next PWA
 **/public/workbox-*.js
+**/public/workbox-*.js.*
+**/public/fallback-*.js
+**/public/fallback-*.js.*
 **/public/sw.js
 **/public/sw.js.*
 
