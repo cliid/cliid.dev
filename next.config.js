@@ -189,7 +189,7 @@ module.exports = withPlugins(
         }
       }
     ],
-    [withContentlayer],
+    [withContentlayer()],
     [withSvgr]
   ],
   nextConfig
