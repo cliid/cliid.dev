@@ -1805,29 +1805,29 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@contentlayer/cli@0.0.28-dev.6":
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.0.28-dev.6.tgz#c14565d2c1ad28d10c0d9119575098cc7ad3de5d"
-  integrity sha512-uCZroq3JUFq8QkXh3KqnnMO3T59S0ucjefpnV6nKhSwfJ/4whlSQv81vhJl4F2kqRMHg5yj2qNzWtWCLgbEaVg==
+"@contentlayer/cli@0.0.28-dev.7":
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.0.28-dev.7.tgz#ecb5d75d6ea8e8cb1068efc162a628d7dc3fc753"
+  integrity sha512-HtWIyAWoP0fuQZ/zlL6nXb7PjLnxKTmsNpdcFonUHDCp5BArcnRlpCftlEGjqArm3FivpEtAxxVLj28Swo9QWw==
   dependencies:
-    "@contentlayer/core" "0.0.28-dev.6"
-    "@contentlayer/utils" "0.0.28-dev.6"
+    "@contentlayer/core" "0.0.28-dev.7"
+    "@contentlayer/utils" "0.0.28-dev.7"
     clipanion "^3.2.0-rc.3"
     typanion "^3.5.0"
 
-"@contentlayer/client@0.0.28-dev.6":
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.0.28-dev.6.tgz#538cb11824a0cf8900927c1956718cecd7351b32"
-  integrity sha512-iAer5D0fW5hSVoyYj2FlhN3EXRgKXAZ4PiHpkB41EqXD/Id+YdlFhSSLRbIWH1eIc1iJE1K1RYRD/u5E74p7Qw==
+"@contentlayer/client@0.0.28-dev.7":
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.0.28-dev.7.tgz#18cf852eae21c9a9a5cc737b2c17510f5591f782"
+  integrity sha512-Bva7VOKWmgvO14iIVYSpFyLUV4N/qmIcmOiSdM1fbexy1vcTAweue+os58cpDEMF1nWYh5kw1uewWM9HdsCfRA==
   dependencies:
-    "@contentlayer/core" "0.0.28-dev.6"
+    "@contentlayer/core" "0.0.28-dev.7"
 
-"@contentlayer/core@0.0.28-dev.6":
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.0.28-dev.6.tgz#2d601ac9059da06e31b98dccbdd6f04c8f3b2542"
-  integrity sha512-c6c5mm7ezxexeq0Zi+BwpCpNQTcupuOXuD73SJZ1WnlKUT6h0v+YnF8pg0oacLeh3iKSNsZQfpnSegJt3U70Vw==
+"@contentlayer/core@0.0.28-dev.7":
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.0.28-dev.7.tgz#bd69456a78b9fcb09888cd9ba6cdcf7688d53c20"
+  integrity sha512-VwK2p51ZOx4rwXaLRfJrE5KmbAR5jnGVEQxW+Wt/9TfnIVegyWh9c2kYtKkMy3I5l3AF13QJe1tdA2AGvcRTKg==
   dependencies:
-    "@contentlayer/utils" "0.0.28-dev.6"
+    "@contentlayer/utils" "0.0.28-dev.7"
     camel-case "^4.1.2"
     esbuild "0.11.x || 0.12.x || 0.13.x"
     gray-matter "^4.0.3"
@@ -1841,13 +1841,13 @@
     type-fest "^1.2.1"
     unified "^10.1.0"
 
-"@contentlayer/source-files@0.0.28-dev.6":
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.28-dev.6.tgz#95756e6f26d46454dda2840014b4dd6fccd67807"
-  integrity sha512-91uoIDayxj7Ww2KBzwUJchSyqkWMIRdBXt2vKHc/SBvQaxGXZlfW8QJeNXvnj52MP/C7pih+SWVPl3R8Vx1l4w==
+"@contentlayer/source-files@0.0.28-dev.7":
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.28-dev.7.tgz#7c60e35b3fbd9513c2c46c5e22259a746dcd974c"
+  integrity sha512-zUHKkWIeJLfpLjZBG5UOcE9eKQMtXhMxD+NdYWRtw5dKsPI96w//OFt+gL30E0v9zolP/oIu2G0q2x6HH9sLwA==
   dependencies:
-    "@contentlayer/core" "0.0.28-dev.6"
-    "@contentlayer/utils" "0.0.28-dev.6"
+    "@contentlayer/core" "0.0.28-dev.7"
+    "@contentlayer/utils" "0.0.28-dev.7"
     chokidar "^3.5.2"
     glob "^7.1.7"
     glob-promise "^4.1.0"
@@ -1857,10 +1857,10 @@
     unified "^10.1.0"
     yaml "^1.10.2"
 
-"@contentlayer/utils@0.0.28-dev.6":
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.0.28-dev.6.tgz#63d97a2851d0aa7da8a914372031aac70d48ee2c"
-  integrity sha512-xBCLEzRJjcbw/MxV19U3PHRBcvUZ91sgQNHRkzlFrkPBw4HdKc5rhbsaWZqeIrdhUw12UCwLXdRRC6m9fF+AuQ==
+"@contentlayer/utils@0.0.28-dev.7":
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.0.28-dev.7.tgz#5c230f7045a6d74d0cbdbaa7d672deb22feac7ae"
+  integrity sha512-jWBbioEAC8mPDr/p+Zyjq+6MmuetPgYfdyXC8JVTwTV5nql3DFpTekvEHD82c3lR5r/WlxraRvh7vFD3bMiIUw==
   dependencies:
     "@effect-ts/core" "^0.44.4"
     "@effect-ts/otel" next
@@ -3959,16 +3959,16 @@ content-type@~1.0.4:
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
-contentlayer@^0.0.28-dev.6:
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.0.28-dev.6.tgz#87c826c49c1b8007ac7e2011ab38bf91284c4c7d"
-  integrity sha512-4+l3oV+uTiBIOTnndNRU4yfX3fng88/npgkjlDShUL50nycLsx3bX20AP1nvEBMTL4FM2w8GO1b3daAw8LAjvg==
+contentlayer@^0.0.28-dev.7:
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.0.28-dev.7.tgz#9bac684baf39476ba54199a3c9fc010df8cedc75"
+  integrity sha512-iMb5o/XfSqyRREUnddS8OGh7PspWDp4bFuYtWqRw6nJP4z5aDNGoQI/LXDcZHnvJsK3y2uJk1FjQNfrM3eZV5A==
   dependencies:
-    "@contentlayer/cli" "0.0.28-dev.6"
-    "@contentlayer/client" "0.0.28-dev.6"
-    "@contentlayer/core" "0.0.28-dev.6"
-    "@contentlayer/source-files" "0.0.28-dev.6"
-    "@contentlayer/utils" "0.0.28-dev.6"
+    "@contentlayer/cli" "0.0.28-dev.7"
+    "@contentlayer/client" "0.0.28-dev.7"
+    "@contentlayer/core" "0.0.28-dev.7"
+    "@contentlayer/source-files" "0.0.28-dev.7"
+    "@contentlayer/utils" "0.0.28-dev.7"
 
 convert-source-map@1.7.0:
   version "1.7.0"
@@ -8369,13 +8369,13 @@ next-compose-plugins@^2.2.1:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.1.tgz#020fc53f275a7e719d62521bef4300fbb6fde5ab"
   integrity sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==
 
-next-contentlayer@^0.0.28-dev.6:
-  version "0.0.28-dev.6"
-  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.0.28-dev.6.tgz#73e908f3a2a215e9e9afa143e04dae6abe4e5eab"
-  integrity sha512-V05k5eCJrtKiUAwKAalWX7MJ5Rft8QDl83ccMvXI/ipWlqm4S4hOSCM22fVox/5vd1OM+Gwq6Byd864iUULnIg==
+next-contentlayer@^0.0.28-dev.7:
+  version "0.0.28-dev.7"
+  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.0.28-dev.7.tgz#bedaec02068827b44ff80b6049bc0310d6d58f6b"
+  integrity sha512-kBHvRQ36Ex1EXJ8YtWciWqELYegfXsdOnMc0v8eddKwI1KQdqpCJYiW5XX5ErtmMkhaKxqJ4ymIXNjT74uSj7Q==
   dependencies:
-    "@contentlayer/core" "0.0.28-dev.6"
-    "@contentlayer/utils" "0.0.28-dev.6"
+    "@contentlayer/core" "0.0.28-dev.7"
+    "@contentlayer/utils" "0.0.28-dev.7"
     rxjs "^7.1.0"
 
 next-pwa@^5.3.1:

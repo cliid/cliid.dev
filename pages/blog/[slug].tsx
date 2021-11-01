@@ -3,12 +3,12 @@ import Tweet from '@components/Tweet';
 import BlogLayout from '@layouts/blog';
 import { getTweets } from '@lib/twitter';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
-import { useMDXComponents } from 'next-contentlayer/hooks';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { allBlogs } from '.contentlayer/data';
 
 export default function Page({ post, tweets }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const Component = useMDXComponents(post.body.code);
+  const Component = useMDXComponent(post.body.code);
   const StaticTweet = ({ id }: { id: string }) => {
     const tweet = tweets.find((tweet) => tweet.id === id);
     return <Tweet {...tweet} />;
