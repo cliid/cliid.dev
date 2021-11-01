@@ -124,8 +124,8 @@ const contentLayerConfig = makeSource({
           isNext: true,
           base: '/static/images/twemoji',
           params: {
-            w: 3840,
-            q: 40
+            w: 32,
+            q: 30
           }
         }
       ]

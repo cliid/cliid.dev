@@ -7,6 +7,7 @@ $navbar-height: 4.5rem;
     background-color: inherit;
     border-color: inherit;
     color: inherit;
+    scroll-margin-top: $navbar-height + 0.5rem;
     transition-duration: 150ms;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,6 +47,10 @@ $navbar-height: 4.5rem;
   h5,
   h6 {
     scroll-margin-top: $navbar-height + 0.2rem;
+  }
+
+  li {
+    scroll-margin-top: $navbar-height + 1rem;
   }
 
   a {
