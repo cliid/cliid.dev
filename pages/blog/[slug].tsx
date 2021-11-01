@@ -2,14 +2,13 @@ import components from '@components/MDXComponents';
 import Tweet from '@components/Tweet';
 import BlogLayout from '@layouts/blog';
 import { getTweets } from '@lib/twitter';
-import { getMDXComponent } from 'mdx-bundler/client';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
-import { useMemo } from 'react';
+import { useMDXComponents } from 'next-contentlayer/hooks';
 
 import { allBlogs } from '.contentlayer/data';
 
 export default function Page({ post, tweets }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const Component = useMemo(() => getMDXComponent(post.body.code), [post.body.code]);
+  const Component = useMDXComponents(post.body.code);
   const StaticTweet = ({ id }: { id: string }) => {
     const tweet = tweets.find((tweet) => tweet.id === id);
     return <Tweet {...tweet} />;
