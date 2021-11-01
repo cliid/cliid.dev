@@ -13,7 +13,7 @@ import smartquotes from 'smartquotes';
 
 // Regex to change ... to … Uuugh, I hate regex.
 function ellipses(input: string) {
-  return input.replaceAll(/((\?|\!)+|\.)?(\.{2,})\./gim, '$1\u2026');
+  return input.replace(/((\?|\!)+|\.)?(\.{2,})\./gim, '$1\u2026');
 }
 
 // Magically change all quotes to match typewriter standards. Hooray!

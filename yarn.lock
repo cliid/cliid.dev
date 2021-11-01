@@ -1805,22 +1805,22 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@contentlayer/cli@0.0.28-dev.4":
-  version "0.0.28-dev.4"
-  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.0.28-dev.4.tgz#5425acd8966d547bd6ad3ed685197d92114a0404"
-  integrity sha512-z4Iok3RkjzjYgLi5gLFj5dAh4Mkh146v6kRkmdTYbTbam2ulFypt/J+IiAlvW9WLHXP6PLD0hgmqqn5Xhi5OMg==
+"@contentlayer/cli@0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.0.27.tgz#e2e17c4d8f3742f0604da1c6b6faa0c7cbdc1133"
+  integrity sha512-shtU9KAAMkmk+SKYtRxNtwMw0psCyTxZntNNDfqgIx6M2Vl3sONL+MWUyl2PJRujcbCDCZ79jShCPR4+ssvuqA==
   dependencies:
-    "@contentlayer/core" "0.0.28-dev.4"
-    "@contentlayer/utils" "0.0.28-dev.4"
+    "@contentlayer/core" "0.0.27"
+    "@contentlayer/utils" "0.0.27"
     clipanion "^3.2.0-rc.3"
     typanion "^3.5.0"
 
-"@contentlayer/client@0.0.28-dev.4":
-  version "0.0.28-dev.4"
-  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.0.28-dev.4.tgz#2a79eb077aabe42a83c0fbee31e344580eef0504"
-  integrity sha512-KNzaghgQM9KK+JXsYHPvczNjYefKGkl3SQjefKqKG5QErV9dRW0IbOwfiA0LxYZ/Gt2n3C2CYQu5iJunvQnmZA==
+"@contentlayer/client@0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.0.27.tgz#d701764d9eda8142187b3f9163bbe1a4a22c1dbb"
+  integrity sha512-Kqg1FGnmN59z96cfL9MFuN86lGYGpQ6so2LiFu7FW26mr6uzgKJOu6y+b+VfCn39QvfrLWVFU+zoHL14SLjJug==
   dependencies:
-    "@contentlayer/core" "0.0.28-dev.4"
+    "@contentlayer/core" "0.0.27"
 
 "@contentlayer/core@0.0.27":
   version "0.0.27"
@@ -1841,32 +1841,13 @@
     type-fest "^1.2.1"
     unified "^10.1.0"
 
-"@contentlayer/core@0.0.28-dev.4":
-  version "0.0.28-dev.4"
-  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.0.28-dev.4.tgz#29c3cfe8dad4dc302b2d707eb44c8b5cad1592ed"
-  integrity sha512-RW/kBPecV7CZmjQfZNAYPWMoojV/mnnGGAxW6Us/BqMkck38ZUjR60YjAvz0ezkzGTTmLSsinKEh7vexcQ3n6A==
+"@contentlayer/source-files@0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.27.tgz#c79bd4e96e7b2735e871f758afe1484589338dfe"
+  integrity sha512-R//YCqEHFqaK0HNz+3KGjg4uG4oWGap7JN6LaU5+BPVwWw7MYTKJZoInKk/CP4Id7RpMapGFvD1VbgB/+mkvwQ==
   dependencies:
-    "@contentlayer/utils" "0.0.28-dev.4"
-    camel-case "^4.1.2"
-    esbuild "0.11.x || 0.12.x"
-    gray-matter "^4.0.3"
-    markdown-wasm "^1.1.2"
-    mdx-bundler "^6.0.2"
-    pkg-up "^3.1.0"
-    rehype-stringify "^9.0.2"
-    remark-parse "^10.0.0"
-    remark-rehype "^10.0.0"
-    source-map-support "^0.5.20"
-    type-fest "^1.2.1"
-    unified "^10.1.0"
-
-"@contentlayer/source-files@0.0.28-dev.4":
-  version "0.0.28-dev.4"
-  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.28-dev.4.tgz#b744b73285c6b0d1918d65c11ad2e1de23d9a498"
-  integrity sha512-8aXpZN5dg5Olqp2GUdiWYkSmY4UqRLKPQPXbG/nrsGx8onN6qFBahBEb9bF6Pek0b5i0m/ecJ7GQ14DDz6HJUQ==
-  dependencies:
-    "@contentlayer/core" "0.0.28-dev.4"
-    "@contentlayer/utils" "0.0.28-dev.4"
+    "@contentlayer/core" "0.0.27"
+    "@contentlayer/utils" "0.0.27"
     chokidar "^3.5.2"
     glob "^7.1.7"
     glob-promise "^4.1.0"
@@ -1880,27 +1861,6 @@
   version "0.0.27"
   resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.0.27.tgz#63dd72c2b01cbd8ce1fab8e16f04b78d6012eb51"
   integrity sha512-yygeNY2NjMm8Qog8pdM2i5nPYSNO+6vGTHHwgTOmOASSH7xApDQWs3czYM1HKTNMaXx87UwdSlzVPRiUDUhs7w==
-  dependencies:
-    "@effect-ts/core" "^0.44.4"
-    "@effect-ts/otel" next
-    "@effect-ts/otel-node" next
-    "@opentelemetry/api" "^1.0.3"
-    "@opentelemetry/exporter-collector" "^0.24.0"
-    "@opentelemetry/node" "^0.24.0"
-    "@opentelemetry/resources" "^0.24.0"
-    "@opentelemetry/semantic-conventions" "^0.24.0"
-    "@opentelemetry/tracing" "^0.24.0"
-    chokidar "^3.5.2"
-    hash-wasm "^4.9.0"
-    inflection "^1.13.1"
-    oo-ascii-tree "^1.36.0"
-    ts-pattern "^3.3.3"
-    type-fest "^1.2.1"
-
-"@contentlayer/utils@0.0.28-dev.4":
-  version "0.0.28-dev.4"
-  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.0.28-dev.4.tgz#432979c36eabaffbaa54f07f2e433c7eaedd96ef"
-  integrity sha512-i3BzcSngNacEB5BbYsLpM2wfmljYHiyEYmNwxOwdmsLGWM3YDNli9qLDR9o1Iw8xfl+ureS9BDoZTPFaKyYRiQ==
   dependencies:
     "@effect-ts/core" "^0.44.4"
     "@effect-ts/otel" next
@@ -3999,16 +3959,16 @@ content-type@~1.0.4:
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
-contentlayer@^0.0.28-dev.4:
-  version "0.0.28-dev.4"
-  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.0.28-dev.4.tgz#a23bac42bc41e0bdb78cff3d84d6e2ba72678f2b"
-  integrity sha512-DpvhEHdy7X/1mqVVD8fbAXdNILPsA5bauI7IauXU6OGtfe5d7q1/1GeswWeEBcAylpQcf9Nm3JTyD870swb4KA==
+contentlayer@^0.0.27:
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.0.27.tgz#570ae01ac041cd7449d4c398ab68b1e3516aba0c"
+  integrity sha512-Sd5+/Nehquo93Ehlw5j0LCJ7p21mxfAnbI2H8k28CG5I9RwDhNuCD+mEs0JlnFuUynXQoq2V63yfZNznkL7Yjw==
   dependencies:
-    "@contentlayer/cli" "0.0.28-dev.4"
-    "@contentlayer/client" "0.0.28-dev.4"
-    "@contentlayer/core" "0.0.28-dev.4"
-    "@contentlayer/source-files" "0.0.28-dev.4"
-    "@contentlayer/utils" "0.0.28-dev.4"
+    "@contentlayer/cli" "0.0.27"
+    "@contentlayer/client" "0.0.27"
+    "@contentlayer/core" "0.0.27"
+    "@contentlayer/source-files" "0.0.27"
+    "@contentlayer/utils" "0.0.27"
 
 convert-source-map@1.7.0:
   version "1.7.0"

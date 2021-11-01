@@ -23,7 +23,7 @@
     "autoprefixer": "^10.3.7",
     "axios": "^0.22.0",
     "classnames": "^2.3.1",
-    "contentlayer": "^0.0.28-dev.4",
+    "contentlayer": "^0.0.27",
     "date-fns": "^2.25.0",
     "esbuild": "^0.13.8",
     "fuse.js": "^6.4.6",
