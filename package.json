@@ -28,7 +28,7 @@
     "esbuild": "^0.13.8",
     "fuse.js": "^6.4.6",
     "image-size": "1.0.0",
-    "mdx-bundler": "^4.1.0",
+    "mdx-bundler": "^6.0.2",
     "motion": "^10.2.1",
     "next": "^12.0.0",
     "next-auth": "4.0.0-beta.2",
