@@ -3,13 +3,9 @@
 @layer components {
   .emoji {
     display: inline-block;
-    height: 0.8em;
-    margin-bottom: 0;
-    margin-left: 0.1em;
-    margin-right: 0.1em;
-    margin-top: 0;
-    vertical-align: -0.1em;
-    width: 0.8em;
+    height: 1em;
+    vertical-align: -0.2em;
+    width: 1em;
   }
 
   .skip-nav {
