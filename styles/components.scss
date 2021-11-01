@@ -152,12 +152,6 @@
 
     .footnote-back {
       @apply tw-ml-1;
-      & > span {
-        @apply tw-w-full tw-h-full;
-        & > * {
-          @apply tw-w-[1em] tw-h-[1em];
-        }
-      }
     }
 
     .footnote-ref {
