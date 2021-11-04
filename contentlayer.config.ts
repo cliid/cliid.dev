@@ -96,13 +96,10 @@ const contentLayerConfig = makeSource({
       [
         rehypeTwemojify,
         {
-          className: 'emoji',
-          isNext: true,
+          framework: 'next',
+          params: { w: 32, q: 20 },
           base: '/static/images/twemoji',
-          params: {
-            w: 32,
-            q: 30
-          }
+          exclude: ['©', '®', '™', '℗']
         }
       ]
     ]

@@ -89,7 +89,7 @@
     "rehype-prism-plus": "^1.1.0",
     "rehype-probe-image-size": "^1.0.0",
     "rehype-slug": "5.0.0",
-    "rehype-twemojify": "^2.0.1",
+    "rehype-twemojify": "^3.1.0",
     "remark-gemoji": "^7.0.0",
     "remark-gfm": "^3.0.0",
     "remark-textr": "^5.0.1",

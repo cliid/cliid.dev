@@ -10144,17 +10144,17 @@ rehype-stringify@^9.0.0, rehype-stringify@^9.0.2:
     hast-util-to-html "^8.0.0"
     unified "^10.0.0"
 
-rehype-twemojify@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/rehype-twemojify/-/rehype-twemojify-2.0.1.tgz#5e49da03ed4d8905910f0666b1f42d1c2e4c35c1"
-  integrity sha512-Fqe++Iv5UnQ9e0TjrgeyAqk8C8lq4XKoFiGykW7vruYHxnQmdXorf+iSeRy8EQ8iXuPFTYdNyY1imC7T/fZRpg==
+rehype-twemojify@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/rehype-twemojify/-/rehype-twemojify-3.1.0.tgz#e1dc0de8b15b8ba741d7a79fae141d64f56992e3"
+  integrity sha512-o5cEjPqCm3Nwsuqz+7dcXG1wgKiAGbZEmidCzBb026irWEzKiVXHkzkE+r8kodIdza/8lwGCTFlOu/A4x0ySfg==
   dependencies:
     emoji-regex "^10.0.0"
     grapheme-splitter "^1.0.4"
     hast "^1.0.0"
     twemoji "^13.1.0"
     unified "^10.1.0"
-    unist-util-visit "^4.1.0"
+    unist-util-map "^3.0.0"
 
 rehype@12.0.0:
   version "12.0.0"
@@ -11843,6 +11843,13 @@ unist-util-is@^5.0.0:
   resolved "https://registry.yarnpkg.com/unist-util-is/-/unist-util-is-5.1.1.tgz#e8aece0b102fa9bc097b0fef8f870c496d4a6236"
   integrity sha512-F5CZ68eYzuSvJjGhCLPL3cYx45IxkqXSetCcRgUXtbcm50X2L9oOWQlfUfDdAf+6Pd27YDblBfdtmsThXmwpbQ==
 
+unist-util-map@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/unist-util-map/-/unist-util-map-3.0.0.tgz#ec4c3e4f3f65f559b6c232087af2a470f3e5db89"
+  integrity sha512-kyPbOAlOPZpytdyquF1g6qYpAjkpMpSPtR7TAj4SOQWSJfQ/LN+IFI2oWBvkxzhsPKxiMKZcgpp5ihZLLvNl6g==
+  dependencies:
+    "@types/unist" "^2.0.0"
+
 unist-util-position-from-estree@^1.0.0, unist-util-position-from-estree@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/unist-util-position-from-estree/-/unist-util-position-from-estree-1.1.1.tgz#96f4d543dfb0428edc01ebb928570b602d280c4c"
@@ -11926,7 +11933,7 @@ unist-util-visit@^3.0.0:
     unist-util-is "^5.0.0"
     unist-util-visit-parents "^4.0.0"
 
-unist-util-visit@^4.0.0, unist-util-visit@^4.1.0:
+unist-util-visit@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-4.1.0.tgz#f41e407a9e94da31594e6b1c9811c51ab0b3d8f5"
   integrity sha512-n7lyhFKJfVZ9MnKtqbsqkQEk5P1KShj0+//V7mAcoI6bpbUjh3C/OG8HVD+pBihfh6Ovl01m8dkcv9HNqYajmQ==
