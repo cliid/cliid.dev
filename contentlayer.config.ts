@@ -11,14 +11,28 @@ import remarkGfm from 'remark-gfm';
 import remarkTextr from 'remark-textr';
 import smartquotes from 'smartquotes';
 
-// Regex to change ... to … Uuugh, I hate regex.
+// Regex to change ... to …
 function ellipses(input: string) {
-  return input.replace(/((\?|\!)+|\.)?(\.{2,})\./gim, '$1\u2026');
+  return input.replace(/\.{3}/gim, '\u2026');
 }
 
 // Magically change all quotes to match typewriter standards. Hooray!
 function quotes(input: string) {
   return smartquotes(input);
+}
+
+function dashes(input: string) {
+  input = input.replace(/\-{3}/gim, '—');
+  input = input.replace(/\-{2}/gim, '–');
+  return input;
+}
+
+function trademarks(input: string) {
+  input = input.replace(/\((c|C)\)/gim, '©');
+  input = input.replace(/\((r|R)\)/gim, '®');
+  input = input.replace(/\((p|P)\)/gim, '℗');
+  input = input.replace(/\((tm|TM)\)/gim, '™');
+  return input;
 }
 
 const computedFields: ComputedFields = {
@@ -60,7 +74,11 @@ const contentLayerConfig = makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkGemoji, [remarkTextr, { plugins: [quotes, ellipses] }]],
+    remarkPlugins: [
+      remarkGfm,
+      remarkGemoji,
+      [remarkTextr, { plugins: [trademarks, quotes, ellipses, dashes] }]
+    ],
     rehypePlugins: [
       rehypeSlug,
       [
