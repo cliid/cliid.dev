@@ -1,27 +1,37 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTheme } from 'next-themes';
+
+import ExternalLink from './ExternalLink';
 
 export default function ProjectCard({
   title,
   description,
   href,
   gradient,
+  darkGradient,
   imageUrl
 }: {
   title: string;
   description: string;
   href: string;
   gradient: string;
+  darkGradient?: string;
   imageUrl: string;
 }) {
+  const { theme, resolvedTheme } = useTheme();
   return (
-    <Link href={href}>
-      <a
+    <ExternalLink href={href}>
+      <div
         className={cn(
           'tw-transform hover:tw-scale-[1.01]',
           'tw-rounded-xl tw-w-full tw-bg-gradient-to-r tw-p-1',
-          gradient
+          'tw-bg-bg dark:tw-bg-dark-bg',
+          darkGradient
+            ? theme === 'tw-dark' || resolvedTheme === 'tw-dark'
+              ? darkGradient
+              : gradient
+            : gradient
         )}
       >
         <div className="tw-flex tw-flex-row tw-justify-between tw-h-full tw-rounded-lg tw-p-8 tw-w-full">
@@ -39,7 +49,7 @@ export default function ProjectCard({
             </div>
           </div>
         </div>
-      </a>
-    </Link>
+      </div>
+    </ExternalLink>
   );
 }

@@ -8,12 +8,12 @@ export default function GuestbookPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container
-      title="Guestbook – Jiwu Jang"
+      title="Guestbook - Jiwu Jang"
       description="Sign my digital guestbook and share some wisdom."
     >
       <h1 className="page-title tw-mb-4">Guestbook</h1>
       <p className="tw-text-gray-600 dark:tw-text-gray-400 tw-mb-4">
-        Leave a comment below. It could be anything – appreciation, information, wisdom, or even
+        Leave a comment below. It could be anything—appreciation, information, wisdom, or even
         humor. Surprise me!
       </p>
       <Guestbook fallbackData={fallbackData} />

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Offline() {
   return (
-    <Container title="Offline – Jiwu Jang">
+    <Container title="Offline - Jiwu Jang">
       <div className="tw-flex tw-flex-col tw-justify-center tw-items-start tw-max-w-2xl tw-mx-auto tw-mb-16">
         <h1 className="page-title tw-mb-4">Internet connection not found</h1>
         <p className="tw-text-gray-600 dark:tw-text-gray-400 tw-mb-4">

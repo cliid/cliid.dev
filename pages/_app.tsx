@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
         <NextNprogress
-          color="#00807D"
+          color="#F96F6F"
           startPosition={0.3}
           stopDelayMs={200}
           height={2}

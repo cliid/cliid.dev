@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 export default function NotFound() {
   return (
-    <Container title="418 – Jiwu Jang">
+    <Container title="418 - Jiwu Jang">
       <div className="tw-flex tw-flex-row tw-items-center tw-space-x-4 tw-mb-4">
         <h1 className="page-title">418 - </h1>
         <div className="tw-relative tw-block tw-w-12 tw-h-12 animate-cutebounce">

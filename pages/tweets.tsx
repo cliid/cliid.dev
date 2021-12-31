@@ -6,7 +6,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 export default function Tweets({ tweets }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container
-      title="Tweets – Jiwu Jang"
+      title="Tweets - Jiwu Jang"
       description="A collection of tweets that inspire me, make me laugh, and make me think."
     >
       <h1 className="page-title tw-mb-4">Tweets</h1>

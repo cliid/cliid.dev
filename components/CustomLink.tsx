@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
 import { HiExternalLink, HiFlag, HiLink, HiMail } from 'react-icons/hi';
+
+import ExternalLink from './ExternalLink';
 const CustomLink = ({
   href,
   children,
@@ -53,10 +55,10 @@ const CustomLink = ({
     );
   } else {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+      <ExternalLink href={href} {...props}>
         {children}
         <HiExternalLink className={iconStyle} />
-      </a>
+      </ExternalLink>
     );
   }
 };

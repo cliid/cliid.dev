@@ -19,14 +19,12 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 
   return (
     <Container
-      title="Blog – Jiwu Jang"
+      title="Blog - Jiwu Jang"
       description="Personal thoughts on programming, life, investing and more."
     >
       <h1 className="page-title tw-mb-4">Blog</h1>
       <p className="tw-mb-4">
-        {`I've been writing on this website since 2021. 2021?
-            Yes, you got it right. This blog is infantly, but I believe it'll sometime be mature. 
-            Oh, and I've written ${posts.length} articles on this site. Use the search below to filter by title.`}
+        {`I've been writing on this website since 2021, and I've written ${posts.length} articles on this site. Search below to filter by title.`}
       </p>
       <div className="tw-relative tw-w-full">
         <input

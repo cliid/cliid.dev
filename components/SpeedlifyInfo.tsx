@@ -67,7 +67,7 @@ const SpeedlifyScore = ({ speedlifyUrl, hash }: { speedlifyUrl: string; hash: st
               <div
                 key={index.toString()}
                 className={cn(
-                  'tw-w-7 tw-h-7 tw-border tw-rounded-full tw-flex tw-justify-center tw-items-center capsize tw-text-xs',
+                  'tw-w-7 tw-h-7 tw-border tw-rounded-full tw-flex tw-justify-center tw-items-center tw-text-xs',
                   scoreColor(value)
                 )}
               >

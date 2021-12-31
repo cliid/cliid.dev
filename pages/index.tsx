@@ -1,5 +1,6 @@
 import BlogPostCard from '@components/BlogPostCard';
 import Container from '@components/Container';
+import ExternalLink from '@components/ExternalLink';
 import ProjectCard from '@components/ProjectCard';
 import Link from 'next/link';
 import React from 'react';
@@ -7,7 +8,7 @@ import React from 'react';
 export default function Home() {
   return (
     <Container>
-      <div className="tw-flex tw-flex-col-reverse sm:tw-flex-row tw-items-start tw-mb-16">
+      <div className="tw-flex tw-flex-col-reverse sm:tw-flex-row tw-items-start tw-mb-8">
         <div className="tw-flex tw-flex-col tw-pr-8">
           <div className="tw-flex tw-flex-row tw-mb-4">
             <div className="tw-w-12 tw-h-12 tw-p-1 tw-mr-2 tw-text-black dark:tw-text-white">
@@ -30,23 +31,15 @@ export default function Home() {
           <p className="page-title tw-text-2xl tw-text-gray-500 dark:tw-text-gray-300 tw-font-bold tw-mb-4">
             a.k.a. cliid
           </p>
-          <h2 className="tw-text-gray-700 dark:tw-text-gray-200 tw-mb-4">
-            Co-founder of&nbsp;
-            <a href="https://dazzle.works" rel="noopener noreferrer" target="_blank">
-              @dazzleofficial
-            </a>
-          </h2>
-          <p className="tw-text-gray-600 dark:tw-text-gray-400">
-            Creator of&nbsp;
-            <a href="https://seven.wiki" rel="noopener noreferrer" target="_blank">
-              Sevenwiki.
-            </a>
-            &nbsp;Building the web with&nbsp;
-            <a href="https://dazzle.works" rel="noopener noreferrer" target="_blank">
-              @dazzleofficial
-            </a>
-            .&nbsp;Occasional optimization fanatic. Thinking how to serve minimal code with maximal
-            user experience.
+          <p>
+            Howdy! I'm the creator of{' '}
+            <ExternalLink href="https://www.facebook.com/dustackle">Dustackle</ExternalLink>,{' '}
+            <ExternalLink href="https://github.com/cliid/ASKY-Python">ASKY</ExternalLink>, and{' '}
+            <ExternalLink href="https://seven.wiki">Sevenwiki</ExternalLink>.
+          </p>
+          <p>
+            I'm also the co-founder of{' '}
+            <ExternalLink href="https://dazzle.works">@dazzleofficial</ExternalLink>.
           </p>
         </div>
       </div>
@@ -77,44 +70,57 @@ export default function Home() {
           </a>
         </Link>
       </div>
-      <div className="tw-mb-16">
+      <div className="tw-mb-8">
         <h3 className="tw-font-bold tw-text-2xl md:tw-text-4xl tw-tracking-tight tw-mb-4 tw-text-black dark:tw-text-white">
           My Projects
         </h3>
         <p className="tw-text-gray-600 dark:tw-text-gray-400 tw-mb-4 tw-prose">
           <span>
-            I love making projects for fun, even if it's of no use. The list below are the projects
-            carefully coded by me. I've written a couple blog posts about the overall structure and
-            development process about those projects. Oh, by the way I always plan to make a new
-            project. It's hardcoded in my genetics 🧬🧬
+            The list below are the projects that I've done. I've written (and will write) a couple
+            blog posts about the overall structure and development process about those projects.
           </span>
         </p>
-
         <div className="tw-grid tw-grid-flow-row tw-gap-6 tw-grid-cols-1 md:tw-grid-cols-2">
           <ProjectCard
+            title="Dustackle."
+            description="A blazingly fast chatbot serving fine dust information in S. Korea."
+            href="https://www.facebook.com/dustackle"
+            gradient="tw-from-[#555555] tw-to-[#444444]"
+            imageUrl="/static/images/dustackle-logo.webp"
+          />
+          <ProjectCard
+            title="ASKY"
+            description="A 3D Virtual Girlfriend that can talk and play games with you."
+            href="https://github.com/cliid/ASKY-Python"
+            darkGradient="tw-from-[#55fc71] tw-to-[#55fc71]"
+            gradient="tw-from-[#41d84b] tw-to-[#41d84b]"
+            imageUrl="/static/images/asky-logo.webp"
+          />
+          <ProjectCard
             title="Sevenwiki."
-            description="A Markdown based tech-wiki focused on giving great user experience as well as providing high quality content."
+            description="A Markdown-based tech wiki for Koreans. Built with Next.js and Tailwind."
             href="https://seven.wiki"
             gradient="tw-from-[#7777ff] tw-to-[#7777ff]"
             imageUrl="/static/images/svw-logo.webp"
           />
           <ProjectCard
             title="cliid.dev"
-            description="A portfolio and a blog. Powered by Next.js, Preact, Tailwind, Contentlayer, Twemoji, Prisma, Planetscale and much more."
+            description="A portfolio and a blog. Powered by Next.js, Tailwind, and Contentlayer."
             href="https://cliid.dev"
             gradient="tw-from-[#000000] tw-to-[#000000]"
+            darkGradient="tw-from-[#ffffff] tw-to-[#ffffff]"
             imageUrl="/static/images/avatar.webp"
           />
           <ProjectCard
             title="Dazzle Inc."
-            description="A small company that dreams of positively impacting millions of users. Creating stuff that anyone can fall in love with."
+            description="Creating stuff that anyone can fall in love with."
             href="https://dazzle.works"
             gradient="tw-from-[#FF86B3] tw-to-[#FF86B3]"
             imageUrl="/static/images/dazzle-logo.webp"
           />
           <ProjectCard
             title="Coming soon..."
-            description="Initializing Yarn, installing TailwindCSS, creating new schemas with Prisma, and constantly deploying to ▲Vercel."
+            description="Initializing Yarn, installing TailwindCSS, and deploying to ▲Vercel."
             href="/404"
             gradient="tw-from-[#00AF54] tw-via-[#007CBE] tw-to-[#FFD639]"
             imageUrl="/static/images/construction.webp"

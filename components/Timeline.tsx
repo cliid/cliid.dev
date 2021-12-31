@@ -1,5 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 
+import ExternalLink from './ExternalLink';
+
 const Divider = () => {
   return <div className="default-colors tw-border tw-w-full tw-my-8" />;
 };
@@ -42,50 +44,48 @@ const FullTimeline = () => (
     <Year>2019</Year>
     <ul>
       <Step title="Made a virtual girlfriend 🔥">
-        I was lonely, so I made a virtual girlfriend with my colleagues at HYGEC. Simple, huh? BTW,
-        She can talk and do some games with you.
+        I was lonely, so I made a virtual girlfriend called ASKY. By the way, She can talk and do
+        some games with you.
       </Step>
     </ul>
     <Divider />
     <Year>2018</Year>
     <ul>
-      <Step title="Started at Hanyang University Gifted Education Center (HYGEC)">
-        It was my first interview, as well as my first standardized exam. Because it was my first
-        test, it made me feel so frightening. I can still remember that feeling. But well, luckily I
-        got accepted. Anyway, some of my colleagues were Informatics Olympiad gold medalists, so I
-        knew it was going to be a real challenge.
+      <Step title="Got into HYGEC">
+        It was my first experience with gifted education. I had to take "two" standardized tests, as
+        well as an interview, to get into HYGEC, at an age of 10.
       </Step>
     </ul>
     <Divider />
     <Year>2017</Year>
     <ul>
       <Step title="Travelled Europe for 80 days 🗺️">
-        I remember going to Yport, France, setting up a campsite and eating two pain au chocolats
-        with my family. An unforgettable experience.
+        I remember setting up a campsite with my family, eating up some barguettes and pain au
+        chocolats, at Yport, France. My grandparents also came to Europe, too!
       </Step>
     </ul>
     <Divider />
     <Year>2016</Year>
     <ul>
-      <Step title="Wrote my first line of code in C">
-        Yeah, I wrote my first line of code, in C. If it wasn't C, I would neither have loved
-        TypeScript nor C++. Anyway, hooray!
+      <Step title="Wrote my first line of code">
+        I wrote my first line of code, in C. If it wasn't C, I would neither have loved TypeScript
+        nor C++. Hooray!
       </Step>
     </ul>
     <Divider />
     <Year>2010</Year>
     <ul>
-      <Step title="Destroyed two laptops with my bare hand">
-        I put a pen on the hinge of my mom's laptop and smacked it. What happened? Of course, the
-        monitor broke, completely. Why did I do that? I don't know either.
+      <Step title="Destroyed two laptops 💻">
+        I put a pen on the hinge of my mom's laptop and smacked it. Why did I do that? I don't know.
       </Step>
     </ul>
     <Divider />
     <Year>2006</Year>
     <ul>
       <Step title="Born 👶🏼🍼">
-        My mom fainted when she had me. That day, September 27, is also Google's birthday. Is it a
-        coincidence that I'm doing programming?
+        I was born at September the 27, which was also Google's birthday, as well as the date when
+        Richard Stallman announced the GNU Manifesto. Is it a coincidence that I'm doing
+        programming?
       </Step>
     </ul>
   </>
@@ -101,23 +101,26 @@ export default function Timeline() {
       </h3>
       <Year>2021</Year>
       <ul>
+        <Step title="Got into HAFS 🌄">
+          I've had an interview, and got into{' '}
+          <ExternalLink href="http://hafs.hs.kr/?main">
+            Hankuk Academy of Foreign Studies
+          </ExternalLink>
+          .
+        </Step>
         <Step title="Founded Dazzle 🚀">
-          I've founded a company called Dazzle with&nbsp;
-          <a href="https://github.com/krrrr0">@krrrr0</a>
+          I've founded <ExternalLink href="https://dazzle.works">dazzle.</ExternalLink> with&nbsp;
+          <ExternalLink href="https://github.com/krrrr0">@krrrr0</ExternalLink>
           &nbsp;and&nbsp;
-          <a href="https://github.com/shi3do">@shi3do</a>
-          ,&nbsp;and we're currently developing a tech-focused wiki called&nbsp;
-          <a href="https://seven.wiki">Sevenwiki</a> for Koreans.
+          <ExternalLink href="https://github.com/shi3do">@shi3do</ExternalLink>.
         </Step>
         <Step title="Graduated from HYGEC 🎓">
-          Finally got my graduation diploma from an advanced gifted education program hosted by
-          Hanyang University, located in South Korea.
+          Finally graduated from{' '}
+          <ExternalLink href="https://gifted.hanyang.ac.kr">HYGEC</ExternalLink> hosted by{' '}
+          <ExternalLink href="https://hanyang.ac.kr">Hanyang University</ExternalLink>.
         </Step>
         <Step title="Made this website 🌐">
           Started developing this website for various usages.
-        </Step>
-        <Step title="Started investing 📈">
-          After saving $10k, I started investing in stocks and real estate.
         </Step>
       </ul>
       <Divider />

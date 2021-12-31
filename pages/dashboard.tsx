@@ -7,7 +7,7 @@ import TopTracks from '@components/TopTracks';
 export default function Dashboard() {
   return (
     <Container
-      title="Dashboard – Jiwu Jang"
+      title="Dashboard - Jiwu Jang"
       description="My personal dashboard, built with Next.js API routes deployed as serverless functions."
     >
       <h1 className="page-title tw-mb-4">Dashboard</h1>
