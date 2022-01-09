@@ -30,7 +30,7 @@ export function useScroll() {
     return () => {
       window.removeEventListener('scroll', listener);
     };
-  });
+  }, []);
 
   return {
     scrollY,

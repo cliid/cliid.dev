@@ -16,12 +16,12 @@ module.exports = {
   prefix: 'tw-',
   mode: 'jit',
   purge: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './layouts/**/*.{js,ts,jsx,tsx,mdx}',
-    './lib/**/*.{js,ts,jsx,tsx,mdx}',
-    './constants/**/*.{js,ts,jsx,tsx,mdx}',
-    './hooks/**/*.{js,ts,jsx,tsx,mdx}'
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
+    './constants/**/*.{js,ts,jsx,tsx}',
+    './hooks/**/*.{js,ts,jsx,tsx}'
   ],
   darkMode: 'class',
   theme: {
@@ -50,20 +50,20 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#F96F6F',
-          50: '#FEDDDD',
-          100: '#FDD1D1',
-          200: '#FCB8B8',
-          300: '#FBA0A0',
-          400: '#FA8787',
-          500: '#F96F6F',
-          600: '#F74848',
-          700: '#F62121',
-          800: '#E40A0A',
-          900: '#BD0808'
+          DEFAULT: '#7777FF',
+          50: '#D3D3FF',
+          100: '#C9C9FF',
+          200: '#B4B4FF',
+          300: '#A0A0FF',
+          400: '#8B8BFF',
+          500: '#7777FF',
+          600: '#6363FF',
+          700: '#4E4EFF',
+          800: '#3A3AFF',
+          900: '#2525FF'
         },
         bg: '#fff',
-        'dark-bg': '#09101b',
+        'dark-bg': '#000000',
         text: colors.trueGray[400],
         'dark-text': colors.trueGray[600],
         border: '#e5e5e5',

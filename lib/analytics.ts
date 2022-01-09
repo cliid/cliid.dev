@@ -5,7 +5,9 @@ export const useAnalytics = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {};
+    const handleRouteChange = (url: string) => {
+      // TODO: do some analytics stuff
+    };
     //When the component is mounted, subscribe to router changes
     //and log those page views
     router.events.on('routeChangeComplete', handleRouteChange);

@@ -9,27 +9,6 @@
     width: 1em;
   }
 
-  .skip-nav {
-    @apply tw-absolute tw-px-4 tw-py-3 tw-duration-200 tw-transform tw--translate-y-12 tw--left-1/4 focus:tw-top-4 focus:tw-translate-y-3 tw--top-8;
-  }
-
-  #skip {
-    scroll-margin-top: 1.125rem;
-  }
-
-  /* https://seek-oss.github.io/capsize/ */
-  .capsize::before {
-    content: '';
-    display: table;
-    margin-bottom: -0.098em;
-  }
-
-  .capsize::after {
-    content: '';
-    display: table;
-    margin-top: -0.219em;
-  }
-
   .highlight-line {
     @apply tw-block tw-px-4 tw--mx-4 tw-border-l-4 tw-border-blue-500;
   }
@@ -88,12 +67,11 @@
     animation: cutebounce 0.8s infinite;
   }
 
-  .tw-prose {
-    .tweet a {
-      font-weight: inherit;
-      text-decoration: inherit;
-    }
+  .link-icon {
+    @apply group-hover:tw-text-black dark:group-hover:tw-text-white tw-w-[1em] tw-h-[1em] tw-inline-block tw-text-gray-500 dark:tw-text-gray-500 tw-bg-transparent dark:tw-bg-transparent tw-ml-0.5 tw-mb-1;
+  }
 
+  .tw-prose {
     a {
       @apply tw-no-underline tw-text-primary hover:tw-text-black dark:hover:tw-text-white;
     }

@@ -1,7 +1,6 @@
 {
-    "name": "cliid.dev",
-    "short_name": "cliid.dev",
-    "description": "Jiwu Jang – Developer, writer, investor.",
+    "name": "Sevenwiki.",
+    "short_name": "Sevenwiki.",
     "icons": [
         {
             "src": "/static/favicons/android-chrome-192x192.png",
@@ -14,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone"
 }

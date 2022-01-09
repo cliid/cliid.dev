@@ -8,7 +8,7 @@
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
       "@hooks/*": ["hooks/*"],
-      "@constants/*": ["constants/*"]
+      "@pages/*": ["pages/*"]
     }
   }
 }

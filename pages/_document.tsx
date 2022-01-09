@@ -1,21 +1,23 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-  // static async getInitialProps(ctx: DocumentContext) {
-  //   const initialProps = await Document.getInitialProps(ctx)
-
-  //   return initialProps
-  // }
-
   render() {
     return (
-      <Html lang="en">
+      <Html lang="ko">
         <Head>
-          <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/static/fonts/Pretendard-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/fonts/Pretendard-Black.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
           />
           <link
             rel="apple-touch-icon"
@@ -35,13 +37,13 @@ class MyDocument extends Document {
             href="/static/favicons/favicon-16x16.png"
           />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
-          <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#000000" />
-          <meta name="msapplication-TileColor" content="#000000" />
+          <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#7777ff" />
+          <link rel="shortcut icon" href="/static/favicons/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#7777ff" />
           <meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
-          <meta name="theme-color" content="#000000" />
-          <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+          <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body className="tw-bg-[#fff] dark:tw-bg-[#09101b] tw-text-gray-600 dark:tw-text-gray-400 tw-border-[#e5e5e5] dark:tw-border-[#333333]">
+        <body className="tw-bg-bg dark:tw-bg-dark-bg tw-text-gray-600 dark:tw-text-gray-400 tw-border-[#e5e5e5] dark:tw-border-[#333333]">
           <Main />
           <NextScript />
         </body>
