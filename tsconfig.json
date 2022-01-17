@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "declaration": true,
@@ -18,7 +19,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
       "@data/*": ["data/*"],
@@ -29,6 +29,6 @@
       "@pages/*": ["pages/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "src/types.d.ts", "**/*.ts", "**/*.tsx", "src/lib/contents.js"],
   "exclude": ["node_modules"]
 }

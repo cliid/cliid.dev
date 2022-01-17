@@ -1,0 +1,17 @@
+@tailwind utilities;
+
+@layer utilities {
+  .rehype-code-title {
+    @apply tw-px-5 tw-py-3 tw-text-sm tw-font-bold tw-border tw-border-b-0 tw-rounded-t-lg;
+
+    font-family: monospace;
+  }
+
+  .rehype-code-title + div > pre {
+    @apply tw-mt-0 tw-rounded-t-none;
+  }
+
+  .title {
+    @apply tw-text-black dark:tw-text-white;
+  }
+}

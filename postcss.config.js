@@ -11,8 +11,10 @@ module.exports = {
         features: {
           'custom-properties': false
         }
-      }
+      },
+      cssnano: {}
     }),
-    tailwindcss: {}
+    tailwindcss: {},
+    autoprefixer: {}
   }
 };

@@ -17,13 +17,13 @@ const generateClassName = incstr.idGenerator({
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com giscus.app;
-  child-src 'self' *.youtube.com *.google.com *.twitter.com giscus.app;
-  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  child-src 'self';
+  style-src 'self' 'unsafe-inline' cdn.jsdelivr.net;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
-  font-src 'self' fonts.gstatic.com;
+  font-src 'self' fonts.gstatic.com cdn.jsdelivr.net;
 `;
 
 const securityHeaders = [
@@ -54,31 +54,21 @@ const securityHeaders = [
   {
     key: 'Strict-Transport-Security',
     value: 'max-age=31536000; includeSubDomains; preload'
-  },
-  {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
   }
 ];
 
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
   eslint: {
-    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
+    dirs: ['src']
   },
   swcMinify: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   },
   images: {
-    domains: [
-      'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com', // Twitter Profile Picture
-      's3-alpha.figma.com',
-      'octodex.github.com',
-      'upload.wikimedia.org'
-    ],
+    domains: ['kanata.seven.wiki'],
     formats: ['image/avif', 'image/webp']
   },
   webpack: (config, { dev, isServer }) => {

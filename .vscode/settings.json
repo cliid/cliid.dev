@@ -31,6 +31,7 @@
   "less.validate": false,
   "scss.validate": false,
   "files.exclude": {
-    "node_modules/": true
-  }
+    "node_modules": true
+  },
+  "git.ignoreLimitWarning": true
 }
