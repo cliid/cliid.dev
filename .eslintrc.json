@@ -6,7 +6,7 @@
     "node": true,
     "es6": true
   },
-  "extends": ["prettier", "plugin:mdx/recommended"],
+  "extends": ["prettier", "plugin:mdx/recommended", "next"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": [
@@ -37,7 +37,6 @@
     },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": ["plugin:@next/next/recommended"],
       "plugins": ["simple-import-sort", "unused-imports", "prettier"],
       "rules": {
         "no-unused-vars": 0,

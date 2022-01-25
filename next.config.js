@@ -18,13 +18,14 @@ const generateClassName = incstr.idGenerator({
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com giscus.app;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com giscus.app cdn.jsdelivr.net;
   child-src 'self' *.youtube.com *.google.com *.twitter.com giscus.app;
-  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  style-src 'self' 'unsafe-inline' *.googleapis.com cdn.jsdelivr.net;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
   font-src 'self' fonts.gstatic.com;
+  worker-src 'self' blob:;
 `;
 
 const securityHeaders = [
@@ -64,9 +65,9 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
   eslint: {
-    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'hooks', 'constants']
+    dirs: ['src']
   },
   swcMinify: true,
   sassOptions: {
@@ -78,7 +79,8 @@ const nextConfig = {
       'pbs.twimg.com', // Twitter Profile Picture
       's3-alpha.figma.com',
       'octodex.github.com',
-      'upload.wikimedia.org'
+      'upload.wikimedia.org',
+      'img.shields.io'
     ],
     formats: ['image/avif', 'image/webp']
   },
@@ -160,15 +162,6 @@ const nextConfig = {
       {
         source: '/:path*',
         headers: securityHeaders
-      }
-    ];
-  },
-  async redirects() {
-    return [
-      {
-        source: '/resume',
-        destination: 'https://cliid.notion.site/cliid/Resume-66f1b9343226457a8b11be5e9062407c',
-        permanent: true
       }
     ];
   }

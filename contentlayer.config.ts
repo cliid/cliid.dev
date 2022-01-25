@@ -9,23 +9,6 @@ import rehypeTwemojify from 'rehype-twemojify';
 import remarkGemoji from 'remark-gemoji';
 import remarkGfm from 'remark-gfm';
 import remarkTextr from 'remark-textr';
-import smartquotes from 'smartquotes';
-
-// Regex to change ... to …
-function ellipses(input: string) {
-  return input.replace(/\.{3}/gim, '\u2026');
-}
-
-// Magically change all quotes to match typewriter standards. Hooray!
-function quotes(input: string) {
-  return smartquotes(input);
-}
-
-function dashes(input: string) {
-  input = input.replace(/\-{3}/gim, '—');
-  input = input.replace(/\-{2}/gim, '–');
-  return input;
-}
 
 function trademarks(input: string) {
   input = input.replace(/\((c|C)\)/gim, '©');
@@ -74,11 +57,7 @@ const contentLayerConfig = makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog],
   mdx: {
-    remarkPlugins: [
-      remarkGfm,
-      remarkGemoji,
-      [remarkTextr, { plugins: [trademarks, quotes, ellipses, dashes] }]
-    ],
+    remarkPlugins: [remarkGfm, remarkGemoji, [remarkTextr, { plugins: [trademarks] }]],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -92,7 +71,7 @@ const contentLayerConfig = makeSource({
       ],
       rehypeCodeTitles,
       [rehypePrismPlus, { showLineNumbers: true }],
-      [rehypeProbeImageSize, { staticDir: 'public' }],
+      [rehypeProbeImageSize as any, { staticDir: 'public' }],
       [
         rehypeTwemojify,
         {

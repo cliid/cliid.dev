@@ -2,35 +2,29 @@
   "workbench.colorTheme": "Material Theme Ocean High Contrast",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.formatOnSave": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "tailwindCSS.emmetCompletions": false,
+  "tailwindCSS.emmetCompletions": true,
   // Run ESLint each time you save a file
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "[css,scss,less,sass]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
-  },
-  "[javascript,javascriptreact,typescript,typescriptreact,markdown,mdx]": {
+  "[javascript,javascriptreact,typescript,typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "stylelint.configFile": "stylelint.config.js",
   "eslint.packageManager": "yarn",
   "eslint.alwaysShowStatus": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "markdown",
-    "mdx"
-  ],
-  "stylelint.validate": ["css", "scss", "less", "sass"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "files.exclude": {
-    "node_modules/": true
-  }
+    "node_modules": true
+  },
+  "git.ignoreLimitWarning": true,
+  "headwind.runOnSave": true,
+  "headwind.removeDuplicates": true,
+  "headwind.customTailwindPrefix": "tw-",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

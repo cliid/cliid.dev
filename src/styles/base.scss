@@ -1,0 +1,108 @@
+@tailwind base;
+
+$navbar-height: 4.5rem;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tw-font-semibold tw-mb-4 tw-scroll-mt-[4.8rem] sm:tw-scroll-mt-[5.5rem];
+  }
+
+  h1 {
+    @apply tw-text-3xl;
+  }
+
+  h2 {
+    @apply tw-text-2xl;
+  }
+
+  h3 {
+    @apply tw-text-xl;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply tw-text-lg;
+  }
+
+  pre {
+    @apply tw-p-0 tw-border;
+  }
+
+  code {
+    @apply tw-text-sm tw-font-semibold;
+
+    &::before,
+    &::after {
+      content: '`';
+    }
+
+    font-family: 'JetBrains Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
+      monospace;
+  }
+
+  pre code {
+    @apply tw-font-normal;
+
+    &::before,
+    &::after {
+      content: '';
+    }
+  }
+
+  a {
+    @apply tw-no-underline tw-text-primary hover:tw-text-black dark:hover:tw-text-white;
+  }
+
+  img {
+    /* Don't apply styles to next/image */
+    @apply tw-m-0;
+  }
+
+  p {
+    @apply tw-font-normal tw-text-base sm:tw-text-[1.05rem] tw-mb-4;
+
+    line-height: 1.625rem;
+  }
+
+  ::selection {
+    @apply tw-bg-[#e5e5e6] dark:tw-bg-[#3e4451];
+  }
+
+  * {
+    background-color: transparent;
+    border-color: inherit;
+    box-sizing: border-box;
+    color: inherit;
+    transition-duration: 50ms;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @apply tw-scroll-mt-[5.1rem] sm:tw-scroll-mt-[5.5rem];
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale; /* Firefox */
+    height: 100%;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+      'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    @apply tw-bg-bg dark:tw-bg-dark-bg tw-text-text dark:tw-text-dark-text tw-border-border dark:tw-border-dark-border;
+  }
+
+  .fonts-loaded body {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
+      'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-style: normal;
+  }
+}

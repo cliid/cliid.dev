@@ -1,0 +1,221 @@
+@tailwind components;
+
+@layer components {
+  .emoji {
+    display: inline-block;
+    height: 1em;
+    margin: 0 0.05em 0 0.1em;
+    vertical-align: -0.1em;
+    width: 1em;
+  }
+
+  .skip-nav {
+    @apply tw-absolute tw-px-4 tw-py-3 tw-duration-200 tw-transform tw--translate-y-12 tw--left-1/4 focus:tw-top-4 focus:tw-translate-y-3 tw--top-8;
+  }
+
+  #skip {
+    scroll-margin-top: 1.125rem;
+  }
+
+  .wiki-heading-content {
+    @apply tw-mb-8;
+  }
+
+  .border {
+    @apply tw-border-2 tw-border-border dark:tw-border-dark-border;
+  }
+
+  .step > h3 {
+    @apply tw-my-0;
+  }
+
+  .link-icon {
+    @apply group-hover:tw-text-black dark:group-hover:tw-text-white tw-w-[1em] tw-h-[1em] tw-inline-block tw-text-gray-500 dark:tw-text-gray-500 tw-ml-0.5 tw-mb-1;
+  }
+
+  .active-guide > a {
+    @apply tw-font-bold tw-text-black dark:tw-text-white;
+  }
+
+  .active-article > a {
+    @apply tw-font-bold tw-text-black dark:tw-text-white;
+  }
+
+  .rehype-code-title {
+    @apply tw-text-sm tw-font-semibold tw-border tw-border-b-0 tw-rounded-t-md;
+
+    font-family: 'JetBrains Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
+      monospace;
+    padding: 1em;
+  }
+
+  .rehype-code-title + div > pre {
+    @apply tw-mt-0 tw-rounded-t-none;
+  }
+
+  nav.toc {
+    @apply tw-relative;
+
+    .toc-link-h2 {
+      @apply tw-ml-[1rem];
+    }
+    .toc-link-h3 {
+      @apply tw-ml-[2rem];
+    }
+    .toc-link-h4 {
+      @apply tw-ml-[3rem];
+    }
+    .toc-link-h5 {
+      @apply tw-ml-[4rem];
+    }
+    .toc-link-h6 {
+      @apply tw-ml-[5rem];
+    }
+  }
+
+  .task-list-item {
+    @apply tw-pl-0;
+
+    &::before {
+      display: none;
+    }
+
+    &:first-child,
+    &:last-child {
+      @apply tw-my-0;
+    }
+
+    input {
+      @apply tw-mr-2;
+    }
+  }
+
+  /* Hide the section label for visual users. */
+  .sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+  }
+
+  [data-footnote-ref] {
+    font-size: 0.7rem;
+
+    &::before {
+      content: '[';
+    }
+
+    &::after {
+      content: ']';
+    }
+  }
+
+  .highlight-line {
+    @apply tw-block tw-px-4 tw--mx-4 tw-border-l-4 tw-border-blue-500;
+  }
+
+  .metric-card {
+    > a {
+      @apply tw-no-underline;
+    }
+    > p {
+      @apply tw-my-2;
+    }
+  }
+
+  .step > h3 {
+    @apply tw-my-0;
+  }
+
+  @keyframes shrink {
+    0%,
+    100% {
+      height: 0.75rem;
+    }
+    50% {
+      height: 0.375rem;
+    }
+  }
+
+  @keyframes expand {
+    0%,
+    100% {
+      height: 0.375rem;
+    }
+    50% {
+      height: 0.75rem;
+    }
+  }
+
+  .tweet a {
+    font-weight: inherit;
+    text-decoration: inherit;
+  }
+
+  a.anchor {
+    margin-left: 0.2em;
+    span.icon.icon-link {
+      font-size: 1em;
+
+      &::after {
+        content: '#';
+
+        @apply tw-font-black;
+      }
+    }
+  }
+
+  pre {
+    @apply tw-p-0;
+  }
+
+  pre code {
+    @apply tw-p-3;
+  }
+
+  code {
+    @apply tw-text-sm;
+  }
+
+  .task-list-item {
+    @apply tw-pl-0;
+
+    &::before {
+      display: none;
+    }
+
+    &:first-child,
+    &:last-child {
+      @apply tw-my-0;
+    }
+
+    input {
+      @apply tw-mr-2;
+    }
+  }
+
+  .footnote-back {
+    @apply tw-ml-1;
+  }
+
+  .footnote-ref {
+    @apply tw-m-0 tw-no-underline hover:tw-text-primary-600 dark:hover:tw-text-primary-600;
+    > sup {
+      @apply tw-ml-0.5 tw-text-primary dark:tw-text-primary;
+
+      font-size: 0.6rem;
+
+      &::before {
+        content: '[';
+      }
+
+      &::after {
+        content: ']';
+      }
+    }
+  }
+}
