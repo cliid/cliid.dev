@@ -1,7 +1,8 @@
 /**
- * useSettings React custom hook
+ * Get global settings
+ *
  * Usage:
- *    const { maxWidth } = useSettings();
+ *    const settings = useSettings();
  */
 
 export function useSettings() {

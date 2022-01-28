@@ -9,7 +9,7 @@ $navbar-height: 4.5rem;
   h4,
   h5,
   h6 {
-    @apply tw-font-semibold tw-mb-4 tw-scroll-mt-[4.8rem] sm:tw-scroll-mt-[5.5rem];
+    @apply tw-font-semibold tw-mb-4 tw-scroll-mt-[4.8rem] sm:tw-scroll-mt-[5.5rem] tw-tracking-tight;
   }
 
   h1 {

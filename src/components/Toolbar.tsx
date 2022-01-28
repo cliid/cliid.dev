@@ -10,7 +10,7 @@ import menu2 from 'react-useanimations/lib/menu2';
 const ToolbarBtn = (_props: Record<string, any>) => {
   let props = { ..._props };
   let className =
-    'tw-flex tw-items-center tw-justify-center tw-w-10 tw-h-10 hover:tw-text-black dark:hover:tw-text-white';
+    'tw-flex tw-justify-center tw-items-center tw-w-10 tw-h-10 hover:tw-text-black dark:hover:tw-text-white';
   if (typeof props.className === 'string') {
     className += ' ';
     className += props.className;

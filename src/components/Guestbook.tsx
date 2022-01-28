@@ -8,6 +8,8 @@ import { Key, useRef, useState } from 'react';
 import useSWR, { useSWRConfig } from 'swr';
 import { Form, FormState } from 'typings';
 
+import Button from './Button';
+
 function GuestbookEntry({ entry, user }: { entry: any; user: any }) {
   const { mutate } = useSWRConfig();
   const deleteEntry = async (e: { preventDefault: () => void }): Promise<void> => {
@@ -21,23 +23,20 @@ function GuestbookEntry({ entry, user }: { entry: any; user: any }) {
   };
 
   return (
-    <div className="tw-flex tw-flex-col tw-space-y-2">
-      <div className="tw-w-full tw-prose dark:tw-prose-dark">{entry.body}</div>
-      <div className="tw-flex tw-items-center">
-        <p className="tw-text-sm tw-text-gray-400 dark:tw-text-gray-600">
-          {format(new Date(entry.updated_at), 'yyyy년 M월 d일, h시 m분')},&nbsp;
-        </p>
-        <p className="tw-text-sm tw-font-semibold tw-text-gray-500">{entry.created_by}</p>
+    <div className="tw-flex tw-flex-col tw-gap-y-2">
+      <div className="tw-px-4 tw-py-2 tw-w-full tw-rounded-2xl tw-border-2">{entry.body}</div>
+      <div className="tw-flex tw-justify-end tw-items-center">
+        <span className="tw-text-sm tw-text-gray-400 dark:tw-text-gray-600">
+          {format(new Date(entry.updated_at), 'yyyy년 M월 d일, h시 m분')}
+        </span>
+        <span className="tw-text-sm tw-text-gray-400 dark:tw-text-gray-600">&nbsp;/&nbsp;</span>
+        <span className="tw-text-sm tw-font-semibold tw-text-gray-500">{entry.created_by}</span>
+      </div>
+      <div className="tw-flex tw-justify-end">
         {user && entry.created_by === user.name && (
-          <>
-            <span className="tw-text-gray-200 dark:tw-text-gray-800">/</span>
-            <button
-              className="tw-text-sm tw-text-red-600 dark:tw-text-red-400"
-              onClick={deleteEntry}
-            >
-              삭제하기
-            </button>
-          </>
+          <button className="tw-text-sm tw-text-red-600 dark:tw-text-red-400" onClick={deleteEntry}>
+            삭제하기
+          </button>
         )}
       </div>
     </div>
@@ -86,7 +85,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
 
   return (
     <>
-      <div className="tw-w-full tw-p-6 tw-my-4 tw-border tw-rounded">
+      <div className="tw-p-6 tw-my-4 tw-w-full tw-rounded tw-border">
         <h5 className="tw-text-lg tw-font-bold tw-text-gray-900 md:tw-text-xl dark:tw-text-gray-100">
           방명록 작성하기
         </h5>
@@ -94,30 +93,30 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
           이 웹사이트의 미래 방문객에게 하고싶은 말을 전해주세요!
         </p>
         {!session && (
-          <button
-            className="tw-flex tw-items-center tw-justify-center tw-h-8 tw-my-4 tw-font-bold tw-border-2 tw-rounded tw-w-28"
+          <Button
+            className="tw-my-4 tw-font-semibold"
             onClick={() => {
               signIn('github');
             }}
           >
             로그인하기
-          </button>
+          </Button>
         )}
         {session?.user && (
-          <form className="tw-relative tw-my-4" onSubmit={leaveEntry}>
+          <form
+            className="tw-flex tw-flex-row tw-gap-x-2 tw-items-center tw-my-4"
+            onSubmit={leaveEntry}
+          >
             <input
               ref={inputEl}
-              aria-label="Your message"
-              placeholder="Your message..."
+              aria-label="메시지를 남겨주세요."
+              placeholder="메시지를 남겨주세요."
               required
-              className="tw-block tw-w-full tw-py-2 tw-pl-4 tw-pr-32 tw-mt-1 tw-rounded-md focus:tw-ring-primary focus:tw-border-primary"
+              className="tw-py-2 tw-pr-32 tw-pl-4 tw-w-full tw-rounded-md tw-border-2"
             />
-            <button
-              className="tw-absolute tw-flex tw-items-center tw-justify-center tw-h-8 tw-px-4 tw-py-1 tw-font-bold tw-rounded tw-right-1 tw-top-1 tw-w-28"
-              type="submit"
-            >
-              {form.state === Form.Loading ? <LoadingSpinner /> : 'Sign'}
-            </button>
+            <Button className="tw-font-semibold" type="submit">
+              {form.state === Form.Loading ? <LoadingSpinner /> : '작성하기'}
+            </Button>
           </form>
         )}
         {form.state === Form.Error ? (
@@ -125,8 +124,8 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
         ) : form.state === Form.Success ? (
           <SuccessMessage>{form.message}</SuccessMessage>
         ) : (
-          <p className="tw-text-sm">
-            개인정보는 이름과 작성한 방명록의 이메일을 띄우기 위함이니 너무 걱정하지 마세요.
+          <p className="tw-text-sm tw-font-semibold tw-tracking-tight">
+            개인정보는 오직 이름과 작성한 방명록의 이메일을 띄우기 위한 용도로만 사용됩니다.
           </p>
         )}
       </div>

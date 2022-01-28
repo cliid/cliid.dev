@@ -13,7 +13,7 @@ import { ThemeProvider } from 'next-themes';
 import NextNprogress from 'nextjs-progressbar';
 import React, { useEffect } from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   useAnalytics();
 
   // FOUT with Class
@@ -59,4 +59,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </ThemeProvider>
     </SessionProvider>
   );
-}
+};
+
+export default App;
