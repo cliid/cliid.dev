@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "workbench.colorTheme": "Gruvbox Material Dark",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "tailwindCSS.emmetCompletions": true,
