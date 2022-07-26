@@ -1,0 +1,72 @@
+---
+title: MongoDB Tips & Tricks
+publishedAt: '2022-05-21'
+summary: 'What I Learned From Refactoring Sevenwiki.'
+---
+
+# MongoDB apparently can't handle Humongous data due to its design.
+
+MongoDB. We all know, we all praise. NoSQL! How wonderful is it?
+
+But, when you start to dive deep in into the complexities of it,
+it sort of feels like... lost.
+
+We, or at least I thought it was such a wonderful database,
+fast, scalable, and developer-friendly. (Well, you might think it still is.)
+But it wasn't all sunshines and rainbows :/
+I had quite a lot of nit-picky skills to learn by trial-and-error.
+
+So this post is about the common pitfalls you would want to avoid while using MongoDB.
+
+First, we'll talk about something a bit more shallow: arrays.
+
+# Arrays
+
+> A backend developer crying out while he first meets MongoDB:
+> **Hooray! No more crappy tables and relations and joins and all that s\*\*\*!**
+
+> The day after service launch:
+> `mongodb: maximum file size exceeded.`
+
+With MongoDB, people started throwing out a bunch of array-focused models.
+Well, It's easier for the devs to code!
+
+But MongoDB uses BSON.
+BSON can only store 16MB.
+If it exceeds 16MB, which quite commonly occurs for history files,
+log files, and the like, it spits out an error.
+
+What happens next?
+
+User input gets ignored, services malfunction,
+servers crash (when even errors aren't properly handled), and BOOM!
+
+So how can we fix this....
+
+## The easier way (with caveats)
+
+The lazy developer might say, why don't we just extend the maximum limit from,
+say, 16MB to 64MB?
+
+And, it would **work**, thanks to the MongoDB devs who created GridFS.
+
+Happily ever after.
+
+## The harder way (that pays you back)
+
+A more sophisticated developer would try to refactor the models.
+
+She would separate arrays, make an array element into a separate model,
+those models would reference back the original document,
+by something like `'parent_id': 'some_random_ObjectId'`.
+
+That would allow the developer to query elements of that new model
+and retrieve only elements that have the `parent_id` to something.
+
+This achieves the same functionality with, well, not exceeding the limit.
+
+Since each element is stored in a separate document, it should still have plenty of capacity left.
+
+The drawback of this approach is, I guess, a subtle increase in time complexity (or MongoDB might optimize the call and make it even faster)?
+
+# To Be Continued...
