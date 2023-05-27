@@ -23,13 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         value={{ dark: 'tw-dark', light: 'tw-light' }}
         disableTransitionOnChange
       >
-        <NextNprogress
-          color="#F96F6F"
-          startPosition={0.3}
-          stopDelayMs={50}
-          height={3}
-          showOnShallow={true}
-        />
+        <NextNprogress startPosition={0.3} stopDelayMs={50} height={3} showOnShallow={true} />
         <Head>
           <meta
             name="viewport"

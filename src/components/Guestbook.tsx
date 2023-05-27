@@ -91,12 +91,12 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
         </p>
         {!session && (
           <Button
-            className="tw-my-2 tw-font-extrabold"
+            className="tw-my-3 tw-font-extrabold"
             onClick={() => {
               signIn('github');
             }}
           >
-            Sign in with GitHub
+            Sign in
           </Button>
         )}
         {session?.user && (
@@ -109,7 +109,7 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
               aria-label="Please leave a message below."
               placeholder="Please leave a message below."
               required
-              className="tw-w-full tw-py-2 tw-pl-4 tw-pr-32 tw-border-2 tw-rounded-md"
+              className="tw-w-full tw-px-4 tw-py-2 tw-border-2 tw-rounded-md tw-h-11"
             />
             <Button className="tw-font-extrabold" type="submit">
               {form.state === Form.Loading ? <LoadingSpinner /> : 'Submit'}
