@@ -1,5 +1,5 @@
+import { globby } from '@cjs-exporter/globby';
 import { writeFileSync } from 'fs';
-import { globby } from 'globby';
 import prettier from 'prettier';
 
 async function generate() {
