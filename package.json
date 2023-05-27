@@ -1,11 +1,11 @@
 {
   "name": "cliid.dev",
-  "version": "v1.0.0-canary.1",
+  "version": "v2.0.0",
   "private": true,
   "scripts": {
     "start": "NODE_ENV='development' next-remote-watch ./data",
     "dev": "NODE_ENV='development' next dev",
-    "build": "prisma generate && NODE_ENV='production' next build && NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs && NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-sitemap.mjs",
+    "build": "prisma generate && contentlayer build && NODE_ENV='production' next build && NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs && NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-sitemap.mjs",
     "serve": "next start",
     "generate": "contentlayer build",
     "generate-dev": "contentlayer dev",

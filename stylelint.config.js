@@ -1,5 +1,4 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
   plugins: ['stylelint-scss', 'stylelint-order', 'stylelint-prettier'],
   rules: {
     'prettier/prettier': [
@@ -14,7 +13,8 @@ module.exports = {
         bracketSpacing: true
       }
     ],
-    'at-rule-no-unknown': [
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': [
       true,
       {
         ignoreAtRules: [
