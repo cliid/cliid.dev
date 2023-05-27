@@ -5,34 +5,15 @@ import '@styles/prism.scss';
 import '@styles/fonts.scss';
 
 import { useAnalytics } from '@lib/analytics';
-import FontFaceObserver from 'fontfaceobserver';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NextNprogress from 'nextjs-progressbar';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const App = ({ Component, pageProps }: AppProps) => {
   useAnalytics();
-
-  // FOUT with Class
-  useEffect(() => {
-    // Optimization for Repeat Views
-    if (sessionStorage.foutWithClassFontsLoaded) {
-      document.documentElement.className += ' fonts-loaded';
-      return;
-    }
-
-    const pretendard = new FontFaceObserver('Pretendard');
-
-    Promise.all([pretendard.load()]).then(function () {
-      document.documentElement.className += ' fonts-loaded';
-
-      // Optimization for Repeat Views
-      sessionStorage.foutWithClassFontsLoaded = true;
-    });
-  }, []);
 
   return (
     <SessionProvider>

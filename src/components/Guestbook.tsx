@@ -24,10 +24,10 @@ function GuestbookEntry({ entry, user }: { entry: any; user: any }) {
 
   return (
     <div className="tw-flex tw-flex-col tw-gap-y-2">
-      <div className="tw-px-4 tw-py-2 tw-w-full tw-rounded-2xl tw-border-2">{entry.body}</div>
-      <div className="tw-flex tw-justify-end tw-items-center">
+      <div className="tw-w-full tw-px-4 tw-py-2 tw-border-2 tw-rounded-2xl">{entry.body}</div>
+      <div className="tw-flex tw-items-center tw-justify-end">
         <span className="tw-text-sm tw-text-gray-400 dark:tw-text-gray-600">
-          {format(new Date(entry.updated_at), 'yyyy년 M월 d일, h시 m분')}
+          {format(new Date(entry.updated_at), 'LLLL do, yyyy, h:mm')}
         </span>
         <span className="tw-text-sm tw-text-gray-400 dark:tw-text-gray-600">&nbsp;/&nbsp;</span>
         <span className="tw-text-sm tw-font-semibold tw-text-gray-500">{entry.created_by}</span>
@@ -35,7 +35,7 @@ function GuestbookEntry({ entry, user }: { entry: any; user: any }) {
       <div className="tw-flex tw-justify-end">
         {user && entry.created_by === user.name && (
           <button className="tw-text-sm tw-text-red-600 dark:tw-text-red-400" onClick={deleteEntry}>
-            삭제하기
+            Delete
           </button>
         )}
       </div>
@@ -79,43 +79,40 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
     mutate('/api/guestbook');
     setForm({
       state: Form.Success,
-      message: '방명록을 작성해주셔서 감사합니다.'
+      message: 'Thank you!'
     });
   };
 
   return (
     <>
-      <div className="tw-p-6 tw-my-4 tw-w-full tw-rounded tw-border">
-        <h5 className="tw-text-lg tw-font-bold tw-text-gray-900 md:tw-text-xl dark:tw-text-gray-100">
-          방명록 작성하기
-        </h5>
+      <div className="tw-w-full tw-p-6 tw-my-4 tw-border tw-rounded">
         <p className="tw-my-1 tw-text-gray-800 dark:tw-text-gray-200">
-          이 웹사이트의 미래 방문객에게 하고싶은 말을 전해주세요!
+          Please leave any words you want to say to future visitors :)
         </p>
         {!session && (
           <Button
-            className="tw-my-4 tw-font-semibold"
+            className="tw-my-2 tw-font-extrabold"
             onClick={() => {
               signIn('github');
             }}
           >
-            로그인하기
+            Sign in with GitHub
           </Button>
         )}
         {session?.user && (
           <form
-            className="tw-flex tw-flex-row tw-gap-x-2 tw-items-center tw-my-4"
+            className="tw-flex tw-flex-row tw-items-center tw-my-4 tw-gap-x-2"
             onSubmit={leaveEntry}
           >
             <input
               ref={inputEl}
-              aria-label="메시지를 남겨주세요."
-              placeholder="메시지를 남겨주세요."
+              aria-label="Please leave a message below."
+              placeholder="Please leave a message below."
               required
-              className="tw-py-2 tw-pr-32 tw-pl-4 tw-w-full tw-rounded-md tw-border-2"
+              className="tw-w-full tw-py-2 tw-pl-4 tw-pr-32 tw-border-2 tw-rounded-md"
             />
-            <Button className="tw-font-semibold" type="submit">
-              {form.state === Form.Loading ? <LoadingSpinner /> : '작성하기'}
+            <Button className="tw-font-extrabold" type="submit">
+              {form.state === Form.Loading ? <LoadingSpinner /> : 'Submit'}
             </Button>
           </form>
         )}
@@ -124,9 +121,10 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
         ) : form.state === Form.Success ? (
           <SuccessMessage>{form.message}</SuccessMessage>
         ) : (
-          <p className="tw-text-sm tw-font-semibold tw-tracking-tight">
-            개인정보는 오직 이름과 작성한 방명록의 이메일을 띄우기 위한 용도로만 사용됩니다.
-          </p>
+          <small>
+            Your personal information is used solely for displaying your name and e-mail on the
+            guestbook.
+          </small>
         )}
       </div>
       <div className="tw-mt-4 tw-space-y-8">

@@ -1,4 +1,4 @@
-import { Giscus as InternalGiscus } from '@giscus/react';
+import InternalGiscus from '@giscus/react';
 import { useTheme } from 'next-themes';
 import React from 'react';
 

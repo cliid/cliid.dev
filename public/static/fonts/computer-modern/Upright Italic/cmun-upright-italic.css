@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Computer Modern Upright Italic';
+  font-style: italic;
+  font-weight: normal;
+  src: url('cmunui.eot');
+  src: url('cmunui.eot?#iefix') format('embedded-opentype'), url('cmunui.woff') format('woff'),
+    url('cmunui.svg#cmunui') format('svg');
+}

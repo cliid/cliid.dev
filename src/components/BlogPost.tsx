@@ -1,15 +1,14 @@
 import fetcher from '@lib/fetcher';
+import type { Post } from 'contentlayer/generated';
 import NextLink from 'next/link';
 import useSWR from 'swr';
 import { Views } from 'typings';
-
-import type { Blog } from '.contentlayer/types';
 
 export default function BlogPost({
   title,
   summary,
   slug
-}: Pick<Blog, 'title' | 'summary' | 'slug'>) {
+}: Pick<Post, 'title' | 'summary' | 'slug'>) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 

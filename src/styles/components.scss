@@ -157,14 +157,13 @@
   }
 
   a.anchor {
-    margin-left: 0.2em;
+    @apply tw-no-underline;
+
     span.icon.icon-link {
-      font-size: 1em;
+      font-size: 0.8em;
 
       &::after {
-        content: '#';
-
-        @apply tw-font-black;
+        content: ' 🔗';
       }
     }
   }
@@ -199,7 +198,9 @@
   }
 
   .footnote-back {
-    @apply tw-ml-1;
+    ::before {
+      content: ' ' !important;
+    }
   }
 
   .footnote-ref {

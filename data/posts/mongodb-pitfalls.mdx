@@ -1,0 +1,113 @@
+---
+title: MongoDB — Pitfalls To Avoid
+publishedAt: '2022-05-21'
+summary: 'What I learned about MongoDB from refactoring Sevenwiki.'
+---
+
+![MongoDB](https://webimages.mongodb.com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png)
+
+> MongoDB apparently can't handle hu-Mongo-us data, due to its design.
+
+_MongoDB. We all know, we all praise. NoSQL! How wonderful is it?_
+
+But, when you start diving deep in into its complexities (and its documentation), it sort of feels like... lost.
+
+At first glance, I thought it was such a perfect database --- fast, scalable, and even developer-friendly!
+
+But alas, after using it for a while, I realized that it wasn't all sunshines and rainbows after all.
+The trade-offs that I thought were negligible were real, and the database itself became a constraint,
+in a different way as opposed to the usual "constraint" of SQL databases.
+Besides, there were a lot of nit-picky skills to learn by trial-and-error.
+
+So this post is about the common pitfalls you would want to avoid while using MongoDB.
+
+First, we have the problem of abusing arrays.
+
+### Arrays
+
+> A backend developer, meeting MongoDB for the first time, being exultant and almost feeling like he found his true love:
+> **Hooray! 🥳 No more tables and relations and joins and all that stuff! It's even developer-friendly! JSON! 🎉🎉**
+
+> The day after service launch:
+> `mongodb: maximum file size exceeded.` 😔
+
+With MongoDB, people started throwing out a bunch of array-focused models, with the rationale of "Well, It's easier for the devs to code!"
+
+But software development isn't for developers. _It's for the users._ (Well, if the users are devs themselves, then it's for the developers, true, but the focus is still on the users.)
+
+Ultimately, a new framework's purpose is to satisfy the user's needs better, whether it be through increasing the speed and efficiency of computation, or through enhancing
+
+But MongoDB uses BSON.
+BSON can only store up to 16MB.
+If the size exceeds 16MB, which quite commonly occurs for history files, log files, and the like, the database spits out an error.
+
+What happens next?
+
+User input gets ignored, services malfunction, servers crash (when even errors aren't properly handled), ... and **boom**💥!
+
+So how can we fix this?
+
+#### The easier way (with caveats)
+
+The lazy developer might say, why don't we just extend the maximum limit from,
+say, 16MB to 64MB?
+
+And, it should "work," thanks to the MongoDB devs who created [GridFS](https://www.mongodb.com/docs/manual/core/gridfs/).
+
+Happily ever after ... or is it?
+
+The developer will get the same error regardless, when the size of the logs hits the capacity of 64MB.
+Now, there is no GridFS to salvage him from service crashes. Eventually, he has to go through the harder way --- the pain is just delayed a bit.
+
+#### The harder way (that pays you back)
+
+The more involved and enthusiastic developer would try to refactor the schema from the beginning.
+
+She separates the arrays, moves each array element into a separate model,
+where those models would reference back the original document,
+through something like `'parent_id': 'some_ObjectId'`.
+
+Such refactoring would allow the developer to query elements of that new model
+and retrieve only elements that have the `parent_id` to something.
+
+This method achieves the same functionality while fixing the original problem, since it would never exceed the limit for most cases.
+Each element is stored in a separate document, so there should be plenty of capacity left.
+
+The drawback of this approach might be a subtle increase in time complexity. (Perhaps, MongoDB might optimize the call and make the operations faster.)
+
+### Eventual Consistency
+
+The next possible problem is eventual consistency.
+
+As a NoSQL database, MongoDB doesn't provide full ACID transaction guarantees by default, but only eventual consistency.
+Although it sounds good, in reality, not really.
+
+Here are some issues frequently raised by eventual consistency:
+
+1. Inconsistency during replication: In an eventually consistent system, updates made on one replica may take some time to propagate to other replicas. During this propagation period, different replicas may have different views of the data, leading to temporary inconsistencies. This inconsistency can cause confusion and difficulties in maintaining data integrity.
+2. Complex application logic: Eventual consistency requires application developers to handle conflicts and reconcile data inconsistencies. This complexity arises due to the need to resolve conflicts that can occur when multiple replicas receive conflicting updates or operate on stale data. Implementing the necessary logic to handle conflicts can be challenging and prone to errors.
+3. Read anomalies: Due to the eventual consistency model, read operations might return stale or outdated data if the replica being accessed has not yet received the latest updates. This can result in read anomalies and impact the accuracy and reliability of the application.
+4. Dependency on conflict resolution mechanisms: Resolving conflicts in an eventually consistent system typically relies on conflict resolution mechanisms such as timestamps, versioning, or conflict resolution algorithms. The effectiveness of these mechanisms determines the accuracy and consistency of the final resolved data. Choosing and implementing the right conflict resolution strategy can be complex and critical to maintaining data integrity.
+5. Increased complexity in application development: Developing applications that can handle eventual consistency adds complexity to the development process. Developers need to carefully design their data models, handle conflicts, implement conflict resolution logic, and consider the impact of inconsistent data on application behavior. This complexity can lead to longer development cycles and increased maintenance efforts.
+6. Trade-off between consistency and latency: Eventual consistency prioritizes low latency and availability over strong consistency. While this trade-off can be acceptable for some applications, it may not be suitable for scenarios that require strict consistency guarantees, such as financial transactions or critical data updates.
+7. User perception and usability challenges: Inconsistencies and delays in data propagation can lead to challenges in user perception and experience. Users may encounter situations where data they expect to be updated is still stale or inconsistent across different parts of the system, which can result in confusion and frustration.
+
+### Beware of Data Duplication
+
+Denormalization, a core principle of NoSQL databases, enhances read performance by storing related data together. However, denormalization can lead to data duplication and redundancy if not managed properly.
+
+### Complex Relationships and Limited Joins
+
+NoSQL databases like MongoDB are not designed for complex joins across multiple collections. Designing data models with complex relationships can be challenging, requiring careful consideration of how data will be accessed and queried. Assess the need for complex relationships and consider alternative approaches such as embedding related data or using application-level handling to meet your requirements.
+
+### Migration Issues
+
+Moving data to MongoDB or even between different MongoDB deployments can present migration issues due to differences in schema and data modeling.
+
+### Scalability Challenges
+
+MongoDB's horizontal scalability is one of its key strengths. However, scaling a NoSQL database introduces challenges related to data distribution, consistency, and sharding strategies. One must consider factors such as data partitioning, sharding keys, and monitoring to ensure even resource utilization and optimal performance.
+
+## Conclusion
+
+In conclusion, while MongoDB offers many benefits, it's important to be aware of and address potential pitfalls. Avoid misuse of arrays to prevent storage limit errors. Consider the complexities of eventual consistency and plan accordingly. Manage data duplication carefully when denormalizing. Be mindful of MongoDB's limitations on complex relationships and joins. Plan migrations and consider scalability challenges. By navigating these challenges, you can make the most of MongoDB's capabilities. Happy coding with MongoDB!

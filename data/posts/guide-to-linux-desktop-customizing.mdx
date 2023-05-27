@@ -1,0 +1,115 @@
+---
+title: A Guide to Linux Desktop Customization
+publishedAt: 2022-02-22
+summary: Which distro to use? What desktop environment? What kind of window manager? OS hardening?
+---
+
+![Distros](https://imageio.forbes.com/specials-images/imageserve/5db3049ca210800006f06ca9/0x0.png?format=png&width=1200)
+
+## Choosing Distros
+
+There are tons of distros that you can choose from, but as an experienced [distro hopper](https://www.urbandictionary.com/define.php?term=distrohopper), I'm pretty certain you don't need to try all of 'em.
+
+A couple of famous distros are: [Arch Linux](https://archlinux.org/), [Debian](https://www.debian.org/), [Ubuntu](https://ubuntu.com/), and [Red Hat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) (yes, and its [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) version, [CentOS](https://www.centos.org/)).
+
+There are a plethora of other Arch-like, Debian-like, Ubuntu-like, and RHEL-like distros as well, but as the theme of this article is centered around desktop _customization_, I'll mostly focus on Arch-based distros (since they're highly customizable).
+
+## For Tinkerers
+
+If you want to try tinkering with your own system and also want to try an Arch-based distribution, I highly recommend [EndeavourOS](https://endeavouros.com/).
+
+Why EndeavourOS?
+
+- Arch-based distro. Highly customizable.
+- It directly uses Arch's main repo, which means you get the latest fixes and features.
+- You can install it via a graphical interface, which is quite cool.
+- The community is very helpful, but has its fine share of advanced users as well.
+- You're free to choose between Xfce, Budgie, Cinnamon, Deepin, i3, KDE Plasma 5, LXQt, Mate, or GNOME.
+
+There are other Arch-based distros as well: [Artix](https://artixlinux.org/), [Arco](https://arcolinux.com/), [Manjaro](https://manjaro.org/), [Garuda](https://garudalinux.org/), and many more.
+You can try them if you want to, but sticking with Endeavour won't be a bad experience, I promise.
+
+## Choosing a Desktop Environment (DE)
+
+The next step, after choosing the distro that you like, is to choose a [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment) (or often abbreviated as DE).
+A desktop environment provides the user interface, as well as the underlying tools and utilities that enable you to interact with your Linux machine.
+
+### System Requirements
+
+Different desktop environments have varying system resource requirements.
+If you have an older or less powerful computer, you may want to opt for a lightweight desktop environment such as [Xfce](https://www.xfce.org/) or [LXQt](https://lxqt-project.org/).
+On the other hand, if you have a high-end system, you can choose a more feature-rich and visually appealing environment like [GNOME](https://www.gnome.org/) or [KDE Plasma](https://kde.org/plasma-desktop/).
+
+### Customization
+
+Linux is known for its flexibility and customization options.
+If you enjoy tweaking and customizing your desktop environment, look for one that offers extensive customization features.
+
+[KDE Plasma](https://kde.org/plasma-desktop/), for example, provides a vast array of customization options, allowing you to personalize nearly every aspect of the desktop.
+Other environments like Xfce and Cinnamon also offer a good level of customization.
+
+### Personal Rant
+
+Personally, I don't use a DE, since I feel it's quite bloated. (GNOME, uugh.)
+
+I rather use the [i3 window manager](https://i3wm.org/), since it's fast and simple.
+A sample screenshot of a machine running Arch Linux with i3 is shown below.
+
+![Arch with i3](https://fediverse.blog/static/media/F384D5F9-9FBB-72A9-BDF8-39F4942B4442.png)
+
+The main reason I use Arch + i3 is because the system is simple and fast to operate as a daily machine,
+but the undeniable fact is that it's elegant and even beautiful: in one word, a tiling window manager is _cool_. Switching between windows in a subsecond with just two keystrokes is _hypercool_.
+Besides, [sway](https://swaywm.org/), [bspwm](https://github.com/baskerville/bspwm), [yabai](https://github.com/koekeishiya/yabai), [Amethyst](https://github.com/ianyh/Amethyst), or any other tiling window manager is also pretty cool.
+
+### Setting Up Software
+
+Now, it's time for the software, but the software itself is mostly a matter of preference (e.g., Vim vs. Emacs).
+
+But be aware that **different distros have different availabilities with regards to software.** (You may have to entirely compile from source if your distro doesn't have what you want.)
+
+For instance, Arch has the [Arch User Repository (AUR)](https://aur.archlinux.org/) besides its [official repository](https://archlinux.org/packages/), a type of repository that other distros don't have.
+The AUR is a bit loose in terms of reviewing uploaded software, thus everyone can upload their software, which is good but also potentially bad, since malicious software can be secretly deployed.
+
+### Operating System Hardening
+
+Since this is an article about Linux desktop customization, I'll also go through operating system hardening (which you might want to skip if this is your first time tinkering with your operating system).
+
+There are several hardened operating systems available that prioritize security and incorporate various security enhancements. Here are some examples of hardened operating systems:
+
+1. [HardenedBSD](https://hardenedbsd.org/): HardenedBSD is a security-enhanced variant of FreeBSD. It includes various security features, such as ASLR, stack and heap protections, memory protections, kernel hardening, MAC frameworks, and proactive security updates.
+2. [OpenBSD](https://www.openbsd.org/): OpenBSD is an open-source operating system known for its strong focus on security. It follows a proactive security approach, emphasizing code correctness, secure defaults, and thorough code review. OpenBSD incorporates features like secure memory management, address space layout randomization (ASLR), W^X enforcement, and privilege separation.
+3. [Qubes OS](https://www.qubes-os.org/): Qubes OS is a security-focused operating system that uses virtualization to create isolated compartments called "qubes." Each qube runs its own operating system, and security boundaries are enforced between them. Qubes OS provides strong isolation, compartmentalization, and security features to protect against various types of attacks.
+4. [SELinux (Security-Enhanced Linux)](https://en.wikipedia.org/wiki/Security-Enhanced_Linux): SELinux is a security framework integrated into various Linux distributions. It provides mandatory access control (MAC) policies and fine-grained access control mechanisms. SELinux enforces security policies, reduces the impact of vulnerabilities, and provides a higher level of security at the operating system level.
+5. [Tails](https://tails.boum.org/): Tails (The Amnesic Incognito Live System) is a security-focused Linux distribution designed for privacy and anonymity. It runs as a live operating system from a USB stick or DVD and routes internet connections through the Tor network, ensuring user anonymity and strong privacy protections.
+
+Using a hardened operating system like HardenedBSD can provide additional security enhancements compared to a standard operating system.
+
+For example, some key features and benefits of HardenedBSD include:
+
+1. Kernel hardening: HardenedBSD applies various kernel-level hardening techniques, including stronger separation of user and kernel spaces, secure memory management, and improved process isolation to mitigate kernel-level vulnerabilities and attacks.
+2. Address Space Layout Randomization (ASLR): HardenedBSD implements ASLR, which randomizes the memory layout of processes, making it more difficult for attackers to exploit memory-based vulnerabilities.
+3. Stack and heap protections: HardenedBSD applies stack and heap protections, such as stack canaries and guard pages, to detect and prevent buffer overflow and memory corruption attacks.
+4. Memory protections: It incorporates memory protections like W^X (Write XOR Execute) enforcement, which helps prevent code execution from writable memory regions, reducing the risk of code injection attacks.
+5. Secure random number generation: HardenedBSD provides a stronger and more secure random number generation mechanism, reducing the risk of weak or predictable cryptographic keys or values.
+6. Mandatory Access Control (MAC): HardenedBSD supports MAC frameworks like MAC Framework and TrustedBSD's Security Event Auditing, enabling fine-grained access control and enhanced auditing capabilities.
+7. Proactive security updates: HardenedBSD aims to provide security patches and updates in a more proactive manner than the standard FreeBSD, ensuring that security vulnerabilities are addressed promptly.
+
+It's important to note that although using a hardened operating system like HardenedBSD can provide added security,
+it may also introduce some trade-offs.
+The additional security measures implemented in a hardened system can sometimes severely impact performance or compatibility with certain software or hardware configurations.
+Hence, it's essential to carefully evaluate the specific requirements of _your system_ before deploying a hardened operating system. (Important! Not other people's requirements, but just what _you_ need.)
+
+## Conclusion
+
+Really, Linux desktop customization offers a wealth of options for personalizing your experience.
+
+Here's a brief recap:
+
+1. Choose a distro aligned with your customization goals, such as an Arch-based distribution like EndeavourOS.
+2. Select a desktop environment based on your system's specifications and desired level of customization.
+   Linux's flexibility allows for extensive tweaking, with options like KDE Plasma, Xfce, and Cinnamon offering robust customization features.
+3. Consider operating system hardening for enhanced security, but weigh the potential trade-offs.
+
+Ultimately, Linux may empower you to create a personalized and secure desktop environment that suits your own needs and preferences.
+
+Thanks for reading, and goodbye!

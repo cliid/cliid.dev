@@ -1,4 +1,4 @@
-import { allBlogs } from '.contentlayer/data';
+import { allPosts } from 'contentlayer/generated';
 import { writeFileSync } from 'fs';
 import RSS from 'rss';
 
@@ -9,7 +9,7 @@ async function generate() {
     feed_url: 'https://cliid.dev/feed.xml'
   });
 
-  allBlogs.map((post) => {
+  allPosts.map((post) => {
     feed.item({
       title: post.title,
       url: `https://cliid.dev/blog/${post.slug}`,

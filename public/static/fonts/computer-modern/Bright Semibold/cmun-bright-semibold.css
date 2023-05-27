@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Computer Modern Bright Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('cmunbsr.eot');
+  src: url('cmunbsr.eot?#iefix') format('embedded-opentype'), url('cmunbsr.woff') format('woff'),
+    url('cmunbsr.ttf') format('truetype'), url('cmunbsr.svg#cmunbsr') format('svg');
+}
+
+@font-face {
+  font-family: 'Computer Modern Bright Semibold';
+  font-style: italic;
+  font-weight: normal;
+  src: url('cmunbso.eot');
+  src: url('cmunbso.eot?#iefix') format('embedded-opentype'), url('cmunbso.woff') format('woff'),
+    url('cmunbso.ttf') format('truetype'), url('cmunbso.svg#cmunbso') format('svg');
+}

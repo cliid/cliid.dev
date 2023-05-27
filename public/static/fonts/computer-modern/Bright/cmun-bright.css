@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Computer Modern Bright';
+  font-style: normal;
+  font-weight: normal;
+  src: url('cmunbmr.eot');
+  src: url('cmunbmr.eot?#iefix') format('embedded-opentype'), url('cmunbmr.woff') format('woff'),
+    url('cmunbmr.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Computer Modern Bright';
+  font-style: normal;
+  font-weight: bold;
+  src: url('cmunbbx.eot');
+  src: url('cmunbbx.eot?#iefix') format('embedded-opentype'), url('cmunbbx.woff') format('woff'),
+    url('cmunbbx.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Computer Modern Bright';
+  font-style: italic;
+  font-weight: normal;
+  src: url('cmunbmo.eot');
+  src: url('cmunbmo.eot?#iefix') format('embedded-opentype'), url('cmunbmo.woff') format('woff'),
+    url('cmunbmo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Computer Modern Bright';
+  font-style: italic;
+  font-weight: bold;
+  src: url('cmunbxo.eot');
+  src: url('cmunbxo.eot?#iefix') format('embedded-opentype'), url('cmunbxo.woff') format('woff'),
+    url('cmunbxo.ttf') format('truetype');
+}

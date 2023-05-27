@@ -80,7 +80,7 @@ export default function Tweet({
           </svg>
         </Link>
       </div>
-      <div className="tw-mt-4 tw-mb-1 tw-text-lg tw-leading-normal tw-text-gray-700 tw-whitespace-pre-wrap dark:tw-text-gray-300">
+      <div className="tw-mt-4 tw-mb-1 tw-text-lg tw-leading-normal tw-text-gray-700 tw-break-words tw-whitespace-pre-wrap dark:tw-text-gray-300">
         {formattedText}
       </div>
       {media && media.length ? (
@@ -91,16 +91,27 @@ export default function Tweet({
               : 'tw-inline-grid tw-grid-cols-2 tw-gap-x-2 tw-gap-y-2 tw-my-2'
           }
         >
-          {media.map((m: any) => (
-            <NextImage
-              key={m.media_key}
-              alt={text}
-              height={m.height}
-              width={m.width}
-              src={m.url}
-              className="tw-rounded"
-            />
-          ))}
+          {media.map((m: any) =>
+            m.type === 'photo' ? (
+              <NextImage
+                key={m.media_key}
+                alt={text}
+                height={m.height}
+                width={m.width}
+                src={m.url}
+                className="tw-rounded"
+              />
+            ) : (
+              <NextImage
+                key={m.media_key}
+                alt={text}
+                height={m.height}
+                width={m.width}
+                src={m.preview_image_url}
+                className="tw-rounded"
+              />
+            )
+          )}
         </div>
       ) : null}
       {quoteTweet ? <Tweet {...quoteTweet} /> : null}

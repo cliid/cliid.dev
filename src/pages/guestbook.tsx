@@ -7,8 +7,8 @@ export default function GuestbookPage({
   fallbackData
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Template title="방명록" description="온라인 방명록.">
-      <p className="tw-mb-4">아래에 댓글을 남겨주세요 ;)</p>
+    <Template title="Guestbook" description="">
+      <p className="tw-mb-4">Feel free to leave a comment below!</p>
       <Guestbook fallbackData={fallbackData} />
     </Template>
   );

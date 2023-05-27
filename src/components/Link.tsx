@@ -17,10 +17,8 @@ export default function Link(props: any) {
   switch (linkType) {
     case LinkType.Internal: {
       return (
-        <NextLink href={href}>
-          <a {...props} className={className}>
-            {children}
-          </a>
+        <NextLink href={href} {...props} className={className}>
+          {children}
         </NextLink>
       );
     }

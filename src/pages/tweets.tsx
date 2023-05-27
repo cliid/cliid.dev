@@ -5,8 +5,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 export default function Tweets({ tweets }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Template title="트윗들" description="나를 웃게 하고 또 생각해보게 해주는 트윗들.">
-      <p className="tw-mb-4">저에게 영감을 주거나 웃게 하고, 또 생각하게 만든 트윗들입니다.</p>
+    <Template title="Tweets" description="Stuff that I like, or stuff that makes me think.">
       {tweets.map(
         (
           tweet: JSX.IntrinsicAttributes & {
@@ -28,11 +27,20 @@ export default function Tweets({ tweets }: InferGetStaticPropsType<typeof getSta
 
 export async function getStaticProps(_: GetStaticPropsContext) {
   const tweets = await getTweets([
-    '1499243317275492355',
-    '1498982413615386625',
-    '1499180855520112642',
-    '1499169386279624708',
-    '1499206854827819013'
+    '1662041331982651392',
+    '1660696280190812160',
+    '1356728209035812866',
+    '1659198653305856000',
+    '1659432625616957440',
+    '1577805024717152262',
+    '1617116981437792259',
+    '1637996332475359232',
+    '1587873929443565572',
+    '1659697212853727234',
+    '439146153280827392',
+    '1512791605593653258',
+    '1661985435495669760',
+    '1435310172985982977'
   ]);
 
   return { props: { tweets } };

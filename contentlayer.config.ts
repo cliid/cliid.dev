@@ -9,6 +9,7 @@ import rehypeTwemojify from 'rehype-twemojify';
 import remarkGemoji from 'remark-gemoji';
 import remarkGfm from 'remark-gfm';
 import remarkTextr from 'remark-textr';
+import smartquotes from 'smartquotes-ts';
 
 function trademarks(input: string) {
   input = input.replace(/\((c|C)\)/gim, '©');
@@ -16,6 +17,18 @@ function trademarks(input: string) {
   input = input.replace(/\((p|P)\)/gim, '℗');
   input = input.replace(/\((tm|TM)\)/gim, '™');
   return input;
+}
+
+function quotes(input: string) {
+  return smartquotes.string(input);
+}
+
+function ellipses(input: string) {
+  return input.replaceAll('...', '\u2026');
+}
+
+function dashes(input: string) {
+  return input.replaceAll('---', '—').replaceAll('--', '–');
 }
 
 const computedFields: ComputedFields = {
@@ -41,10 +54,10 @@ const computedFields: ComputedFields = {
   }
 };
 
-const Blog = defineDocumentType(() => ({
-  name: 'Blog',
-  filePathPattern: 'blog/*.mdx',
-  bodyType: 'mdx',
+const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: 'posts/**/*.mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     publishedAt: { type: 'string', required: true },
@@ -55,9 +68,13 @@ const Blog = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog],
+  documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkGemoji, [remarkTextr, { plugins: [trademarks] }]],
+    remarkPlugins: [
+      remarkGfm,
+      remarkGemoji,
+      [remarkTextr, { plugins: [dashes, ellipses, trademarks, quotes] }]
+    ],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -75,10 +92,9 @@ const contentLayerConfig = makeSource({
       [
         rehypeTwemojify,
         {
-          framework: 'next',
-          params: { w: 32, q: 20 },
-          base: '/static/images/twemoji',
-          exclude: ['©', '®', '™', '℗']
+          params: { w: 32, q: 100 },
+          twemoji: { size: 'svg', baseUrl: '/static/images/twemoji' },
+          exclude: ['©', '®', '™', '℗', '↩']
         }
       ]
     ]

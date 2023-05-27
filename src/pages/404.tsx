@@ -4,14 +4,12 @@ import Template from '@components/templates/Template';
 
 export default function NotFound() {
   return (
-    <Template title="404">
-      <div className="tw-flex tw-flex-col">
-        <p className="tw-mb-8">페이지를 못 찾겠어요.. ㅜㅜ</p>
-        <div className="tw-flex tw-justify-start">
-          <Button>
-            <Link href="/">홈으로 돌아가기</Link>
-          </Button>
-        </div>
+    <Template title="404 Not Found">
+      <div>
+        <p className="">This page isn’t a puzzle 😝</p>
+        <Button>
+          <Link href="/">Back to home</Link>
+        </Button>
       </div>
     </Template>
   );

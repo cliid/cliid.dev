@@ -20,6 +20,12 @@
         "trailingComma": "none",
         "bracketSpacing": true
       }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["contentlayer/generated", "next-contentlayer/hooks", "contentlayer/source-files"]
+      }
     ]
   },
   "settings": {

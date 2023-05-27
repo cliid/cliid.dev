@@ -1,8 +1,5 @@
-// @ts-check
-
 const colors = require('tailwindcss/colors');
 
-/** @type {import("tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   prefix: 'tw-',
   content: ['./src/**/*.{html,js,jsx,ts,tsx,css,scss,sass}'],
@@ -46,5 +43,5 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/typography')]
 };

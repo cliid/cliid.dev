@@ -1,16 +1,15 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import classNames from 'classnames';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { ButtonHTMLAttributes, useEffect, useState } from 'react';
 import { HiArrowDown, HiArrowUp, HiMoon, HiSun } from 'react-icons/hi';
 import UseAnimations from 'react-useanimations';
 // EVERY ANIMATION NEEDS TO BE IMPORTED FIRST -> YOUR BUNDLE WILL INCLUDE ONLY WHAT IT NEEDS
 import menu2 from 'react-useanimations/lib/menu2';
 
-const ToolbarBtn = (_props: Record<string, any>) => {
+const ToolbarBtn = (_props: ButtonHTMLAttributes<HTMLButtonElement>) => {
   let props = { ..._props };
   let className =
-    'tw-flex tw-justify-center tw-items-center tw-w-10 tw-h-10 hover:tw-text-black dark:hover:tw-text-white';
+    'tw-flex tw-items-center tw-justify-center tw-w-10 tw-h-10 hover:tw-text-black dark:hover:tw-text-white';
   if (typeof props.className === 'string') {
     className += ' ';
     className += props.className;
@@ -29,7 +28,7 @@ const Toolbar = () => {
   const [isTop, setIsTop] = useState(true);
   const [showFull, setShowFull] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
-  const offset = 50;
+  const offset = 10;
   useScrollPosition(({ currPos }) => {
     setIsTop(-currPos.y < offset);
     setIsBottom(
@@ -43,12 +42,7 @@ const Toolbar = () => {
   return (
     <div className="tw-flex tw-flex-col tw-gap-y-2 sm:tw-flex-col-reverse">
       {showFull && (
-        <div
-          className={classNames(
-            'tw-grid tw-grid-flow-row',
-            'tw-rounded-lg tw-border-2 tw-shadow-md tw-backdrop-filter tw-backdrop-blur-lg tw-backdrop-saturate-200 tw-bg-bg dark:tw-bg-dark-bg'
-          )}
-        >
+        <div className="tw-box-content tw-grid tw-grid-flow-row tw-border-2 tw-rounded-lg tw-shadow-md tw-gap-y-1 tw-backdrop-filter tw-backdrop-blur-lg tw-backdrop-saturate-200 tw-bg-bg dark:tw-bg-dark-bg">
           <ToolbarBtn
             aria-label="Toggle Dark Mode"
             onClick={() => {
@@ -83,17 +77,13 @@ const Toolbar = () => {
           </ToolbarBtn>
         </div>
       )}
-      <div
-        className={classNames(
-          'tw-grid tw-grid-flow-row',
-          'tw-rounded-lg tw-border-2 tw-shadow-md tw-backdrop-filter tw-backdrop-blur-lg tw-backdrop-saturate-200 tw-bg-bg dark:tw-bg-dark-bg'
-        )}
-      >
+      <div className="tw-grid tw-grid-flow-row">
         <ToolbarBtn
           aria-label="Show Full Toolbar"
           onClick={() => {
             setShowFull(!showFull);
           }}
+          className="tw-box-content tw-border-2 tw-rounded-lg tw-shadow-md tw-backdrop-filter tw-backdrop-blur-lg tw-backdrop-saturate-200 tw-bg-bg dark:tw-bg-dark-bg"
         >
           <UseAnimations
             animation={menu2}
