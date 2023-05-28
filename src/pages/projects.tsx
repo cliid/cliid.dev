@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <Template title="Projects" description="Fun stuff I've been doing.">
       <p className="tw-mb-4">Fun stuff I’ve been doing.</p>
-      <div className="tw-flex tw-flex-col tw-gap-y-4">
+      <div className="tw-flex tw-flex-col tw-pb-8 tw-gap-y-4">
         <ProjectCard
           title="dustackle"
           url="https://www.messenger.com/t/102129921278799"
