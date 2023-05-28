@@ -4,7 +4,7 @@ import Template from '@components/templates/Template';
 export default function Projects() {
   return (
     <Template title="Projects" description="Fun stuff I've been doing.">
-      <p className="tw-mb-4">Fun stuff I've been doing.</p>
+      <p className="tw-mb-4">Fun stuff I’ve been doing.</p>
       <div className="tw-flex tw-flex-col tw-gap-y-4">
         <ProjectCard
           title="dustackle"

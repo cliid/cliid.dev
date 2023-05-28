@@ -7,7 +7,7 @@ export default function Home() {
     <Template title="Homepage of Jiwu Jang">
       <div className="tw-flex tw-flex-col">
         <p>
-          Hi! I'm Jiwu Jang (aka{' '}
+          Hi! I’m Jiwu Jang (aka{' '}
           <span style={{ fontFamily: 'Computer Modern Typewriter' }}>cliid</span>), and welcome to
           my personal website!
         </p>
