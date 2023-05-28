@@ -14,7 +14,7 @@ export default function Home() {
         <p>
           I’m a student at <Link href="https://ohs.stanford.edu/">Stanford Online High School</Link>
           , studying mathematics. If you’re curious about what drew me into mathematics, I’ve
-          written a <Link href="/blog/why-mathematics">blog post</Link> on the subject that you
+          written a <Link href="/blog/why-mathematics">blog post</Link> on the subject, which you
           might find interesting.
         </p>
         <p>
