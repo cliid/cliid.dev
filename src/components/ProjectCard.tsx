@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ReactElement } from 'react';
 
 const ProjectCard = ({
   title,
@@ -7,7 +8,7 @@ const ProjectCard = ({
 }: {
   title: string;
   url: string;
-  description: string;
+  description: string | ReactElement | ReactElement[];
 }) => {
   return (
     <div className="tw-w-full tw-p-4 tw-border tw-rounded-lg metric-card max-w-72">

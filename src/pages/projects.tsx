@@ -1,5 +1,6 @@
 import ProjectCard from '@components/ProjectCard';
 import Template from '@components/templates/Template';
+import Link from 'next/link';
 
 export default function Projects() {
   return (
@@ -24,6 +25,17 @@ export default function Projects() {
           the JavaScript ecosystem. Developed using Java, GraalVM, and ANTLR4."
         />
         <ProjectCard
+          title="design-patterns"
+          url="https://github.com/cliid/design-patterns"
+          description={
+            <div>
+              Implementation of design patterns with Java, mainly from Christopher Okhravi’s{' '}
+              <Link href="https://www.youtube.com/watch?v=v9ejT8FO-7I">Design Pattern videos</Link>,
+              including some other important design patterns from other sources such as Mosh’s ones.
+            </div>
+          }
+        />
+        <ProjectCard
           title="rehype-twemojify"
           url="https://github.com/cliid/rehype-twemojify"
           description="An emoji-to-twemoji converter that runs on top of the unified ecosystem."
@@ -36,14 +48,13 @@ export default function Projects() {
         <ProjectCard
           title="ASKY"
           url="https://github.com/cliid/ASKY-Unity"
-          description="A virtual girlfriend developed using Unity/C#, Python Flask, and LUIS.ai. Can talk and play
-some games with the user using natural language processing. Presented in front of other HYGEC
-students."
+          description="A virtual girlfriend developed with Unity/C#, Python Flask, and LUIS.ai. Can talk and play
+some games (e.g. word relay) with the user, using natural language processing."
         />
         <ProjectCard
           title="konne.ai"
           url="https://konne.ai"
-          description="A word training platform powered by machine learning."
+          description="A word training platform powered by machine learning. Built with Next.js and Nest.js."
         />
       </div>
     </Template>
