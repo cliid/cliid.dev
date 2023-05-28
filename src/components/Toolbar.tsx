@@ -29,14 +29,18 @@ const Toolbar = () => {
   const [showFull, setShowFull] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
   const offset = 10;
+
   useScrollPosition(({ currPos }) => {
     setIsTop(-currPos.y < offset);
     setIsBottom(
       -currPos.y + window.outerHeight + offset >= document.getElementById('__next')!.scrollHeight
     );
   });
+
   useEffect(() => {
     setMounted(true);
+    setIsTop(0 < offset);
+    setIsBottom(window.outerHeight + offset >= document.getElementById('__next')!.scrollHeight);
   }, []);
 
   return (
