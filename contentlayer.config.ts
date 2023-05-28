@@ -2,12 +2,14 @@ import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/sou
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
+import rehypeKatex from 'rehype-katex';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeProbeImageSize from 'rehype-probe-image-size';
 import rehypeSlug from 'rehype-slug';
 import rehypeTwemojify from 'rehype-twemojify';
 import remarkGemoji from 'remark-gemoji';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 import remarkTextr from 'remark-textr';
 import smartquotes from 'smartquotes-ts';
 
@@ -71,11 +73,13 @@ const contentLayerConfig = makeSource({
   documentTypes: [Post],
   mdx: {
     remarkPlugins: [
+      remarkMath,
       remarkGfm,
       remarkGemoji,
       [remarkTextr, { plugins: [dashes, ellipses, trademarks, quotes] }]
     ],
     rehypePlugins: [
+      rehypeKatex,
       rehypeSlug,
       [
         rehypeAutolinkHeadings,
