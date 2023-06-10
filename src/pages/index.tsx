@@ -13,15 +13,9 @@ export default function Home() {
         </p>
         <p>
           I’m a student at <Link href="https://ohs.stanford.edu/">Stanford Online High School</Link>
-          , studying mathematics. If you’re curious about what drew me into mathematics, I’ve
-          written a <Link href="/blog/why-mathematics">blog post</Link> on the subject, which you
-          might find interesting.
-        </p>
-        <p>
-          These days, I’m interested in algebraic number theory, combinatorics, type theory,
-          projective geometry, and analytic number theory. Likewise, I love Olympiad mathematics and
-          competitive programming: they challenge my mental abilities to the extreme. My personal
-          favorites are{' '}
+          , studying mathematics. These days, I’m interested in algebraic number theory,
+          combinatorics, type theory, projective geometry, and analytic number theory. I love
+          Olympiad mathematics and competitive programming as well. My favorite ones are{' '}
           <Link href="https://artofproblemsolving.com/wiki/index.php/2017_IMO_Problems/Problem_3">
             IMO 2017/3
           </Link>{' '}
@@ -39,10 +33,10 @@ export default function Home() {
         </p>
         <p>
           I also have a few fun hobbies I enjoy pursuing in my free time: cardistry, choir, singing,
-          and creating Pokémon and Super Mario characters with perler beads. If you haven’t seen
-          what cardistry is, check out{' '}
-          <Link href="https://www.youtube.com/watch?v=njstvj2M0WA">this video</Link>! It’s an
-          amazing compilation of cardistry moves :D
+          and creating Pokémon and Super Mario characters with perler beads. If you don’t know what
+          cardistry is, check out{' '}
+          <Link href="https://www.youtube.com/watch?v=njstvj2M0WA">this video</Link>! (an amazing
+          compilation of cardistry moves :D)
         </p>
         <p>
           My daily driver is a{' '}
@@ -57,7 +51,7 @@ export default function Home() {
           I’m also a playing cards collector: during my trip to Europe for 80 days, I collected over
           30 different decks from more than 10 European countries.
         </p>
-        <p>Thanks for visiting my website, and I hope you have an enjoyable experience!</p>
+        <p>Anyways, thanks for visiting my website, and I hope you have fun!</p>
       </div>
     </Template>
   );
