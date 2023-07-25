@@ -35,7 +35,7 @@ export default function Home() {
           I also have a few fun hobbies I enjoy pursuing in my free time: cardistry, choir, singing,
           and creating Pokémon and Super Mario characters with perler beads. If you don’t know what
           cardistry is, check out{' '}
-          <Link href="https://www.youtube.com/watch?v=njstvj2M0WA">this video</Link>! (an amazing
+          <Link href="https://www.youtube.com/watch?v=I0KSaqiv5C0">this video</Link>! (an amazing
           compilation of cardistry moves :D)
         </p>
         <p>
