@@ -13,9 +13,15 @@ export default function Home() {
         </p>
         <p>
           I’m a student at <Link href="https://ohs.stanford.edu/">Stanford Online High School</Link>
-          , studying mathematics. These days, I’m interested in algebraic number theory,
-          combinatorics, type theory, projective geometry, and analytic number theory. I love
-          Olympiad mathematics and competitive programming as well. My favorite ones are{' '}
+          , studying mathematics. These days, I’m interested in algebraic number theory, spectral
+          graph theory, analytic number theory, algebraic geometry, and elliptic curves. I'm
+          currently reading <em>The Arithmetic of Elliptic Curves</em> by Joseph H. Silverman,{' '}
+          <em>Undergraduate Algebraic Geometry</em> by Miles Reid, and{' '}
+          <em>Algebraic Number Theory</em> by Serge Lang.
+        </p>
+        <p>
+          Besides, I love Olympiad math and competitive programming as well. Some of my favorite
+          problems are{' '}
           <Link href="https://artofproblemsolving.com/wiki/index.php/2017_IMO_Problems/Problem_3">
             IMO 2017/3
           </Link>{' '}

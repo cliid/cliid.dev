@@ -76,4 +76,8 @@ $navbar-height: 4.5rem;
       'Malgun Gothic', sans-serif;
     @apply tw-bg-bg dark:tw-bg-dark-bg tw-text-text dark:tw-text-dark-text tw-border-border dark:tw-border-dark-border;
   }
+
+  .katex {
+    font-size: 0.7em;
+  }
 }
