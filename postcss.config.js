@@ -1,5 +1,4 @@
 module.exports = {
-  syntax: 'postcss-scss',
   plugins: {
     ...(process.env.NODE_ENV === 'production' && {
       'postcss-import': {},
