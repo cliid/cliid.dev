@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       typography: {
-        default: {
+        DEFAULT: {
           css: {
             'blockquote p:first-of-type::before': { content: 'none' },
             'blockquote p:first-of-type::after': { content: 'none' }
