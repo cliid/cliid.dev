@@ -4,8 +4,17 @@ module.exports = {
   prefix: 'tw-',
   content: ['./src/**/*.{html,js,jsx,ts,tsx,css,scss,sass}'],
   darkMode: 'class',
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
+      typography: {
+        default: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' }
+          }
+        }
+      },
       animation: {
         shrink: 'shrink 1.5s infinite',
         expand: 'expand 1.5s infinite',
@@ -42,6 +51,5 @@ module.exports = {
         }
       }
     }
-  },
-  plugins: [require('@tailwindcss/typography')]
+  }
 };
