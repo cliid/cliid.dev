@@ -9,7 +9,7 @@ import React, { PropsWithChildren } from 'react';
 import Template from './Template';
 
 const editUrl = (slug: string) =>
-  `https://github.com/cliid/cliid.dev/edit/main/data/blog/${slug}.mdx`;
+  `https://github.com/cliid/cliid.dev/edit/main/data/posts/${slug}.mdx`;
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://cliid.dev/blog/${slug}`)}`;
 
