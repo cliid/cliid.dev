@@ -26,7 +26,8 @@ const nextConfig = {
       }
     ],
     formats: ['image/avif', 'image/webp']
-  }
+  },
+  transpilePackages: ['react-tweet']
 };
 
 module.exports = () => {

@@ -149,6 +149,9 @@ export default function Template({
                 />
               </div>
               <div className="tw-hidden sm:tw-block">
+                <NavItem currentPath={router.asPath} href="/tweets" content="Tweets" />
+              </div>
+              <div className="tw-hidden sm:tw-block">
                 <NavItem currentPath={router.asPath} href="/dashboard" content="Dashboard" />
               </div>
               <div className="tw-hidden sm:tw-block">

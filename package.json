@@ -38,6 +38,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-tweet": "^3.0.3",
     "react-useanimations": "^2.10.0",
     "sass": "^1.62.1",
     "sharp": "^0.29.3",
