@@ -1,16 +1,18 @@
 import components from '@components/MDXComponents';
 import PostTemplate from '@components/templates/PostTemplate';
-import Tweet from '@components/Tweet';
-import { getTweets } from '@lib/twitter';
 import { allPosts } from 'contentlayer/generated';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import { Tweet as ReactTweet } from 'react-tweet';
 
 export default function Page({ post, tweets }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(post.body.code);
-  const StaticTweet = ({ id }: { id: string }) => {
-    const tweet = tweets.find((tweet) => tweet.id === id);
-    return <Tweet {...tweet} />;
+  const Tweet = ({ id }: { id: string }) => {
+    return (
+      <div className="tw-not-prose">
+        <ReactTweet id={id} />
+      </div>
+    );
   };
 
   return (
@@ -18,7 +20,7 @@ export default function Page({ post, tweets }: InferGetStaticPropsType<typeof ge
       <Component
         components={{
           ...components,
-          StaticTweet
+          Tweet
         }}
       />
       <link
@@ -40,7 +42,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const post = allPosts.find((post) => post.slug === params!.slug)!;
-  const tweets: any[] = await getTweets(post!.tweetIds);
 
-  return { props: { post, tweets } };
+  return { props: { post, tweets: post!.tweetIds as string[] } };
 }
