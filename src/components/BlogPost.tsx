@@ -1,6 +1,7 @@
 import fetcher from '@lib/fetcher';
 import type { Post } from 'contentlayer/generated';
 import NextLink from 'next/link';
+import { string } from 'smartquotes-ts';
 import useSWR from 'swr';
 import { Views } from 'typings';
 
@@ -23,7 +24,7 @@ export default function BlogPost({
             {`${views ? new Number(views).toLocaleString() : '---'} views`}
           </p>
         </div>
-        <p className="tw-text-gray-600 dark:tw-text-gray-400">{summary}</p>
+        <p className="tw-text-gray-600 dark:tw-text-gray-400">{string(summary)}</p>
       </button>
     </NextLink>
   );
