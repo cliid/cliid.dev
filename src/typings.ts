@@ -19,6 +19,7 @@ export type Views = {
 };
 
 export type Song = {
+  imageUrl: string;
   songUrl: string;
   artist: string;
   title: string;

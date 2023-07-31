@@ -9,6 +9,7 @@ const TopTracks = async (_: NextApiRequest, res: NextApiResponse) => {
   const { items }: { items: any } = response.data;
 
   const tracks = items.slice(0, 10).map((track: any) => ({
+    imageUrl: track.album.images[0].url,
     artist: track.artists.map((_artist: any) => _artist.name).join(', '),
     songUrl: track.external_urls.spotify,
     title: track.name

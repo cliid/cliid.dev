@@ -6,7 +6,7 @@ import TopTracks from '@components/TopTracks';
 
 export default function Dashboard() {
   return (
-    <Template title="Dashboard" description="Some stuff about my website!">
+    <Template title="Dashboard" description="A dashboard made with serverless functions.">
       <p className="tw-mb-4">A dashboard made with serverless functions.</p>
       <div className="tw-grid tw-w-full tw-grid-cols-1 tw-gap-4 tw-my-2 sm:tw-grid-cols-2">
         <Analytics />
@@ -14,7 +14,7 @@ export default function Dashboard() {
       </div>
       <UnsplashCard />
       <h2 className="tw-mt-16 tw-mb-4 tw-text-2xl tw-font-extrabold tw-tracking-tight tw-text-black dark:tw-text-white">
-        Top tracks of mine
+        Top Tracks (last 4 weeks)
       </h2>
       <TopTracks />
       <div className="tw-my-8"></div>
