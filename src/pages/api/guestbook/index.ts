@@ -1,6 +1,8 @@
 import prisma from '@lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth';
+
+import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const entries = await prisma.guestbook.findMany({
@@ -20,15 +22,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
   }
 
-  const session = await getSession({ req });
+  const session = await getServerSession(req, res, authOptions);
+
+  console.log(session);
 
   if (!session) {
-    return res.status(403).send('Unauthorized');
+    return res.status(401).send('Unauthorized');
   }
 
   const { email, name } = session.user!;
 
-  if (!email || !name) return res.status(403).send('Unauthorized');
+  if (!email || !name) return res.status(401).send('Unauthorized');
 
   if (req.method === 'POST') {
     const newEntry = await prisma.guestbook.create({

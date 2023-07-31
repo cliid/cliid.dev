@@ -66,6 +66,14 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
       method: 'POST'
     });
 
+    if (!res.ok) {
+      setForm({
+        state: Form.Error,
+        message: 'Sorry! There seems to be an error with the system right now.'
+      });
+      return;
+    }
+
     const { error } = await res.json();
     if (error) {
       setForm({

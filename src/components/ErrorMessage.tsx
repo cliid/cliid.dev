@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function ErrorMessage({ children }: { children: React.ReactNode }) {
   return (
-    <p className="tw-flex tw-items-center tw-text-sm tw-font-bold tw-text-red-800 dark:tw-text-red-400">
+    <p className="tw-flex tw-text-sm tw-font-bold tw-text-red-800 dark:tw-text-red-400">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="tw-mr-2 tw-h-4 tw-w-4"
+        className="tw-w-4 tw-h-4 tw-mr-1"
       >
         <path
           fillRule="evenodd"
@@ -15,7 +15,7 @@ export default function ErrorMessage({ children }: { children: React.ReactNode }
           clipRule="evenodd"
         />
       </svg>
-      {children}
+      <span>{children}</span>
     </p>
   );
 }
