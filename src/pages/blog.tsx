@@ -37,9 +37,9 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 }
 
 export function getStaticProps() {
-  const posts = allPosts.map((post: Post) =>
-    pick(post, ['slug', 'title', 'summary', 'publishedAt'])
-  );
+  const posts = allPosts
+    .map((post: Post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
+    .sort((a, b) => new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf());
 
   return { props: { posts } };
 }
