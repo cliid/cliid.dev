@@ -122,8 +122,8 @@ export default function Guestbook({ fallbackData }: { fallbackData: any }) {
           <SuccessMessage>{form.message}</SuccessMessage>
         ) : (
           <small>
-            Your personal information is used solely for displaying your name and e-mail on the
-            guestbook.
+            Your personal information is used for the sole purpose of displaying your name and
+            e-mail on the guestbook.
           </small>
         )}
       </div>

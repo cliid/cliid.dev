@@ -12,11 +12,11 @@ import { ThemeProvider } from 'next-themes';
 import NextNprogress from 'nextjs-progressbar';
 import React from 'react';
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   useAnalytics();
 
   return (
-    <SessionProvider>
+    <SessionProvider session={session}>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
