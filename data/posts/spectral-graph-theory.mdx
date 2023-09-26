@@ -1,0 +1,169 @@
+---
+title: A Glimpse into Spectral Graph Theory
+publishedAt: 2023-09-22
+summary: This is an abridged version of an appendix I wrote for a linear algebra textbook, posted for reference.
+---
+
+> This is an abridged version of an appendix I wrote for a linear algebra textbook, posted for reference.
+
+I'm going to talk about a subfield of graph theory that uses linear algebra, called _spectral graph theory_.
+The whole premise of spectral graph theory is that one can identify a graph with a corresponding matrix, then use linear algebra to deduce properties about the graph of interest. In this section, we assume the reader to be familiar with basic graph theoretic terminology and linear algebra; nothing else is assumed. We first look at several instances where the matrix representation of a graph seems to not give out much useful information, almost to the point where it seems trivial; however, later on, one would notice that this theory goes much deeper than what one would've had initially expected.
+
+But first, we are getting ahead of ourselves; let us start with the definitions.
+
+**Definition:** The _adjacency matrix_ $A(G)$ of a labeled graph $G = (V, E)$ is an $n \times n$ matrix with rows and columns labeled by graph vertices, where $A(G)_{ij}$ counts the number of edges $(v_i, v_j)$ with multiplicity.
+
+In this section, assume $A$ to be the adjacency matrix of whatever graph of interest; if ambiguous, we shall explicitly denote the underlying graph by writing $A(G)$.
+
+**Remark:** For $v_i \in V$, the edge $(v_i, v_i)$, called a _self-loop_, adds $1$ to the corresponding entry $A_{ii}$ in the adjacency matrix $A$.
+
+Easily, we deduce that for an adjacency matrix $A$ of a simple graph, $\operatorname{Tr}(A) = 0$; also $A$ is symmetric.
+
+**Exercise:** For a graph $G$, prove that $$ \operatorname{Tr}(A^3) = 6 \times \text{\# of triangles in $G$} $$
+
+Now, we introduce a basic (yet crucial) theorem that relates graph walks to adjacency matrices:
+
+**Theorem:** $(A^\ell)_{ij}$ is the number of walks from $i$ to $j$ of length $\ell$.
+
+**Proof.** We know $(BA)_{ij} = \sum_{k=1}^n B_{ik} A_{kj}$. Hence, $$(A^\ell)_{ij} = (A^{\ell-1} A)_{ij} = \sum_{k=1}^n A^{\ell-1}_{ik} A_{kj}$$ and conclude by induction. $\blacksquare$
+
+### Graph Operations
+
+Now, we define some basic graph operations:
+
+**Definition:** Define $G_1 \oplus G_2 = (V_1 \sqcup V_2,\;E_1 \sqcup E_2)$.
+Note that this is simply the diagonal concatenation of $A(G_1)$ and $A(G_2)$; all other entries are automatically zero.
+
+**Definition:** Define $G_1 \lor G_2 = (V,\,E)$, where $V = V_1 \sqcup V_2$ and $E = E_1 \sqcup E_2 \sqcup \{(x, y) \mid x \in V_1,\ y \in V_2\}$.
+In linear algebra language, $G_1 \lor G_2$ is simply diagonally concatenating $A_1$ and $A_2$, and then filling in the remaining elements with $1$.
+
+**Definition:** Define the _complement_ of a graph $G = (V, E)$ to be $$ \overline{G} = (V,\ (V \times V) - E - \{(v, v) \mid v \in V\}) $$
+
+**Corollary:** $G + \overline{G} = K_n$. (Verify.)
+
+**Corollary:** $A(G) + A(\overline{G}) = A(K_n) = J_n - I_n$, hence $A(\overline{G}) = J_n - I_n - A(G)$.
+Until now, most things would have been fairly obvious. However, one is yet to notice the true power of spectral graph theory. Consider the following celebrated theorem of Frank Ramsey:
+
+### Interlude: Ramsey's theorem
+
+**Theorem (Ramsey's theorem):** For fixed $a,\,b$, there exists a constant $R(a, b)$ such that for all graphs with $|V| \ge R(a, b)$, either $G$ contains $K_a$ or $\overline{G}$ contains $K_b$, where $R(a, b)$ is a constant depending on $a$ and $b$.
+
+**Remark:** The minimum value of such $R(a, b)$ is said to be the _Ramsey number_ of a graph $G$, which is the minimum number of vertices that guarantee the existence of either a blue $K_a$ or a red $K_b$ subgraph, where we color the edges with either blue or red.
+There are many combinatorial proofs for the existence of $R(3, 3)$; however, in this section, we give a linear algebraic proof for it.
+
+**Theorem (Existence of $R(3, 3)$):** For a graph $G = (V, E)$, there exists a constant $R(3, 3)$ such that whenever $|V| \ge R(3, 3)$, either $G$ contains $K_3$ or $\overline{G}$ contains $K_3$, that is, either $\operatorname{Tr}(A^3) > 0$ or $\operatorname{Tr}(A^3) > 0$.
+
+**Proof.** Assume $\operatorname{Tr}(A(G)^3) = 0$, then
+
+$$ \begin{aligned} &\operatorname{Tr}(A(\overline{G})^3) \\ &= \operatorname{Tr}((J-I-A(G))^3) \\ &= \operatorname{Tr}(J^3) - 3\operatorname{Tr}(J^2) + 3\operatorname{Tr}(J) - \operatorname{Tr}(I_n) - \operatorname{Tr}(A^3) \\ &\quad + 3 \operatorname{Tr}(A^2 J) - 3 \operatorname{Tr}(A^2) - 3 \operatorname{Tr}(J^2 A) + 6 \operatorname{Tr}(JA) - 3 \operatorname{Tr}(A) \\ &= n^3 - 3n^2 + 3n - n - \operatorname{Tr}(A^3) \\ &\quad+ 3 \operatorname{Tr}(A^2 J) - 3 \operatorname{Tr}(A^2) - 3n \operatorname{Tr}(JA) + 6 \operatorname{Tr}(JA) - 3 \operatorname{Tr}(A) \\ &= n^3 + O(n^2) - \operatorname{Tr}(A^3) + 3 \operatorname{Tr}(A^2J) - 3\operatorname{Tr}(AJ^2) \\ &= n^3 + O(n^2) + 3 \operatorname{Tr}(A^2 J - AJ^2) \\ &= n^3 - 3\operatorname{Tr}\left(A\frac{J^2}{n}(J - A)\right) + O(n^2) \\ &= n^3 - 3 \sum_{i=1}^n \left(n \deg{v_i} - \deg{v_i}^2\right) + O(n^2) \\ &\ge n^3 - \frac{3n^3}{4} + O(n^2) \\ &= \frac{n^3}{4} + O(n^2) \end{aligned} $$
+
+Indeed, for sufficiently large $n$, we have $\operatorname{Tr}(A(\overline{G})^3) > 0$, hence we are done. $\blacksquare$
+
+**Remark:** By using linear algebra, a previously combinatorial problem has turned into simple algebra.
+
+As an interlude, we look at some converse properties, that is, we can also look at square matrices by identifying them with a graph. The following exercise serves as a good example of such a converse notion:
+
+**Exercise:** Let $J_n$ be a matrix with all entries being $1$. We know that $\operatorname{Tr}(J_n) = n$. What is $(J_n)^2$? What is $(J_n)^k$?
+
+**Proof.** First, $(J_n)^2 = n \cdot J_n$, since for a connected graph $K_n$ with self-loops, one can move back to the first point at the penultimate step. Moreover, it is not hard to see that for the general case, we have $(J_n)^k = n^{k-1} \cdot J_n$. $\blacksquare$
+
+### $(n, d)$-graphs
+
+It is often useful to study graphs with a fixed structure but with varying parameters; in this subsection, we look at $(n, d)$-graphs.
+
+**Definition:** A graph $G = (V, E)$ is called a _$(n, d)$-graph_ if $|V| = n$ and $\deg v_i = d$ for all $v_i \in V$.
+
+**Remark:** For the sake of convenience, we will often use the variables $n$ and $d$ without explicitly stating the graph.
+
+As the name _spectral_ graph theory suggests, we shall look at the spectrum $\sigma_A$ of the adjacency matrix $A$, which is the set of all eigenvalues of $A$.
+
+**Theorem:** For all $(n, d)$-graphs, $d \in \sigma_A$.
+
+**Proof.** It suffices to show $\mathbf{A} \vec{1} = d \vec{1}$, but since $\deg v = d$ for all $v \in V$, we see that each row has $d$ ones and $n-d$ zeros, hence we are done. $\blacksquare$
+
+Now, we state a theorem that restricts the set of eigenvalues of $A$:
+
+**Theorem:** For a $(n, d)$-graph $G = (V, E)$, we have $|\lambda| \le d$ for all $\lambda \in \sigma_A$, where $\sigma_A$ denotes the spectrum of the matrix $A(G)$.
+
+**Proof.** Let $\mathbf{x}$ be an arbitrary eigenvector of $A$ and $i = \operatorname{argmax}_{1 \le j \le n} |x_j|$. Now, notice that
+
+$$\begin{aligned} \left|(\mathbf{A}\mathbf{x})_i\right| & = \left|\sum_{k=1}^n A_{ik} x_k\right| \\ & \le \sum_{k=1}^n |A_{ik}| |x_k|        \\ & \le \sum_{k=1}^n |A_{ik}| |x_i|        \\ & = |x_i| \cdot \sum_{k=1}^n A_{ik}      \\ & = |x_i| \cdot \deg v_i                 \\ & = |x_i| \cdot d \end{aligned}$$
+
+thus for $\lambda \in \sigma_A$ such that $\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$, we have $$ |(\lambda \mathbf{x})_i| = |\lambda x_i| \le |x_i| \cdot d $$ so $|\lambda| \le d$ as desired. $\blacksquare$
+
+With this result, we conventionally order the eigenvalues of the spectrum $\sigma_A$ as follows: $$ d = \lambda_1 \ge \lambda_2 \ge \lambda_3 \ge \dots \ge \lambda_n $$
+This is where things get interesting: we can essentially characterize the graph $G$ by merely looking at the spectrum $\sigma_A$.
+
+**Theorem:** $|\{\lambda_i \mid \lambda_i = d\}| = |C|$, where $C$ is the set of the connected components of $G$.
+It suffices to prove $|\{\lambda_i \mid \lambda_i = d\}| \ge |C|$ and $|\{\lambda_i \mid \lambda_i = d\}| \le |C|$.
+
+**Proof of $(\ge)$.** Let $C$ be a connected component, whence $C \subseteq V$. Let $\mathbf{v} = \sum_{i \in C} \mathbf{e}_i$, where $\mathbf{e}_i$ is the canonical basis (i.e., $\mathbf{e}_{ii} = 1$ and $\mathbf{e}_{ij} = 0$ for $j \neq i$).
+
+Consider $(\mathbf{A}\mathbf{v})_j = (\mathbf{A} \sum_{i \in C} \mathbf{e}_i)_j = \sum_{i \in C} (\mathbf{A} \mathbf{e}_i)_j = \sum_{i \in C} \mathbf{A}_{ji}$.
+
+- If $j \notin C$, then $\mathbf{A}_{ji} = 0$ for all $i \in C$, so $(\mathbf{A}\mathbf{v})_j = 0$, hence $\left(\sum_{i \in C} \mathbf{e}_i\right)_j = 0$.
+
+- If $j \in C$, then $\deg j = d$, so $j$ has $d$ vertices in $C$, where it is connected to $\sum_{i \in C} \mathbf{A}_{ji} = d$, so $\mathbf{v}_j = \left(\sum_{i \in C}\mathbf{e}_i\right)_j = \vec{1}$. Hence, $\mathbf{A}\mathbf{v} = d \mathbf{v}$ in this case. $\blacksquare$
+
+**Proof of $(\le)$.** Suppose $\mathbf{x}$ is an eigenvector with a corresponding eigenvalue $d$.
+Consider the following:
+
+$$ \begin{aligned} &\sum_{i=1}^n \sum_{j=1}^n A_{ij} (x_i - x_j)^2 \\ &= \sum_i \left(\sum_j A_{ij}\right) x_i^2 + \sum_j \left(\sum_i A_{ij}\right) x_j^2 - 2 \sum_i \sum_j A_{ij} x_i x_j \\ &= \sum_i d x_i^2 + \sum_j d x_j^2 - 2 \sum_j \sum_i \left(x_i A_{ij}\right) x_j \\ &= 2d\,\|\mathbf{x}\|^2 - 2 \mathbf{x}^T \mathbf{A} \mathbf{x} \\ &= 2d \|\mathbf{x}\|^2 - 2d \mathbf{x}^T \mathbf{x} \\ &= 2d \|\mathbf{x}\|^2 - 2d \|\mathbf{x}\|^2 = 0 \end{aligned} $$
+
+Because $A_{ij} (x_i - x_j)^2 \ge 0$, we have $A_{ij} (x_i - x_j)^2 = 0$ for all $i,\,j \in [n]^2$. Hence, $x_i = x_j$ whenever $ij \in E$, that is, $x_i = x_j$ for all $i,\,j \in C$. Note that $\mathbf{x} = \sum_{C_j} k \mathbf{v}_j$ where $\mathbf{v}_j = \sum_{i \in C_j} \mathbf{e}_i$. Thus, the number of eigenvectors with $\lambda_i = d$ is less than or equal to the number of connected components, as desired. $\blacksquare$
+
+We have the following obvious corollary:
+
+**Corollary:** We have that $\lambda_2 = d \iff G\ \text{is disconnected}$.
+
+Along the philosophy of classifying graphs based on the spectra, this time, we have another theorem that partially tells us when $G$ is bipartite.
+
+**Theorem:** If $G$ is bipartite, then $\lambda_n = -d$.
+
+**Proof.** Take disjoint vertex sets $V_1$ and $V_2$ such that $V_1 \sqcup V_2 = G$. Let $E$ be the set of edges such that if $i,\,j \in V_1$ then $ij \notin E$, and if $i,\,j \in V_2$ then $ij \notin E$. Let $\mathbf{v} = \sum_{i \in V_1} \mathbf{e}_i - \sum_{j \in V_2} \mathbf{e}_j$, which has entry $1$ if it is in the first set and $-1$ if it is in the second set. If $\ell \in V_1$, then $(\mathbf{Av})_\ell = \sum_{i=1}^n A_{\ell i} v_i = \sum_{i \in V_2} A_{\ell i} v_i = \sum_{i \in V_2} -A_{\ell i} = -d$. Similarly, if $\ell \in V_2$, then $\sum_{i=1}^n A_{\ell i} v_i = d$, hence we get an eigenvalue $-d$. $\blacksquare$
+
+For a complete characterization of bipartite graphs, we state the following theorem, which is morally converse to the previous theorem:
+
+**Theorem:** If $\lambda_n = -d$ and $G$ is connected, then $G$ is bipartite.
+
+**Proof.** We already know that we can check whether $G$ is connected by looking at $\lambda_2$. Consider $\sum_i \sum_j A_{ij} (x_i + x_j)^2$.
+
+If $\mathbf{x}$ has $\lambda = -d$, then
+
+$$\begin{aligned} \sum_i \sum_j A_{ij} (x_i + x_j)^2 & = 2 d \|\mathbf{x}\|^2 + 2 \sum A_{ij} x_i x_j               \\ & = 2d \|\mathbf{x}\|^2 + 2 \mathbf{x}^T \mathbf{A} \mathbf{x} \\ & = 2 d \|\mathbf{x}\|^2 - 2d \|\mathbf{x}\|^2                 \\ & = 0 \end{aligned}$$
+
+Thus, $A_{ij} (x_i + x_j)^2 = 0$, which implies $x_i = -x_j$ for all $ij \in E$.
+
+Now, we define $R = \{i \mid x_i = 0\}$, $S = \{i \mid x_i > 0\}$, and $T = \{i \mid x_i < 0\}$.
+- If $i \in R$, then $x_i = 0$, which means we must have either $R = V$ or $R = \emptyset$. But since $\vec{0}$ cannot be an eigenvector, we must have $R = \emptyset$.
+- If $i \in S$, then $x_i > 0$, so for any $ij \in E$, we have $x_j < 0$ where $j \in T$.
+- Similarly, if $i \in T$, then $j \in S$.
+
+Hence, $G$ is bipartite, as desired. $\blacksquare$
+
+### Where does it all go?
+
+There are many ways to proceed from here; it is often useful to look at $\lambda_k - \lambda_{k+1}$, which is called a _spectral gap_. Note that a graph $G$ is disconnected iff $\lambda_2 = d$, in which case the spectral gap is zero; equivalently, a graph is connected iff $\lambda_1 - \lambda_2 > 0$.
+
+One might also be interested in the _expansion ratio_ of $G$, which roughly tells us how strongly connected the graph is.
+
+**Definition:** For a graph $G = (V, E)$, we consider a subset $S \subseteq V$, for which we have $\overline{S} = V \setminus S$. Define the edges between two sets $S$ and $T$ to be $$ E(S, T) := \{\{s, t\} \in E \mid s \in S,\ t \in T\} $$ We denote the _boundary_ of a vertex set $S$ as $\partial S = E(S, \overline{S})$.
+
+**Definition:** The partition of $V$ into $S$ and $\overline{S}$ is called a _cut_. An edge $e \in \partial S$ is said to _cross the cut_. We define $|\partial S|$ to be the _size_ of the cut.
+Now, we define the expansion ratio $h(G)$ of a graph:
+
+**Definition:** For a graph $G$, define the _expansion ratio_ $h(G)$ to be $ \min_{1 \le |S| \le \frac{n}{2}} \frac{|\partial S|}{|S|} $
+
+**Example:** For $G = C_n$, we have $h(G) = \frac{2}{\left\lfloor \frac{n}{2} \right\rfloor}$.
+
+We conclude this section with the following beautiful inequality that relates the expansion ratio $h(G)$ and the spectrum $\sigma_A$.
+
+**Theorem (Cheeger's inequality):** For a $(n, d)$-graph $G$, denote $\lambda_i \in \sigma_A$ as usual, with $d = \lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_n$. Then, we have $$ \frac{\lambda_1 - \lambda_2}{2} \le h(G) \le \sqrt{2 \lambda_1 (\lambda_1 - \lambda_2)} $$
+
+**Proof.** One can find a proof in _Section 9.2. Eigenvalues and Expanders_ from _The Probabilistic Method_ by Alon \& Spencer. $\blacksquare$
+
+A fairly easy corollary of Cheeger's inequality (which one can check with previously deduced theorems and lemmas) is the following:
+
+**Corollary:** $h(G) > 0 \iff G\ \text{is connected}$. (Exercise: Prove this.)
+
+This is all for this chapter. $\blacksquare$
