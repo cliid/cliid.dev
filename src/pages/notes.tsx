@@ -13,6 +13,11 @@ export default function Notes() {
       </p>
       <div className="tw-flex tw-flex-col tw-pb-8 tw-gap-y-4">
         <NotesCard
+          title="A Gentle Introduction to Arithmetic Dynamics"
+          url="/static/files/gentle-intro-to-arithmetic-dynamics.pdf"
+          description="We provide an introduction to the field of arithmetic dynamics. We start by defining basic terminology and notation from classical dynamics, also covering some basic machinery from algebraic geometry, number theory, and p-adic theory. Continuing the discussion, we discuss dynamics over global fields, including height functions, local canonical heights, ultimately leading to the proof of Northcott’s theorem. We then discuss several pathways emerging from it, including the uniform boundedness conjecture."
+        />
+        <NotesCard
           title="Family 3 Celebration Set — The Ross Mathematics Program"
           url="/static/files/fam-3-celebration.pdf"
           description="At the end of week 3 of Ross, our ‘family,’ comprising four first-year students, a junior counselor, and a counselor, proved the Unique Factorization Theorem from the Ring Axioms and the Well-Ordering Principle (WOP). This paper was the final result."
