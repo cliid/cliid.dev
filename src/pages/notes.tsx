@@ -33,22 +33,22 @@ export default function Notes() {
           description="This is a series of notes I’ve taken while attending lectures on Cantor sets, given by Prof. Vitaly Bergelson (OSU). My LaTeX’ed notes were used by Prof. Bergelson and Prof. Shapiro as a basis for the compilation of the final lecture notes."
         />
         <NotesCard
-          title="Graph Theory"
+          title="Graph theory"
           url="/static/files/graph-theory.pdf"
           description="This is a series of notes I’ve taken while attending lectures on Graph Theory (Extremal Graph Theory, Ramsey Theory, and Spectral Graph Theory), given by Prof. Matthew Stone (OSU)."
         />
         <NotesCard
-          title="Modal Logic"
+          title="Modal logic"
           url="/static/files/modal-logic.pdf"
           description="This is a series of notes I’ve taken while attending lectures on Modal Logic, given by Pico Gilman (UCSB)."
         />
         <NotesCard
-          title="Hypergeometric Functions"
+          title="Hypergeometric functions"
           url="/static/files/hypergeometric-fn.pdf"
           description="This is a series of notes I’ve taken while attending lectures on Hypergeometric Functions, given by Brian Grove (LSU)."
         />
         <NotesCard
-          title="Class Field Theory"
+          title="Class field theory"
           url="/static/files/class-field-theory.pdf"
           description="This is a series of notes I’ve taken while attending lectures on Class Field Theory, given by Bartu Bingol (UMass Amherst)."
         />
@@ -63,9 +63,19 @@ export default function Notes() {
           description="This is a series of notes I’ve taken while attending lectures on Abstract Algebra, given by Mustafa Nawaz (UIC)."
         />
         <NotesCard
-          title="The second-most beautiful mathematical argument"
+          title="Suslin things"
           url="/static/files/2nd-most.pdf"
           description="This is a series of notes I’ve taken while attending lectures on the ‘back and forth’ argument, given by Pico Gilman (UCSB)."
+        />
+        <NotesCard
+          title="Banach and Hilbert spaces"
+          url="/static/files/banach-hilbert.pdf"
+          description="This was a presentation I had given for my linear algebra class."
+        />
+        <NotesCard
+          title="Stokes' theorem with JCT"
+          url="/static/files/stokes.pdf"
+          description="This was a presentation I had given for my vector calculus class."
         />
       </div>
     </Template>
