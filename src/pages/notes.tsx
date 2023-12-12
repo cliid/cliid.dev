@@ -15,7 +15,7 @@ export default function Notes() {
         <NotesCard
           title="A Gentle Introduction to Arithmetic Dynamics"
           url="/static/files/gentle-intro-to-arithmetic-dynamics.pdf"
-          description="We provide an introduction to the field of arithmetic dynamics. We start by defining basic terminology and notation from classical dynamics, also covering some basic machinery from algebraic geometry, number theory, and p-adic theory. Continuing the discussion, we discuss dynamics over global fields, including height functions, local canonical heights, ultimately leading to the proof of Northcott’s theorem. We then discuss several pathways emerging from it, including the uniform boundedness conjecture."
+          description="We provide an introduction to the field of arithmetic dynamics. We start by defining fundamental terminology and notation from classical dynamics, including periodic points, wandering points, rational maps, power maps, Chebyshev polynomials, and Lattès maps. Together, we cover basic machinery from algebraic geometry, number theory, and p-adic analysis, including affine and projective space, ideals and varieties, and completions of Q. Continuing the discussion, we discuss dynamics over global fields, ultimately leading to the proof of Northcott’s theorem, involving Hilbert’s Nullstellensatz. We then discuss pathways emerging from it, centered around the uniform boundedness conjecture."
         />
         <NotesCard
           title="Family 3 Celebration Set — The Ross Mathematics Program"
