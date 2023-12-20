@@ -5,7 +5,7 @@
   "tailwindCSS.emmetCompletions": true,
   // Run ESLint each time you save a file
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "[javascript,javascriptreact,typescript,typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
