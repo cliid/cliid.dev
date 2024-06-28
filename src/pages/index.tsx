@@ -12,17 +12,16 @@ export default function Home() {
           my personal website!
         </p>
         <p>
-          I’m a student at <Link href="https://ohs.stanford.edu/">Stanford Online High School</Link>
-          , studying mathematics. These days, I’m interested in analytic number theory, complex
-          dynamics, and algebraic geometry. I'm currently reading{' '}
-          <em>Dynamics in One Complex Variable</em> by John Milnor, and{' '}
-          <em>Real and Complex Analysis</em> by Serge Lang.
+          I’m interested in harmonic analysis, ergodic theory, analytic number theory, and additive
+          combinatorics. I'm currently reading Tao-Vu and Stein-Shakarchi.
         </p>
         <p>
-          I’m doing artificial intelligence research on Democratic Constitutional AI, under the
-          supervision of <Link href="https://scottviteri.com/">Scott Viteri</Link>. I'm interested
-          in social choice theory and voting theory, and how to optimize inefficacies of the status
-          quo via mathematics and technology.
+          I’ve been researching vertex functions of Nakajima quiver varieties under the supervision
+          of{' '}
+          <Link href="https://math.mit.edu/directory/profile.html?pid=2613">
+            Dr. Hunter Dinkins
+          </Link>{' '}
+          through MIT PRIMES-USA.
         </p>
         <p>
           Besides, I love Olympiad math. Some of my favorite problems are{' '}
@@ -40,10 +39,9 @@ export default function Home() {
           .
         </p>
         <p>
-          Aside from mathematics (including theoretical CS), I code a lot. I’ve been an avid
-          programmer since 11, and since then, I’ve created stuff like my own programming language,
-          a virtual girlfriend (she can talk and play games!), and also contributed to open-source
-          projects such as the{' '}
+          Aside from mathematics, I code. I’ve been an avid programmer since 11, and since then,
+          I’ve created stuff like my own programming language and compiler, a virtual girlfriend
+          (she can talk and play games!), and contributed to open-source projects such as the{' '}
           <Link href="https://github.com/rehypejs/rehype">
             <em>rehype</em>
           </Link>{' '}

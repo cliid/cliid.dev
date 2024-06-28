@@ -1,8 +1,12 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { ButtonHTMLAttributes, useEffect, useState } from 'react';
 import { HiArrowDown, HiArrowUp, HiMoon, HiSun } from 'react-icons/hi';
-import UseAnimations from 'react-useanimations';
+const UseAnimations = dynamic(() => import('react-useanimations'), {
+  loading: () => <img alt="" src="/static/images/menu2-fallback.svg" />,
+  ssr: false
+});
 // EVERY ANIMATION NEEDS TO BE IMPORTED FIRST -> YOUR BUNDLE WILL INCLUDE ONLY WHAT IT NEEDS
 import menu2 from 'react-useanimations/lib/menu2';
 

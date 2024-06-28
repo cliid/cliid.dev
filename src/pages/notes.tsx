@@ -18,11 +18,6 @@ export default function Notes() {
           description="We provide an introduction to the field of arithmetic dynamics. We start by defining fundamental terminology and notation from classical dynamics, including periodic points, wandering points, rational maps, power maps, Chebyshev polynomials, and Lattès maps. Together, we cover basic machinery from algebraic geometry, number theory, and p-adic analysis, including affine and projective space, ideals and varieties, and completions of Q. Continuing the discussion, we discuss dynamics over global fields, ultimately leading to the proof of Northcott’s theorem, involving Hilbert’s Nullstellensatz. We then discuss pathways emerging from it, centered around the uniform boundedness conjecture."
         />
         <NotesCard
-          title="Family 3 Celebration Set — The Ross Mathematics Program"
-          url="/static/files/fam-3-celebration.pdf"
-          description="At the end of week 3 of Ross, our ‘family,’ comprising four first-year students, a junior counselor, and a counselor, proved the Unique Factorization Theorem from the Ring Axioms and the Well-Ordering Principle (WOP). This paper was the final result."
-        />
-        <NotesCard
           title="Asymptotic Arguments — A powerful technique using complexity and density"
           url="/static/files/asymptotic-arguments.pdf"
           description="These slides were part of a lecture I delivered to my ‘family’ at Ross, which covered topics on asymptotic analysis, including natural density, union bound, and Szemerédi's theorem."
